@@ -1,0 +1,18 @@
+program Impostos;
+
+uses
+  Vcl.Forms,
+  U_tela in 'U_tela.pas' {Form1},
+  U_pis in 'U_pis.pas' {frm_pis},
+  U_cofins in 'U_cofins.pas' {Frm_cofins};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(Tfrm_pis, frm_pis);
+  Application.CreateForm(TFrm_cofins, Frm_cofins);
+  Application.Run;
+end.

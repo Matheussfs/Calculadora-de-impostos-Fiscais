@@ -1,0 +1,81 @@
+unit U_interestadual;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFrm_interestadual = class(TForm)
+    Edit1: TEdit;
+    Cbx_origem: TComboBox;
+    Cbx_destino: TComboBox;
+    edt_icms_interestadual: TEdit;
+    btn_int_icms: TButton;
+    Btn_clear_icms_inte: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit3: TEdit;
+    Label5: TLabel;
+    procedure Cbx_destinoChange(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure edt_icms_interestadualKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_interestadual: TFrm_interestadual;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm_interestadual.Cbx_destinoChange(Sender: TObject);
+begin
+  IF (Cbx_origem.text = 'AC') and (Cbx_destino.text = 'AC')
+  or (Cbx_origem.text = 'PA') and (Cbx_destino.text = 'PA')
+  or (Cbx_origem.text = 'ES') and (Cbx_destino.text = 'ES')
+  or (Cbx_origem.text = 'GO') and (Cbx_destino.text = 'GO')
+  or (Cbx_origem.text = 'MT') and (Cbx_destino.text = 'MT')
+  or (Cbx_origem.text = 'RR') and (Cbx_destino.text = 'RR')
+  or (Cbx_origem.text = 'MS') and (Cbx_destino.text = 'MS')then
+  begin
+    edt_icms_interestadual.text := '17';
+    END
+    else
+  IF (Cbx_origem.text = 'CE') and (Cbx_destino.text = 'CE')
+  or (Cbx_origem.text = 'AL') and (Cbx_destino.text = 'AL')
+  OR (Cbx_origem.text = 'AP') and (Cbx_destino.text = 'AP')
+  OR (Cbx_origem.text = 'BA') and (Cbx_destino.text = 'BA')
+  OR (Cbx_origem.text = 'AM') and (Cbx_destino.text = 'AM')
+  OR (Cbx_origem.text = 'DF') and (Cbx_destino.text = 'DF')
+  OR (Cbx_origem.text = 'MA') and (Cbx_destino.text = 'MA')then
+  begin
+     edt_icms_interestadual.text := '18';
+    end
+    else
+    begin
+     edt_icms_interestadual.text := '12';
+     end;
+
+  end;
+
+procedure TFrm_interestadual.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+procedure TFrm_interestadual.edt_icms_interestadualKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+     if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+end.

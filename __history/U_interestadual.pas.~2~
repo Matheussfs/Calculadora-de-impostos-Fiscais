@@ -1,0 +1,34 @@
+unit U_interestadual;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFrm_interestadual = class(TForm)
+    Edit1: TEdit;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Edit2: TEdit;
+    btn_int_icms: TButton;
+    Btn_clear_icms_inte: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_interestadual: TFrm_interestadual;
+
+implementation
+
+{$R *.dfm}
+
+end.

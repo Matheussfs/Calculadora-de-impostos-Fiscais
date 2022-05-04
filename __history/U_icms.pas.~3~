@@ -1,0 +1,27 @@
+unit U_icms;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFrm_icms = class(TForm)
+    Label1: TLabel;
+    Btn_estadual: TButton;
+    Btn_interestadual: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_icms: TFrm_icms;
+
+implementation
+
+{$R *.dfm}
+
+end.

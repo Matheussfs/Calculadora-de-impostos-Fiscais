@@ -1,0 +1,137 @@
+unit U_pis;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tfrm_pis = class(TForm)
+    Label1: TLabel;
+    edt_base_pis: TEdit;
+    Btn_calc_pis: TButton;
+    Btn_limpar_pis: TButton;
+    edt_valor_pis: TEdit;
+    Label2: TLabel;
+    edt_icms_excluir: TEdit;
+    CheckBox_presumido: TCheckBox;
+    CheckBox_real: TCheckBox;
+    CheckBox_excluir_icms: TCheckBox;
+    procedure CheckBox_realClick(Sender: TObject);
+    procedure CheckBox_presumidoClick(Sender: TObject);
+    procedure CheckBox_excluir_icmsClick(Sender: TObject);
+    procedure Btn_calc_pisClick(Sender: TObject);
+    procedure edt_base_pisChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_pis: Tfrm_pis;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_pis.Btn_calc_pisClick(Sender: TObject);
+var
+base_pis: real;
+aliquota_pis_real: real;
+aliquota_pis_presumido: real;
+resultado_pis: real;
+ icms_excluir: real;
+
+begin
+If CheckBox_real.checked = true then
+  base_pis := strtofloat (edt_base_pis.text);
+  icms_excluir :=  strtofloat (edt_icms_excluir.text);
+  aliquota_pis_real:= strtofloat('1,65');
+  resultado_pis:= (base_pis - icms_excluir) * aliquota_pis_real/100;
+  edt_valor_pis.text := floattostr (resultado_pis);
+  edt_valor_pis.text := formatfloat (',.00', resultado_pis);
+
+ begin
+ If CheckBox_presumido.checked = true then
+ base_pis := strtofloat (edt_base_pis.text);
+ icms_excluir :=  strtofloat (edt_icms_excluir.text);
+ aliquota_pis_presumido:= strtofloat('0,65');
+ resultado_pis:= (base_pis - icms_excluir) * aliquota_pis_presumido/100;
+ edt_valor_pis.text := floattostr (resultado_pis);
+ edt_valor_pis.text := formatfloat (',.00', resultado_pis);
+ end;
+
+
+end;
+
+procedure Tfrm_pis.CheckBox_excluir_icmsClick(Sender: TObject);
+begin
+  If CheckBox_excluir_icms.checked = true then
+edt_icms_excluir.Enabled := true;
+
+If CheckBox_excluir_icms.checked = false then
+edt_icms_excluir.Enabled := false;
+
+If CheckBox_excluir_icms.checked = false then
+edt_icms_excluir.text := ('0');
+
+end;
+
+procedure Tfrm_pis.CheckBox_presumidoClick(Sender: TObject);
+begin
+
+If CheckBox_presumido.checked = true then
+Btn_calc_pis.Enabled := true;
+
+If CheckBox_presumido.checked = true then
+CheckBox_real.Enabled := false;
+
+If CheckBox_presumido.checked = false then
+CheckBox_real.Enabled := true;
+
+If CheckBox_presumido.checked = false then
+Btn_calc_pis.Enabled := false;
+
+If CheckBox_presumido.checked = true then
+CheckBox_excluir_icms.Enabled := true;
+If CheckBox_presumido.checked = false then
+CheckBox_excluir_icms.Enabled := false;
+
+If CheckBox_presumido.checked = false then
+edt_valor_pis.clear;
+
+end;
+
+procedure Tfrm_pis.CheckBox_realClick(Sender: TObject);
+begin
+ If CheckBox_real.checked = true then
+Btn_calc_pis.Enabled := true;
+
+If CheckBox_real.checked = true then
+CheckBox_presumido.Enabled := false;
+
+If CheckBox_real.checked = false then
+CheckBox_presumido.Enabled := true;
+
+If CheckBox_real.checked = false then
+Btn_calc_pis.Enabled := false;
+
+If CheckBox_real.checked = true then
+CheckBox_excluir_icms.Enabled := true;
+If CheckBox_real.checked = false then
+CheckBox_excluir_icms.Enabled := false;
+
+If CheckBox_real.checked = false then
+edt_valor_pis.clear;
+
+end;
+
+procedure Tfrm_pis.edt_base_pisChange(Sender: TObject);
+begin
+CheckBox_real.Enabled := true;
+CheckBox_presumido.Enabled := true;
+end;
+
+end.

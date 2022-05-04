@@ -1,0 +1,36 @@
+program Impostos;
+
+uses
+  Vcl.Forms,
+  U_tela in 'U_tela.pas' {Form1},
+  U_pis in 'U_pis.pas' {frm_pis},
+  U_cofins in 'U_cofins.pas' {Frm_cofins},
+  U_icms in 'U_icms.pas' {Frm_icms},
+  U_icms_st in 'U_icms_st.pas' {frm_icms_st},
+  U_ipi in 'U_ipi.pas' {frm_IPI},
+  U_difal in 'U_difal.pas' {frm_difal},
+  U_irpj in 'U_irpj.pas' {Frm_irpj},
+  U_csll in 'U_csll.pas' {Frm_csll},
+  U_retencoes in 'U_retencoes.pas' {Frm_retencoes},
+  U_ICMSTELA in 'U_ICMSTELA.pas' {FRM_TELA_ICMS},
+  U_interestadual in 'U_interestadual.pas' {Frm_interestadual};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(Tfrm_pis, frm_pis);
+  Application.CreateForm(TFrm_cofins, Frm_cofins);
+  Application.CreateForm(Tfrm_icms_st, frm_icms_st);
+  Application.CreateForm(Tfrm_IPI, frm_IPI);
+  Application.CreateForm(Tfrm_difal, frm_difal);
+  Application.CreateForm(TFrm_irpj, Frm_irpj);
+  Application.CreateForm(TFrm_icms, Frm_icms);
+  Application.CreateForm(TFRM_TELA_ICMS, FRM_TELA_ICMS);
+  Application.CreateForm(TFrm_csll, Frm_csll);
+  Application.CreateForm(TFrm_retencoes, Frm_retencoes);
+  Application.CreateForm(TFrm_interestadual, Frm_interestadual);
+  Application.Run;
+end.

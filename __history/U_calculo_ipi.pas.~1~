@@ -1,0 +1,24 @@
+unit U_calculo_ipi;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFRM_CALCULO_IPI = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRM_CALCULO_IPI: TFRM_CALCULO_IPI;
+
+implementation
+
+{$R *.dfm}
+
+end.
