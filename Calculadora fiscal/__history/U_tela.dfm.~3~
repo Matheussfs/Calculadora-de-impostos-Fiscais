@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Cursor = crHandPoint
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Teste de gip'
+  Caption = 'Calculadora de Impostos'
   ClientHeight = 365
   ClientWidth = 444
   Color = clBtnFace
