@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Cursor = crHandPoint
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Teste hub'
+  Caption = 'Teste de gip'
   ClientHeight = 365
   ClientWidth = 444
   Color = clBtnFace
