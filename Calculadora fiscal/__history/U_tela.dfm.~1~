@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Cursor = crHandPoint
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Calculadora de Impostos'
+  Caption = 'Form1'
   ClientHeight = 365
   ClientWidth = 444
   Color = clBtnFace
@@ -1358,6 +1358,9 @@ object Form1: TForm1
         Text = 'Vers'#227'o Beta'
         Width = 111
       end>
+    ExplicitLeft = 184
+    ExplicitTop = 344
+    ExplicitWidth = 0
   end
   object Pnl_topo: TPanel
     Left = 0
