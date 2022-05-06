@@ -105,44 +105,64 @@ begin
   Txt_aliq_icms.text :='18';
   if cb_uf.text = 'CE' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'DF' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'ES' then
   Txt_aliq_icms.text :='17';
+
   if cb_uf.text = 'GO' then
   Txt_aliq_icms.text :='17';
+
   if cb_uf.text = 'MA' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = '17' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'MS' then
   Txt_aliq_icms.text :='17';
+
   if cb_uf.text = 'MG' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'PA' then
   Txt_aliq_icms.text :='17';
+
   if cb_uf.text = 'PB' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'PR' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'PE' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'PI' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'RN' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'RS' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'RO' then
   Txt_aliq_icms.text :='17,5';
+
   if cb_uf.text = 'RR' then
   Txt_aliq_icms.text :='17';
+
   if cb_uf.text = 'SC' then
   Txt_aliq_icms.text :='17';
+
   if cb_uf.text = 'SP' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'SE' then
   Txt_aliq_icms.text :='18';
+
   if cb_uf.text = 'TO' then
   Txt_aliq_icms.text :='18';
 

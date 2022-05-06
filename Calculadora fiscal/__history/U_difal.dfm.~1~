@@ -196,7 +196,6 @@ object frm_difal: Tfrm_difal
     Width = 81
     Height = 22
     Hint = 'Categoria'
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -215,7 +214,6 @@ object frm_difal: Tfrm_difal
     Width = 81
     Height = 22
     Hint = 'Categoria'
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -228,7 +226,7 @@ object frm_difal: Tfrm_difal
     OnKeyPress = edt_interestadualKeyPress
   end
   object Btn_limpar_difal: TButton
-    Left = 153
+    Left = 173
     Top = 164
     Width = 75
     Height = 25
@@ -238,7 +236,7 @@ object frm_difal: Tfrm_difal
     OnClick = Btn_limpar_difalClick
   end
   object Btn_calc_difal: TButton
-    Left = 72
+    Left = 92
     Top = 164
     Width = 75
     Height = 25
@@ -308,14 +306,5 @@ object frm_difal: Tfrm_difal
     ParentFont = False
     TabOrder = 15
     Text = '0'
-  end
-  object btn_editar: TButton
-    Left = 234
-    Top = 164
-    Width = 79
-    Height = 25
-    Caption = 'Editar Al'#237'quota'
-    TabOrder = 16
-    OnClick = btn_editarClick
   end
 end

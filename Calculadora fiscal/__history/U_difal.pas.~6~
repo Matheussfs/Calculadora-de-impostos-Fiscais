@@ -885,16 +885,24 @@ then
   or (cb_uf_origem.text = 'SP') and (cb_uf_destino.text = 'TO') THEN
   edt_interestadual.text := '7';
   end;
-  end;
-Btn_calc_difal.Enabled := True;
+
+    end;
+
+
+
+
+
+
+
+  Btn_calc_difal.Enabled := True;
 Btn_limpar_difal.enabled := True;
-end;
+
+
+  end;
+
+
 
 procedure Tfrm_difal.cb_uf_origemChange(Sender: TObject);
-
-{Aplicando proteção para que não haja cálculo do DIFAL quando o combobox
-cb_uf_destino.text for igual ao combobox cb_uf_origem.text}
-
 begin
  IF (cb_uf_destino.text = 'AC') and (cb_uf_origem.text = 'AC')
   or (cb_uf_destino.text = 'PA') and (cb_uf_origem.text = 'PA')
@@ -928,8 +936,6 @@ then
     EDT_ALIQ_DIFAL_FINAL.text := '0';
     showmessage('Não haverá calculo do Difal entre os mesmos Estados! Verifique.');
   end
-  {Aplicando alíquota de icms para cada estado conforme preenchimento
-   da cb_uf_origem.text}
   else
 if cb_uf_origem.text = 'RJ' then
   edt_estadual.text :='20';
@@ -945,44 +951,64 @@ if cb_uf_origem.text = 'RJ' then
   edt_estadual.text :='18';
   if cb_uf_origem.text = 'CE' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'DF' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'ES' then
   edt_estadual.text :='17';
+
   if cb_uf_origem.text = 'GO' then
   edt_estadual.text :='17';
+
   if cb_uf_origem.text = 'MA' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = '17' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'MS' then
   edt_estadual.text :='17';
+
   if cb_uf_origem.text = 'MG' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'PA' then
   edt_estadual.text :='17';
+
   if cb_uf_origem.text = 'PB' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'PR' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'PE' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'PI' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'RN' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'RS' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'RO' then
   edt_estadual.text :='17,5';
+
   if cb_uf_origem.text = 'RR' then
   edt_estadual.text :='17';
+
   if cb_uf_origem.text = 'SC' then
   edt_estadual.text :='17';
+
   if cb_uf_origem.text = 'SP' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'SE' then
   edt_estadual.text :='18';
+
   if cb_uf_origem.text = 'TO' then
   edt_estadual.text :='18';
 
