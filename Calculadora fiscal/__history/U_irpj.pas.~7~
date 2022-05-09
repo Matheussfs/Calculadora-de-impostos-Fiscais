@@ -59,7 +59,7 @@ type
     procedure adicional;
   var resultado,aliquota, aliquota_final, base,
 resultado_final, base_bruta, base_adicional,
-aliq_adicional, resultado_adicional, total_com_adicional, fim :real;
+aliq_adicional, resultado_adicional, total_com_adicional :real;
     { Private declarations }
   public
     { Public declarations }
@@ -80,42 +80,32 @@ end;
 
 procedure TFrm_irpj.adicional;
 begin
+
+end;
+
+procedure TFrm_irpj.Btn_calcuClick(Sender: TObject);
+begin
+Btn_calcu.enabled :=false;
+
 if Cbx_adicional.checked = true then
 base_bruta := strtofloat (edt_base_bruta.text);
 base := strtofloat (edt_base.text);
 aliquota := strtofloat (edt_aliq.text);
 aliquota_final := strtofloat (edt_aliq_final.text);
 resultado_final := base * aliquota_final/100;
+
 base := ( base_bruta * aliquota/100);
-resultado_final := strtofloat (Edt_resultado.text);
 base_adicional := strtofloat (Edt_base_adicional.text);
 aliq_adicional := strtofloat ('10');
+
 base_adicional := ( base - 60000);
 Edt_base_adicional.text := floattostr (base_adicional);
-Edt_base_adicional.text := format('%n', [base_adicional]);
-
+Edt_base_adicional.text := formatfloat ('0,.00', base_adicional);
+total_com_adicional  := strtofloat (Edt_total_adicional.text);
 Edt_total_adicional.text := floattostr(base_adicional * 10/100);
-resultado_adicional := strtofloat (Edt_total_adicional.text);
-Edt_total_adicional.text := format('%n', [resultado_adicional]);
 
-
-fim := strtofloat (Edt_final_ad.text);
-Edt_final_ad.text := floattostr(resultado_adicional + resultado_final);
-Edt_final_ad.text := format ('%n', [fim] );
-
-
-
-begin
-
-end;
-end;
-
-procedure TFrm_irpj.Btn_calcuClick(Sender: TObject);
-begin
-if Cbx_adicional.Checked then
-begin
-adicional;
-end;
+Edt_final_ad.text := floattostr (total_com_adicional + resultado_final);
+Edt_final_ad.text := formatfloat ('0,.00', resultado_final);
 
 if Cbx_servico.Checked then
 begin

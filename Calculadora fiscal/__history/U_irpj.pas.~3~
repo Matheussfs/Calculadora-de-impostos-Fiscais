@@ -1,0 +1,246 @@
+unit U_irpj;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFrm_irpj = class(TForm)
+    Cbx_venda: TCheckBox;
+    Cbx_servico: TCheckBox;
+    Cbx_gasolina: TCheckBox;
+    Cbx_outras: TCheckBox;
+    CheckBox5: TCheckBox;
+    Btn_editar: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    edt_base_bruta: TEdit;
+    Edt_aliq: TEdit;
+    Edt_base: TEdit;
+    Edt_aliq_final: TEdit;
+    Edt_base_adicional: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Edit8: TEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    Edit9: TEdit;
+    Label10: TLabel;
+    Label11: TLabel;
+    procedure Cbx_vendaClick(Sender: TObject);
+    procedure Cbx_servicoClick(Sender: TObject);
+    procedure Cbx_gasolinaClick(Sender: TObject);
+    procedure Cbx_outrasClick(Sender: TObject);
+    procedure edt_base_brutaExit(Sender: TObject);
+    procedure Edt_aliqExit(Sender: TObject);
+    procedure Edt_aliq_finalExit(Sender: TObject);
+    procedure Edt_base_adicionalExit(Sender: TObject);
+    procedure edt_base_brutaKeyPress(Sender: TObject; var Key: Char);
+    procedure Edt_base_adicionalKeyPress(Sender: TObject; var Key: Char);
+    procedure Edt_aliqKeyPress(Sender: TObject; var Key: Char);
+    procedure Edt_aliq_finalKeyPress(Sender: TObject; var Key: Char);
+    procedure Btn_editarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_irpj: TFrm_irpj;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm_irpj.Btn_editarClick(Sender: TObject);
+begin
+Edt_base_adicional.enabled  :=true;
+
+end;
+
+procedure TFrm_irpj.Cbx_gasolinaClick(Sender: TObject);
+begin
+if Cbx_gasolina.Checked = true then
+Cbx_venda.enabled := false;
+if Cbx_gasolina.Checked = true then
+Cbx_servico.enabled := false;
+if Cbx_gasolina.Checked = true then
+Cbx_outras.enabled := false;
+
+if Cbx_gasolina.Checked = false then
+Cbx_venda.enabled := true;
+if Cbx_gasolina.Checked = false then
+Cbx_servico.enabled := true;
+if Cbx_gasolina.Checked = false then
+Cbx_outras.enabled := true;
+
+if Cbx_gasolina.Checked = true then
+Edt_aliq.text := '15';
+if Cbx_gasolina.Checked = true then
+Edt_aliq_final.text := '1,6';
+
+if Cbx_gasolina.Checked = false then
+Edt_aliq.text := '0';
+if Cbx_gasolina.Checked = false then
+Edt_aliq_final.text := '0';
+end;
+
+procedure TFrm_irpj.Cbx_outrasClick(Sender: TObject);
+begin
+if Cbx_outras.Checked = true then
+Edt_aliq.enabled := true;
+if Cbx_outras.Checked = true then
+Edt_aliq_final.enabled := true;
+
+if Cbx_outras.Checked = false then
+Edt_aliq.enabled := false;
+if Cbx_outras.Checked = false then
+Edt_aliq_final.enabled := false;
+
+if Cbx_outras.Checked = true then
+Cbx_venda.enabled := false;
+if Cbx_outras.Checked = true then
+Cbx_gasolina.enabled := false;
+if Cbx_outras.Checked = true then
+Cbx_servico.enabled := false;
+
+if Cbx_outras.Checked = false then
+Cbx_venda.enabled := true;
+if Cbx_outras.Checked = false then
+Cbx_gasolina.enabled := true;
+if Cbx_outras.Checked = false then
+Cbx_servico.enabled := true;
+
+if Cbx_outras.Checked = false then
+Edt_aliq.text := '0';
+if Cbx_outras.Checked = false then
+Edt_aliq_final.text := '0';
+end;
+
+procedure TFrm_irpj.Cbx_servicoClick(Sender: TObject);
+begin
+if Cbx_servico.Checked = true then
+Cbx_venda.enabled := false;
+if Cbx_servico.Checked = true then
+Cbx_gasolina.enabled := false;
+if Cbx_servico.Checked = true then
+Cbx_outras.enabled := false;
+
+if Cbx_servico.Checked = false then
+Cbx_venda.enabled := true;
+if Cbx_servico.Checked = false then
+Cbx_gasolina.enabled := true;
+if Cbx_servico.Checked = false then
+Cbx_outras.enabled := true;
+
+if Cbx_servico.Checked = true then
+Edt_aliq.text := '32';
+if Cbx_servico.Checked = true then
+Edt_aliq_final.text := '15';
+
+if Cbx_servico.Checked = false then
+Edt_aliq.text := '0';
+if Cbx_servico.Checked = false then
+Edt_aliq_final.text := '0';
+end;
+
+procedure TFrm_irpj.Cbx_vendaClick(Sender: TObject);
+begin
+if Cbx_venda.Checked = true then
+Cbx_servico.enabled := false;
+if Cbx_venda.Checked = true then
+Cbx_gasolina.enabled := false;
+if Cbx_venda.Checked = true then
+Cbx_outras.enabled := false;
+
+if Cbx_venda.Checked = false then
+Cbx_servico.enabled := true;
+if Cbx_venda.Checked = false then
+Cbx_gasolina.enabled := true;
+if Cbx_venda.Checked = false then
+Cbx_outras.enabled := true;
+
+if Cbx_venda.Checked = true then
+Edt_aliq.text := '8';
+if Cbx_venda.Checked = true then
+Edt_aliq_final.text := '15';
+
+if Cbx_venda.Checked = false then
+Edt_aliq.text := '0';
+if Cbx_venda.Checked = false then
+Edt_aliq_final.text := '0';
+end;
+
+procedure TFrm_irpj.Edt_base_adicionalExit(Sender: TObject);
+begin
+if (Edt_base_adicional.text='') then
+begin
+showmessage('Deve ser inserido uma base de adicional de IRPJ');
+Edt_base_adicional.setfocus;
+Edt_base_adicional.text := ('0');
+end;
+end;
+
+procedure TFrm_irpj.Edt_base_adicionalKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+procedure TFrm_irpj.Edt_aliqExit(Sender: TObject);
+begin
+begin
+if (Edt_aliq.text='') then
+begin
+showmessage('Deve ser inserido uma alíquota de IRPJ');
+Edt_aliq.setfocus;
+Edt_aliq.text := ('0');
+end;
+end;
+end;
+
+procedure TFrm_irpj.Edt_aliqKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+procedure TFrm_irpj.Edt_aliq_finalExit(Sender: TObject);
+begin
+if (Edt_aliq_final.text='') then
+begin
+showmessage('Deve ser inserido uma alíquota de IRPJ');
+Edt_aliq_final.setfocus;
+Edt_aliq_final.text := ('0');
+end;
+end;
+
+procedure TFrm_irpj.Edt_aliq_finalKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+procedure TFrm_irpj.edt_base_brutaExit(Sender: TObject);
+begin
+if (edt_base_bruta.text='') then
+begin
+showmessage('Deve ser inserido uma base de IRPJ');
+edt_base_bruta.setfocus;
+edt_base_bruta.text := ('0');
+end;
+end;
+
+procedure TFrm_irpj.edt_base_brutaKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+end.

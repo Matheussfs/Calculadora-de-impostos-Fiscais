@@ -79,7 +79,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label6: TLabel
     Left = 437
@@ -93,7 +92,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label7: TLabel
     Left = 438
@@ -107,11 +105,10 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label8: TLabel
-    Left = 83
-    Top = 257
+    Left = 242
+    Top = 247
     Width = 111
     Height = 19
     Caption = 'Total do IRPJ'
@@ -123,9 +120,9 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 51
-    Top = 282
-    Width = 26
+    Left = 223
+    Top = 272
+    Width = 42
     Height = 18
     Caption = 'R$:'
     Font.Charset = DEFAULT_CHARSET
@@ -135,35 +132,7 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label10: TLabel
-    Left = 351
-    Top = 282
-    Width = 26
-    Height = 18
-    Caption = 'R$:'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Visible = False
-  end
-  object Label11: TLabel
-    Left = 322
-    Top = 253
-    Width = 229
-    Height = 19
-    Caption = 'Total do IRPJ com Adicional'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Visible = False
-  end
-  object Cbx_venda: TCheckBox
+  object CheckBox1: TCheckBox
     Left = 40
     Top = 8
     Width = 97
@@ -176,9 +145,8 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    OnClick = Cbx_vendaClick
   end
-  object Cbx_servico: TCheckBox
+  object CheckBox2: TCheckBox
     Left = 40
     Top = 31
     Width = 97
@@ -191,9 +159,8 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    OnClick = Cbx_servicoClick
   end
-  object Cbx_gasolina: TCheckBox
+  object CheckBox3: TCheckBox
     Left = 40
     Top = 54
     Width = 177
@@ -206,9 +173,8 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    OnClick = Cbx_gasolinaClick
   end
-  object Cbx_outras: TCheckBox
+  object CheckBox4: TCheckBox
     Left = 212
     Top = 8
     Width = 145
@@ -221,9 +187,8 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    OnClick = Cbx_outrasClick
   end
-  object Cbx_adicional: TCheckBox
+  object CheckBox5: TCheckBox
     Left = 212
     Top = 31
     Width = 157
@@ -236,9 +201,8 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = Cbx_adicionalClick
   end
-  object Btn_editar: TButton
+  object Button1: TButton
     Left = 431
     Top = 8
     Width = 169
@@ -251,16 +215,13 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
-    Visible = False
-    OnClick = Btn_editarClick
   end
-  object Btn_calcu: TButton
+  object Button2: TButton
     Left = 224
     Top = 216
     Width = 73
     Height = 25
     Caption = 'Calcular'
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -268,7 +229,6 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 6
-    OnClick = Btn_calcuClick
   end
   object Button3: TButton
     Left = 303
@@ -284,7 +244,7 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 7
   end
-  object edt_base_bruta: TEdit
+  object Edit1: TEdit
     Left = 40
     Top = 110
     Width = 121
@@ -297,15 +257,12 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 8
     Text = '0'
-    OnExit = edt_base_brutaExit
-    OnKeyPress = edt_base_brutaKeyPress
   end
-  object Edt_aliq: TEdit
+  object Edit2: TEdit
     Left = 264
     Top = 110
     Width = 89
     Height = 22
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -314,15 +271,12 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 9
     Text = '0'
-    OnExit = Edt_aliqExit
-    OnKeyPress = Edt_aliqKeyPress
   end
-  object Edt_base: TEdit
+  object Edit3: TEdit
     Left = 40
     Top = 174
     Width = 121
     Height = 22
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -332,12 +286,11 @@ object Frm_irpj: TFrm_irpj
     TabOrder = 10
     Text = '0'
   end
-  object Edt_aliq_final: TEdit
+  object Edit4: TEdit
     Left = 264
     Top = 174
     Width = 89
     Height = 22
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -346,15 +299,12 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 11
     Text = '0'
-    OnExit = Edt_aliq_finalExit
-    OnKeyPress = Edt_aliq_finalKeyPress
   end
-  object Edt_base_adicional: TEdit
+  object Edit5: TEdit
     Left = 451
     Top = 72
     Width = 121
     Height = 22
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -363,16 +313,12 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 12
     Text = '0'
-    Visible = False
-    OnExit = Edt_base_adicionalExit
-    OnKeyPress = Edt_base_adicionalKeyPress
   end
-  object Edt_aliq_adicional: TEdit
-    Left = 483
+  object Edit6: TEdit
+    Left = 451
     Top = 134
-    Width = 54
+    Width = 121
     Height = 22
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -380,31 +326,27 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 13
-    Text = '10'
-    Visible = False
+    Text = '0'
   end
-  object Edt_total_adicional: TEdit
+  object Edit7: TEdit
     Left = 451
     Top = 198
     Width = 121
-    Height = 26
-    Enabled = False
+    Height = 33
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 14
     Text = '0'
-    Visible = False
   end
-  object Edt_resultado: TEdit
-    Left = 83
-    Top = 278
-    Width = 129
+  object Edit8: TEdit
+    Left = 255
+    Top = 268
+    Width = 121
     Height = 27
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -413,21 +355,5 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 15
     Text = '0'
-  end
-  object Edt_final_ad: TEdit
-    Left = 383
-    Top = 278
-    Width = 138
-    Height = 27
-    Enabled = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 16
-    Text = '0'
-    Visible = False
   end
 end

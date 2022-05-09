@@ -27,7 +27,6 @@ type
     procedure edt_base_pisExit(Sender: TObject);
     procedure edt_icms_excluirExit(Sender: TObject);
     procedure edt_base_pisKeyPress(Sender: TObject; var Key: Char);
-    procedure edt_valor_pisChange(Sender: TObject);
 
   private
   {procedures para calculo do pis real/presumido
@@ -199,11 +198,6 @@ showmessage('Deve ser inserido um valor de icms');
 edt_icms_excluir.setfocus;
 edt_icms_excluir.text := ('0');
 end;
-end;
-
-procedure Tfrm_pis.edt_valor_pisChange(Sender: TObject);
-begin
-
 end;
 
 //procedure com o calculo do pis lucro presumido

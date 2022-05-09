@@ -89,7 +89,6 @@ object frm_pis: Tfrm_pis
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    OnChange = edt_valor_pisChange
   end
   object edt_icms_excluir: TEdit
     Left = 311

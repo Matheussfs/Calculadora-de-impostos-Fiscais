@@ -26,7 +26,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_ICMSTELA, U_interestadual, U_difal;
+uses U_ICMSTELA, U_interestadual;
 
 procedure TFrm_icms.Btn_estadualClick(Sender: TObject);
 begin
@@ -37,9 +37,9 @@ end;
 
 procedure TFrm_icms.Btn_interestadualClick(Sender: TObject);
 begin
-application.createform (Tfrm_difal, frm_difal);
-  frm_difal.borderstyle := bssingle;
-  frm_difal.showmodal;
+application.createform (TFrm_interestadual, Frm_interestadual);
+  Frm_interestadual.borderstyle := bssingle;
+  Frm_interestadual.showmodal;
 end;
 
 end.

@@ -79,7 +79,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label6: TLabel
     Left = 437
@@ -93,7 +92,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label7: TLabel
     Left = 438
@@ -107,7 +105,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label8: TLabel
     Left = 83
@@ -147,7 +144,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Label11: TLabel
     Left = 322
@@ -161,7 +157,6 @@ object Frm_irpj: TFrm_irpj
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    Visible = False
   end
   object Cbx_venda: TCheckBox
     Left = 40
@@ -223,7 +218,7 @@ object Frm_irpj: TFrm_irpj
     TabOrder = 3
     OnClick = Cbx_outrasClick
   end
-  object Cbx_adicional: TCheckBox
+  object CheckBox5: TCheckBox
     Left = 212
     Top = 31
     Width = 157
@@ -236,7 +231,6 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = Cbx_adicionalClick
   end
   object Btn_editar: TButton
     Left = 431
@@ -251,7 +245,6 @@ object Frm_irpj: TFrm_irpj
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
-    Visible = False
     OnClick = Btn_editarClick
   end
   object Btn_calcu: TButton
@@ -363,11 +356,10 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 12
     Text = '0'
-    Visible = False
     OnExit = Edt_base_adicionalExit
     OnKeyPress = Edt_base_adicionalKeyPress
   end
-  object Edt_aliq_adicional: TEdit
+  object Edit6: TEdit
     Left = 483
     Top = 134
     Width = 54
@@ -381,7 +373,6 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 13
     Text = '10'
-    Visible = False
   end
   object Edt_total_adicional: TEdit
     Left = 451
@@ -397,7 +388,6 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 14
     Text = '0'
-    Visible = False
   end
   object Edt_resultado: TEdit
     Left = 83
@@ -428,6 +418,5 @@ object Frm_irpj: TFrm_irpj
     ParentFont = False
     TabOrder = 16
     Text = '0'
-    Visible = False
   end
 end
