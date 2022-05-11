@@ -13,6 +13,7 @@ type
     Cbx_gasolina: TCheckBox;
     Cbx_outras: TCheckBox;
     Cbx_adicional: TCheckBox;
+    Btn_editar: TButton;
     Btn_calcu: TButton;
     Button3: TButton;
     edt_base_bruta: TEdit;
@@ -35,7 +36,6 @@ type
     Edt_final_ad: TEdit;
     Label10: TLabel;
     Label11: TLabel;
-    Cbx_adc_mensal: TCheckBox;
     procedure Cbx_vendaClick(Sender: TObject);
     procedure Cbx_servicoClick(Sender: TObject);
     procedure Cbx_gasolinaClick(Sender: TObject);
@@ -51,15 +51,12 @@ type
     procedure Btn_editarClick(Sender: TObject);
     procedure Btn_calcuClick(Sender: TObject);
     procedure Cbx_adicionalClick(Sender: TObject);
-    procedure Cbx_adc_mensalClick(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
   private
   procedure venda;
   procedure servico;
     procedure gasolina;
     procedure outras;
     procedure adicional;
-    procedure adicional_mensal;
   var resultado,aliquota, aliquota_final, base,
 resultado_final, base_bruta, base_adicional,
 aliq_adicional, resultado_adicional, total_com_adicional, fim :real;
@@ -81,36 +78,9 @@ Edt_base_adicional.enabled  :=true;
 
 end;
 
-procedure TFrm_irpj.Button3Click(Sender: TObject);
-begin
-//configurando botão de limpar
-var p:integer;
-begin
-for p := 0 to   Frm_irpj.ComponentCount-1 do
- if components[p] is tedit then
- begin
-    tedit(components[p]).text := '0';
-  end;
-end;
-end;
-
 procedure TFrm_irpj.adicional;
 begin
-//configurando a procedure do adicional trimestral para as vendas
-if Cbx_adicional.checked and Cbx_venda.Checked = true then
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-
+if Cbx_adicional.checked = true then
 base_bruta := strtofloat (edt_base_bruta.text);
 base := strtofloat (edt_base.text);
 aliquota := strtofloat (edt_aliq.text);
@@ -122,136 +92,26 @@ base_adicional := strtofloat (Edt_base_adicional.text);
 aliq_adicional := strtofloat ('10');
 base_adicional := ( base - 60000);
 Edt_base_adicional.text := floattostr (base_adicional);
+Edt_base_adicional.text := format('%n', [base_adicional]);
 
 Edt_total_adicional.text := floattostr(base_adicional * 10/100);
 resultado_adicional := strtofloat (Edt_total_adicional.text);
+Edt_total_adicional.text := format('%n', [resultado_adicional]);
 
 
-Edt_final_ad.text := floattostr
-(strtofloat(Edt_resultado.text) + strtofloat(Edt_total_adicional.text));
 fim := strtofloat (Edt_final_ad.text);
-Edt_final_ad.text := formatfloat ('0,.00', FIM);
+Edt_final_ad.text := floattostr(resultado_adicional + resultado_final);
+Edt_final_ad.text := format ('%n', [fim] );
 
-//configurando a procedure do adicional trimestral para os serviços
-if Cbx_adicional.checked and Cbx_servico.Checked = true then
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-resultado_final := base * aliquota_final/100;
-base := ( base_bruta * aliquota/100);
-resultado_final := strtofloat (Edt_resultado.text);
-base_adicional := strtofloat (Edt_base_adicional.text);
-aliq_adicional := strtofloat ('10');
-base_adicional := ( base - 60000);
-Edt_base_adicional.text := floattostr (base_adicional);
-
-
-Edt_total_adicional.text := floattostr(base_adicional * 10/100);
-resultado_adicional := strtofloat (Edt_total_adicional.text);
 
 
 begin
 
 end;
-end;
-
-procedure TFrm_irpj.adicional_mensal;
-//configurando a procedure do adicional mensal para as vendas
-begin
-if Cbx_adc_mensal.checked and Cbx_venda.Checked = true then
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-resultado_final := base * aliquota_final/100;
-base := ( base_bruta * aliquota/100);
-resultado_final := strtofloat (Edt_resultado.text);
-base_adicional := strtofloat (Edt_base_adicional.text);
-aliq_adicional := strtofloat ('10');
-base_adicional := ( base - 20000);
-Edt_base_adicional.text := floattostr (base_adicional);
-
-
-Edt_total_adicional.text := floattostr(base_adicional * 10/100);
-resultado_adicional := strtofloat (Edt_total_adicional.text);
-
-
-
-Edt_final_ad.text := floattostr
-(strtofloat(Edt_resultado.text) + strtofloat(Edt_total_adicional.text));
-fim := strtofloat (Edt_final_ad.text);
-Edt_final_ad.text := formatfloat ('0,.00', FIM);
-
-//configurando a procedure do adicional mensal para as vendas
-if Cbx_adc_mensal.checked and Cbx_servico.Checked = true then
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-
-
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-resultado_final := base * aliquota_final/100;
-base := ( base_bruta * aliquota/100);
-resultado_final := strtofloat (Edt_resultado.text);
-base_adicional := strtofloat (Edt_base_adicional.text);
-aliq_adicional := strtofloat ('10');
-base_adicional := ( base - 20000);
-Edt_base_adicional.text := floattostr (base_adicional);
-
-
-Edt_total_adicional.text := floattostr(base_adicional * 10/100);
-resultado_adicional := strtofloat (Edt_total_adicional.text);
-
 end;
 
 procedure TFrm_irpj.Btn_calcuClick(Sender: TObject);
-
-//chamando as procedures para calculo do irpj e adicional conforme checkbox
 begin
-if Cbx_adc_mensal.Checked then
-begin
-adicional_mensal;
-end;
-
 if Cbx_adicional.Checked then
 begin
 adicional;
@@ -281,77 +141,10 @@ end;
 
 
 
-procedure TFrm_irpj.Cbx_adc_mensalClick(Sender: TObject);
-//configurando checkbox do adicional mensal
-begin
-if Cbx_adc_mensal.checked = true then
- Cbx_adicional.enabled := false;
- if Cbx_adc_mensal.checked = false then
- Cbx_adicional.enabled := true;
-
- if Cbx_adc_mensal.checked  = false then
-Edt_base_adicional.text :=('0');
-if Cbx_adc_mensal.checked  = false then
-Edt_total_adicional.text :=('0');
-if Cbx_adc_mensal.checked  = false then
-Edt_final_ad.text :=('0');
-
-if Cbx_adc_mensal.checked  = true then
-Label5.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Edt_base_adicional.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Label6.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Edt_aliq_adicional.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Label7.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Edt_total_adicional.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Label11.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Edt_final_ad.Visible := true;
-if Cbx_adc_mensal.checked  = true then
-Label10.Visible := true;
-
-
-if Cbx_adc_mensal.checked  = false then
-Label5.Visible := false;
-if Cbx_adc_mensal.checked  = false then
-Edt_base_adicional.Visible := false;
-if Cbx_adc_mensal.checked  = false then
-Label6.Visible := false;
-if Cbx_adc_mensal.checked  = false then
-Edt_aliq_adicional.Visible := false;
-if Cbx_adc_mensal.checked  = false then
-Label7.Visible := false;
-if Cbx_adc_mensal.checked  = false then
-Edt_total_adicional.Visible := false;
-if Cbx_adc_mensal.checked  = false then
-Label11.Visible := false;
-
-if Cbx_adc_mensal.checked  = false then
-Edt_final_ad.Visible := false;
-
-if Cbx_adc_mensal.checked  = false then
-Label10.Visible := false;
-
-end;
-
 procedure TFrm_irpj.Cbx_adicionalClick(Sender: TObject);
-//configurando checkbox do adicional trimestral
 begin
 if Cbx_adicional.checked  = true then
-Cbx_adc_mensal.Enabled := false;
-if Cbx_adicional.checked  = false then
-if Cbx_adicional.checked  = false then
-Edt_base_adicional.text :=('0');
-if Cbx_adicional.checked  = false then
-Edt_total_adicional.text :=('0');
-if Cbx_adicional.checked  = false then
-Edt_final_ad.text :=('0');
-Cbx_adc_mensal.enabled := true;
+Btn_editar.Visible := true;
 if Cbx_adicional.checked  = true then
 Label5.Visible := true;
 if Cbx_adicional.checked  = true then
@@ -371,7 +164,8 @@ Edt_final_ad.Visible := true;
 if Cbx_adicional.checked  = true then
 Label10.Visible := true;
 
-
+if Cbx_adicional.checked  = false then
+Btn_editar.Visible := false;
 if Cbx_adicional.checked  = false then
 Label5.Visible := false;
 if Cbx_adicional.checked  = false then
@@ -398,7 +192,6 @@ Label10.Visible := false;
 end;
 
 procedure TFrm_irpj.Cbx_gasolinaClick(Sender: TObject);
-//configurando checkbox do irpj em postos de gasolina
 begin
 if Cbx_gasolina.Checked = true then
 Cbx_venda.enabled := false;
@@ -444,7 +237,6 @@ Edt_resultado.text :='0';
 end;
 
 procedure TFrm_irpj.Cbx_outrasClick(Sender: TObject);
-//configurando o checkbox para outras alíquotas
 begin
 if Cbx_outras.Checked = true then
 Edt_aliq.enabled := true;
@@ -495,7 +287,6 @@ Edt_resultado.text :='0';
 end;
 
 procedure TFrm_irpj.Cbx_servicoClick(Sender: TObject);
-//configurando o checkbox para os serviços
 begin
 if Cbx_servico.Checked = true then
 Cbx_venda.enabled := false;
@@ -541,7 +332,6 @@ Edt_resultado.text :='0';
 end;
 
 procedure TFrm_irpj.Cbx_vendaClick(Sender: TObject);
-//configurando o checkbox para as vendas
 begin
 if Cbx_venda.Checked = true then
 Cbx_servico.enabled := false;
@@ -588,7 +378,6 @@ Edt_resultado.text :='0';
 end;
 
 procedure TFrm_irpj.Edt_base_adicionalExit(Sender: TObject);
-//configurando proteção para que o txt Edt_base_adicional não fique vazio
 begin
 if (Edt_base_adicional.text='') then
 begin
@@ -599,13 +388,12 @@ end;
 end;
 
 procedure TFrm_irpj.Edt_base_adicionalKeyPress(Sender: TObject; var Key: Char);
-//confuigurando o evento onkeypress para aceitar apenas números
 begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure TFrm_irpj.Edt_aliqExit(Sender: TObject);
-//configurando proteção para que o txt Edt_aliq não fique vazio
+begin
 begin
 if (Edt_aliq.text='') then
 begin
@@ -613,17 +401,15 @@ showmessage('Deve ser inserido uma alíquota de IRPJ');
 Edt_aliq.setfocus;
 Edt_aliq.text := ('0');
 end;
-
+end;
 end;
 
 procedure TFrm_irpj.Edt_aliqKeyPress(Sender: TObject; var Key: Char);
-//confuigurando o evento onkeypress para aceitar apenas números
 begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure TFrm_irpj.Edt_aliq_finalExit(Sender: TObject);
-//configurando proteção para que o txt Edt_aliq_final não fique vazio
 begin
 if (Edt_aliq_final.text='') then
 begin
@@ -634,13 +420,11 @@ end;
 end;
 
 procedure TFrm_irpj.Edt_aliq_finalKeyPress(Sender: TObject; var Key: Char);
-//confuigurando o evento onkeypress para aceitar apenas números
 begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure TFrm_irpj.edt_base_brutaExit(Sender: TObject);
-//configurando proteção para que o txt edt_base_bruta não fique vazio
 begin
 if (edt_base_bruta.text='') then
 begin
@@ -651,70 +435,11 @@ end;
 end;
 
 procedure TFrm_irpj.edt_base_brutaKeyPress(Sender: TObject; var Key: Char);
-//confuigurando o evento onkeypress para aceitar apenas números
 begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure TFrm_irpj.gasolina;
-//configurando o calculo do irpj para os postos de combustível
-begin
-if Cbx_gasolina.checked = true then
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-Edt_resultado.text := formatfloat ('0,.00', resultado_final);
-end;
-
-procedure TFrm_irpj.outras;
-//configurando o calculo do irpj para os valores de outras alíquotas
-begin
-if Cbx_outras.checked = true then
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-Edt_resultado.text := formatfloat ('0,.00', resultado_final);
-
-end;
-
-procedure TFrm_irpj.servico;
-//configurando o calculo do irpj para os valores de serviços
-begin
- if  Cbx_servico.checked = true then
-base_bruta := strtofloat (edt_base_bruta.text);
-base := strtofloat (edt_base.text);
-aliquota := strtofloat (edt_aliq.text);
-aliquota_final := strtofloat (edt_aliq_final.text);
-
-
-base := ( base_bruta * aliquota/100);
-Edt_base.text := floattostr (base);
-resultado_final := base * aliquota_final/100;
-
-Edt_resultado.text := floattostr (resultado_final);
-Edt_resultado.text := formatfloat ('0,.00', resultado_final);
-end;
-
-
-procedure TFrm_irpj.venda;
-//configurando o calculo do irpj para os valores de vendas
 begin
 if Cbx_venda.checked = true then
 base_bruta := strtofloat (edt_base_bruta.text);
@@ -725,6 +450,63 @@ aliquota_final := strtofloat (edt_aliq_final.text);
 
 base := ( base_bruta * aliquota/100);
 Edt_base.text := floattostr (base);
+Edt_base.text := formatfloat ('0,.00', base);
+resultado_final := base * aliquota_final/100;
+
+Edt_resultado.text := floattostr (resultado_final);
+Edt_resultado.text := formatfloat ('0,.00', resultado_final);
+end;
+
+procedure TFrm_irpj.outras;
+begin
+ if Cbx_venda.checked = true then
+base_bruta := strtofloat (edt_base_bruta.text);
+base := strtofloat (edt_base.text);
+aliquota := strtofloat (edt_aliq.text);
+aliquota_final := strtofloat (edt_aliq_final.text);
+
+
+base := ( base_bruta * aliquota/100);
+Edt_base.text := floattostr (base);
+Edt_base.text := formatfloat ('0,.00', base);
+resultado_final := base * aliquota_final/100;
+
+Edt_resultado.text := floattostr (resultado_final);
+Edt_resultado.text := formatfloat ('0,.00', resultado_final);
+end;
+
+procedure TFrm_irpj.servico;
+
+begin
+ if Cbx_venda.checked = true then
+base_bruta := strtofloat (edt_base_bruta.text);
+base := strtofloat (edt_base.text);
+aliquota := strtofloat (edt_aliq.text);
+aliquota_final := strtofloat (edt_aliq_final.text);
+
+
+base := ( base_bruta * aliquota/100);
+Edt_base.text := floattostr (base);
+Edt_base.text := formatfloat ('0,.00', base);
+resultado_final := base * aliquota_final/100;
+
+Edt_resultado.text := floattostr (resultado_final);
+Edt_resultado.text := formatfloat ('0,.00', resultado_final);
+end;
+
+
+procedure TFrm_irpj.venda;
+begin
+if Cbx_venda.checked = true then
+base_bruta := strtofloat (edt_base_bruta.text);
+base := strtofloat (edt_base.text);
+aliquota := strtofloat (edt_aliq.text);
+aliquota_final := strtofloat (edt_aliq_final.text);
+
+
+base := ( base_bruta * aliquota/100);
+Edt_base.text := floattostr (base);
+Edt_base.text := formatfloat ('0,.00', base);
 resultado_final := base * aliquota_final/100;
 
 Edt_resultado.text := floattostr (resultado_final);

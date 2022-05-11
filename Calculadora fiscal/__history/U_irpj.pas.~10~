@@ -659,7 +659,7 @@ end;
 procedure TFrm_irpj.gasolina;
 //configurando o calculo do irpj para os postos de combustível
 begin
-if Cbx_gasolina.checked = true then
+if Cbx_venda.checked = true then
 base_bruta := strtofloat (edt_base_bruta.text);
 base := strtofloat (edt_base.text);
 aliquota := strtofloat (edt_aliq.text);
@@ -678,7 +678,7 @@ end;
 procedure TFrm_irpj.outras;
 //configurando o calculo do irpj para os valores de outras alíquotas
 begin
-if Cbx_outras.checked = true then
+ if Cbx_venda.checked = true then
 base_bruta := strtofloat (edt_base_bruta.text);
 base := strtofloat (edt_base.text);
 aliquota := strtofloat (edt_aliq.text);
@@ -687,6 +687,7 @@ aliquota_final := strtofloat (edt_aliq_final.text);
 
 base := ( base_bruta * aliquota/100);
 Edt_base.text := floattostr (base);
+
 resultado_final := base * aliquota_final/100;
 
 Edt_resultado.text := floattostr (resultado_final);
@@ -697,7 +698,7 @@ end;
 procedure TFrm_irpj.servico;
 //configurando o calculo do irpj para os valores de serviços
 begin
- if  Cbx_servico.checked = true then
+ if Cbx_venda.checked = true then
 base_bruta := strtofloat (edt_base_bruta.text);
 base := strtofloat (edt_base.text);
 aliquota := strtofloat (edt_aliq.text);
@@ -706,6 +707,7 @@ aliquota_final := strtofloat (edt_aliq_final.text);
 
 base := ( base_bruta * aliquota/100);
 Edt_base.text := floattostr (base);
+
 resultado_final := base * aliquota_final/100;
 
 Edt_resultado.text := floattostr (resultado_final);

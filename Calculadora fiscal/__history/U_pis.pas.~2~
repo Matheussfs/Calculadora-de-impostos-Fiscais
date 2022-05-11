@@ -167,7 +167,6 @@ quando um dos checkbox for marcado}
 begin
 CheckBox_real.Enabled := true;
 CheckBox_presumido.Enabled := true;
-
 end;
 
 procedure Tfrm_pis.edt_base_pisExit(Sender: TObject);
