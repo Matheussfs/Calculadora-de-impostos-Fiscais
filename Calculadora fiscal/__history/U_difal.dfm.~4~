@@ -75,7 +75,6 @@ object frm_difal: Tfrm_difal
     TabOrder = 3
     TextHint = 'UF Origem'
     OnChange = cb_uf_origemChange
-    OnKeyPress = cb_uf_origemKeyPress
     Items.Strings = (
       'AC'
       'AL'
@@ -133,7 +132,6 @@ object frm_difal: Tfrm_difal
     TabOrder = 5
     TextHint = 'UF Destino'
     OnChange = cb_uf_destinoChange
-    OnKeyPress = cb_uf_destinoKeyPress
     Items.Strings = (
       'AC'
       'AL'

@@ -21,8 +21,6 @@ type
     procedure edt_base_ipiKeyPress(Sender: TObject; var Key: Char);
     procedure edt_aliq_ipiKeyPress(Sender: TObject; var Key: Char);
     procedure edt_aliq_ipiChange(Sender: TObject);
-    procedure edt_aliq_ipiExit(Sender: TObject);
-    procedure edt_base_ipiExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +41,6 @@ var
   aliq_ipi: real;
   resultado: real;
 begin
-//configurando calculo de ipi
 base_ipi := strtofloat (edt_base_ipi.text);
    aliq_ipi := strtofloat (edt_aliq_ipi.text);
     resultado :=  base_ipi * aliq_ipi/100;
@@ -52,7 +49,6 @@ base_ipi := strtofloat (edt_base_ipi.text);
 end;
 
 procedure Tfrm_IPI.Btn_clear_ipiClick(Sender: TObject);
-//confiugurando botão de limpar
  var x:integer;
 begin
 
@@ -73,41 +69,13 @@ Btn_calc_ipi.Enabled := True;
     Btn_clear_ipi.enabled := True;
 end;
 
-procedure Tfrm_IPI.edt_aliq_ipiExit(Sender: TObject);
-begin
-//configurando proteção para que o txt edt_aliq_ipi não fique vazio
-begin
-if (edt_aliq_ipi.text='') then
-begin
-showmessage('Deve ser inserido uma alíquota de IPI');
-edt_aliq_ipi.setfocus;
-edt_aliq_ipi.text := ('0');
-end;
-end;
-end;
-
 procedure Tfrm_IPI.edt_aliq_ipiKeyPress(Sender: TObject; var Key: Char);
-//Proteção para permitir apenas números e vírgula no edt_aliq_ipi
 begin
 if ((key in ['0'..'9'] = false) and (word(key) <> vk_back)) then
  key := #0;
 end;
 
-procedure Tfrm_IPI.edt_base_ipiExit(Sender: TObject);
-begin
-//configurando proteção para que o txt edt_base_ipi não fique vazio
-begin
-if (edt_base_ipi.text='') then
-begin
-showmessage('Deve ser inserido uma base de IPI');
-edt_base_ipi.setfocus;
-edt_base_ipi.text := ('0');
-end;
-end;
-end;
-
 procedure Tfrm_IPI.edt_base_ipiKeyPress(Sender: TObject; var Key: Char);
-//Proteção para permitir apenas números e vírgula no edt_base_ipi
 begin
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;

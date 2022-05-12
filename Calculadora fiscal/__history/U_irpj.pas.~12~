@@ -345,22 +345,17 @@ procedure TFrm_irpj.Cbx_adicionalClick(Sender: TObject);
 //configurando checkbox do adicional trimestral
 begin
 if Cbx_adicional.checked  = true then
-Cbx_adc_mensal.Enabled := false;
-
-if Cbx_adicional.checked  = false then
-Cbx_adc_mensal.Enabled := true;
-
 if Cbx_adicional.checked  = true then
 Edt_aliq_adicional.text := '10';
-
-
+Cbx_adc_mensal.Enabled := false;
+if Cbx_adicional.checked  = false then
 if Cbx_adicional.checked  = false then
 Edt_base_adicional.text :=('0');
 if Cbx_adicional.checked  = false then
 Edt_total_adicional.text :=('0');
 if Cbx_adicional.checked  = false then
 Edt_final_ad.text :=('0');
-
+Cbx_adc_mensal.enabled := true;
 if Cbx_adicional.checked  = true then
 Label5.Visible := true;
 if Cbx_adicional.checked  = true then

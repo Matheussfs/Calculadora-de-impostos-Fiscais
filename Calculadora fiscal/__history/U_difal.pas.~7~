@@ -36,8 +36,6 @@ type
     procedure edt_estadualKeyPress(Sender: TObject; var Key: Char);
     procedure edt_interestadualKeyPress(Sender: TObject; var Key: Char);
     procedure btn_editarClick(Sender: TObject);
-    procedure cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
-    procedure cb_uf_destinoKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -892,11 +890,6 @@ Btn_calc_difal.Enabled := True;
 Btn_limpar_difal.enabled := True;
 end;
 
-procedure Tfrm_difal.cb_uf_destinoKeyPress(Sender: TObject; var Key: Char);
-begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-end;
-
 procedure Tfrm_difal.cb_uf_origemChange(Sender: TObject);
 
 {Aplicando proteção para que não haja cálculo do DIFAL quando o combobox
@@ -994,11 +987,6 @@ if cb_uf_origem.text = 'RJ' then
   edt_estadual.text :='18';
 
 
-end;
-
-procedure Tfrm_difal.cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
-begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure Tfrm_difal.edt_estadualExit(Sender: TObject);

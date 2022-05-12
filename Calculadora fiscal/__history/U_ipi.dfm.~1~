@@ -17,7 +17,7 @@ object frm_IPI: Tfrm_IPI
   TextHeight = 13
   object Label1: TLabel
     Left = 96
-    Top = 134
+    Top = 126
     Width = 28
     Height = 19
     Caption = 'R$:'
@@ -42,7 +42,6 @@ object frm_IPI: Tfrm_IPI
     ParentFont = False
     TabOrder = 0
     TextHint = 'Base IPI'
-    OnExit = edt_base_ipiExit
     OnKeyPress = edt_base_ipiKeyPress
   end
   object edt_aliq_ipi: TEdit
@@ -61,7 +60,6 @@ object frm_IPI: Tfrm_IPI
     TabOrder = 1
     TextHint = '% IPI'
     OnChange = edt_aliq_ipiChange
-    OnExit = edt_aliq_ipiExit
     OnKeyPress = edt_aliq_ipiKeyPress
   end
   object StaticText1: TStaticText
@@ -126,7 +124,7 @@ object frm_IPI: Tfrm_IPI
   end
   object edt_total_ipi: TEdit
     Left = 131
-    Top = 127
+    Top = 119
     Width = 119
     Height = 31
     Enabled = False

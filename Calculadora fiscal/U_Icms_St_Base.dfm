@@ -1,10 +1,9 @@
-object Frm_csll: TFrm_csll
+object FRM_BASE_ST: TFRM_BASE_ST
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Frm_csll'
-  ClientHeight = 313
-  ClientWidth = 381
+  Caption = 'FRM_BASE_ST'
+  ClientHeight = 356
+  ClientWidth = 325
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,76 +15,102 @@ object Frm_csll: TFrm_csll
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 20
-    Top = 133
-    Width = 83
-    Height = 19
-    Caption = 'Base CSLL'
+    Left = 40
+    Top = 10
+    Width = 72
+    Height = 16
+    Caption = 'Vl. Produto'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 20
-    Top = 69
-    Width = 133
-    Height = 19
-    Caption = 'Base Bruta CSLL'
+    Left = 40
+    Top = 74
+    Width = 66
+    Height = 16
+    Caption = 'Vl. Seguro'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 243
-    Top = 69
-    Width = 113
-    Height = 19
-    Caption = 'Al'#237'quota Base'
+    Left = 40
+    Top = 138
+    Width = 81
+    Height = 16
+    Caption = 'Vl. Desconto'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 244
-    Top = 133
-    Width = 69
-    Height = 19
-    Caption = 'Al'#237'quota'
+    Left = 40
+    Top = 202
+    Width = 88
+    Height = 16
+    Caption = 'Al'#237'quota MVA'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 216
+    Top = 10
+    Width = 54
+    Height = 16
+    Caption = 'Vl. Frete'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 173
+    Top = 74
+    Width = 137
+    Height = 16
+    Caption = 'Despesas Acess'#243'rias'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 221
+    Top = 138
+    Width = 38
+    Height = 16
+    Caption = 'Vl. IPI'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 127
-    Top = 257
-    Width = 112
-    Height = 19
-    Caption = 'Total da CSLL'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label9: TLabel
-    Left = 95
-    Top = 282
-    Width = 26
+    Left = 18
+    Top = 325
+    Width = 130
     Height = 18
-    Caption = 'R$:'
+    Caption = 'Base do ICMS ST:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -93,85 +118,79 @@ object Frm_csll: TFrm_csll
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Cbx_venda: TCheckBox
-    Left = 32
-    Top = 8
-    Width = 97
-    Height = 17
-    Caption = 'Venda'
+  object Edit1: TEdit
+    Left = 16
+    Top = 32
+    Width = 121
+    Height = 22
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    OnClick = Cbx_vendaClick
+    Text = '0'
   end
-  object Cbx_servico: TCheckBox
-    Left = 32
-    Top = 31
-    Width = 97
-    Height = 17
-    Caption = 'Servi'#231'o'
+  object Edit2: TEdit
+    Left = 16
+    Top = 96
+    Width = 121
+    Height = 22
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    OnClick = Cbx_servicoClick
+    Text = '0'
   end
-  object Cbx_outras: TCheckBox
-    Left = 204
-    Top = 8
-    Width = 145
-    Height = 17
-    Caption = 'Outras Al'#237'quotas'
+  object Edit3: TEdit
+    Left = 16
+    Top = 160
+    Width = 121
+    Height = 22
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    OnClick = Cbx_outrasClick
+    Text = '0'
   end
-  object Btn_calcu: TButton
-    Left = 109
-    Top = 202
-    Width = 73
-    Height = 25
-    Caption = 'Calcular'
-    Enabled = False
+  object Edit4: TEdit
+    Left = 18
+    Top = 224
+    Width = 121
+    Height = 22
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    OnClick = Btn_calcuClick
+    Text = '0'
   end
-  object Button3: TButton
-    Left = 188
-    Top = 202
-    Width = 73
-    Height = 25
-    Caption = 'Limpar'
+  object Edit5: TEdit
+    Left = 184
+    Top = 32
+    Width = 121
+    Height = 22
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = Button3Click
+    Text = '0'
   end
-  object edt_base_bruta: TEdit
-    Left = 20
-    Top = 94
+  object Edit6: TEdit
+    Left = 184
+    Top = 96
     Width = 121
     Height = 22
     Font.Charset = DEFAULT_CHARSET
@@ -182,15 +201,12 @@ object Frm_csll: TFrm_csll
     ParentFont = False
     TabOrder = 5
     Text = '0'
-    OnExit = edt_base_brutaExit
-    OnKeyPress = edt_base_brutaKeyPress
   end
-  object Edt_aliq: TEdit
-    Left = 244
-    Top = 94
-    Width = 89
+  object Edit7: TEdit
+    Left = 184
+    Top = 160
+    Width = 126
     Height = 22
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -199,15 +215,13 @@ object Frm_csll: TFrm_csll
     ParentFont = False
     TabOrder = 6
     Text = '0'
-    OnExit = Edt_aliqExit
-    OnKeyPress = Edt_aliqKeyPress
   end
-  object Edt_base: TEdit
-    Left = 20
-    Top = 158
-    Width = 121
-    Height = 22
-    Enabled = False
+  object Button1: TButton
+    Left = 216
+    Top = 188
+    Width = 75
+    Height = 25
+    Caption = 'Calcular IPI'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -215,15 +229,14 @@ object Frm_csll: TFrm_csll
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 7
-    Text = '0'
-    OnKeyPress = Edt_baseKeyPress
+    OnClick = Button1Click
   end
-  object Edt_aliq_final: TEdit
-    Left = 243
-    Top = 158
-    Width = 89
-    Height = 22
-    Enabled = False
+  object Button3: TButton
+    Left = 92
+    Top = 272
+    Width = 75
+    Height = 25
+    Caption = 'Calcular'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -231,23 +244,33 @@ object Frm_csll: TFrm_csll
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 8
-    Text = '0'
-    OnExit = Edt_aliq_finalExit
-    OnKeyPress = Edt_aliq_finalKeyPress
   end
-  object Edt_resultado: TEdit
-    Left = 127
-    Top = 278
-    Width = 129
+  object Button4: TButton
+    Left = 173
+    Top = 272
+    Width = 75
+    Height = 25
+    Caption = 'Limpar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 9
+  end
+  object Edit8: TEdit
+    Left = 149
+    Top = 321
+    Width = 121
     Height = 27
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 10
     Text = '0'
   end
 end

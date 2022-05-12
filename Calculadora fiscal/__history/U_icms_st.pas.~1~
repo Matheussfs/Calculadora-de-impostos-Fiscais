@@ -1,4 +1,4 @@
-unit U_irpj;
+unit U_icms_st;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  TFrm_irpj = class(TForm)
+  Tfrm_icms_st = class(TForm)
   private
     { Private declarations }
   public
@@ -15,7 +15,7 @@ type
   end;
 
 var
-  Frm_irpj: TFrm_irpj;
+  frm_icms_st: Tfrm_icms_st;
 
 implementation
 
