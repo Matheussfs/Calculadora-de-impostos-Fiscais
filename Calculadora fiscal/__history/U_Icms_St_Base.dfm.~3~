@@ -1,10 +1,9 @@
 object FRM_BASE_ST: TFRM_BASE_ST
   Left = 0
   Top = 0
-  BorderStyle = bsSingle
   Caption = 'FRM_BASE_ST'
-  ClientHeight = 366
-  ClientWidth = 335
+  ClientHeight = 356
+  ClientWidth = 325
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -275,7 +274,6 @@ object FRM_BASE_ST: TFRM_BASE_ST
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 9
-    OnClick = Btn_limpar_baseClick
   end
   object Edt_resultado_bc_st: TEdit
     Left = 149

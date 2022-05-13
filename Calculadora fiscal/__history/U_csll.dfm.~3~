@@ -1,11 +1,10 @@
-object frm_icms_st: Tfrm_icms_st
+object Frm_csll: TFrm_csll
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
-  Caption = 'frm_icms_st'
-  ClientHeight = 265
-  ClientWidth = 688
+  Caption = 'Frm_csll'
+  ClientHeight = 313
+  ClientWidth = 381
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,37 +16,76 @@ object frm_icms_st: Tfrm_icms_st
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 8
-    Top = 23
-    Width = 186
-    Height = 18
-    Caption = 'Base de C'#225'lculo ICMS-ST'
+    Left = 20
+    Top = 133
+    Width = 83
+    Height = 19
+    Caption = 'Base CSLL'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 231
-    Top = 24
-    Width = 81
-    Height = 18
-    Caption = 'UF Destino'
+    Left = 20
+    Top = 69
+    Width = 133
+    Height = 19
+    Caption = 'Base Bruta CSLL'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 352
-    Top = 24
-    Width = 131
+    Left = 243
+    Top = 69
+    Width = 113
+    Height = 19
+    Caption = 'Al'#237'quota Base'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 244
+    Top = 133
+    Width = 69
+    Height = 19
+    Caption = 'Al'#237'quota'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 127
+    Top = 257
+    Width = 112
+    Height = 19
+    Caption = 'Total da CSLL'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 95
+    Top = 282
+    Width = 26
     Height = 18
-    Caption = 'Al'#237'quota ICMS-ST'
+    Caption = 'R$:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -55,37 +93,12 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label5: TLabel
-    Left = 145
-    Top = 209
-    Width = 136
-    Height = 18
-    Caption = 'Valor do ICMS-ST:'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label6: TLabel
-    Left = 560
-    Top = 24
-    Width = 84
-    Height = 18
-    Caption = 'Valor ICMS'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Edt_base_ST: TEdit
+  object Cbx_venda: TCheckBox
     Left = 32
-    Top = 48
-    Width = 129
-    Height = 24
+    Top = 8
+    Width = 97
+    Height = 17
+    Caption = 'Venda'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -93,16 +106,14 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    Text = '0'
-    OnExit = Edt_base_STExit
-    OnKeyPress = Edt_base_STKeyPress
+    OnClick = Cbx_vendaClick
   end
-  object Txt_aliq_icms: TEdit
-    Left = 384
-    Top = 48
-    Width = 49
-    Height = 24
-    Enabled = False
+  object Cbx_servico: TCheckBox
+    Left = 32
+    Top = 31
+    Width = 97
+    Height = 17
+    Caption = 'Servi'#231'o'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -110,62 +121,59 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    Text = '0'
-    OnChange = Txt_aliq_icmsChange
-    OnExit = Txt_aliq_icmsExit
-    OnKeyPress = Txt_aliq_icmsKeyPress
+    OnClick = Cbx_servicoClick
   end
-  object Btn_base: TButton
-    Left = 48
-    Top = 78
-    Width = 97
-    Height = 35
-    Caption = 'Calcular Base '
+  object Cbx_outras: TCheckBox
+    Left = 204
+    Top = 8
+    Width = 145
+    Height = 17
+    Caption = 'Outras Al'#237'quotas'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    OnClick = Btn_baseClick
+    OnClick = Cbx_outrasClick
   end
-  object Btn_calcular_st_final: TButton
-    Left = 247
-    Top = 152
-    Width = 82
+  object Btn_calcu: TButton
+    Left = 109
+    Top = 202
+    Width = 73
     Height = 25
     Caption = 'Calcular'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
-    OnClick = Btn_calcular_st_finalClick
+    OnClick = Btn_calcuClick
   end
-  object Btn_limpar_st: TButton
-    Left = 335
-    Top = 152
-    Width = 82
+  object Button3: TButton
+    Left = 188
+    Top = 202
+    Width = 73
     Height = 25
     Caption = 'Limpar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = Btn_limpar_stClick
+    OnClick = Button3Click
   end
-  object Btn_aliq_st: TButton
-    Left = 360
-    Top = 78
-    Width = 106
-    Height = 35
-    Caption = 'Editar Al'#237'quota'
+  object edt_base_bruta: TEdit
+    Left = 20
+    Top = 94
+    Width = 121
+    Height = 22
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -173,73 +181,49 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
-    OnClick = Btn_aliq_stClick
+    Text = '0'
+    OnExit = edt_base_brutaExit
+    OnKeyPress = edt_base_brutaKeyPress
   end
-  object Cb_uf: TComboBox
-    Left = 251
-    Top = 48
-    Width = 46
-    Height = 24
+  object Edt_aliq: TEdit
+    Left = 244
+    Top = 94
+    Width = 89
+    Height = 22
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 6
-    TextHint = 'UF'
-    OnChange = Cb_ufChange
-    OnKeyPress = Cb_ufKeyPress
-    Items.Strings = (
-      'AC'
-      'AL'
-      'AP'
-      'AM'
-      'BA'
-      'CE'
-      'DF'
-      'ES'
-      'GO'
-      'MA'
-      'MT'
-      'MS'
-      'MG'
-      'PA'
-      'PB'
-      'PR'
-      'PE'
-      'PI'
-      'RJ'
-      'RN'
-      'RS'
-      'RO'
-      'RR'
-      'SC'
-      'SP'
-      'SE'
-      'TO')
+    Text = '0'
+    OnExit = Edt_aliqExit
+    OnKeyPress = Edt_aliqKeyPress
   end
-  object Edt_vl_st: TEdit
-    Left = 287
-    Top = 202
-    Width = 145
-    Height = 31
+  object Edt_base: TEdit
+    Left = 20
+    Top = 158
+    Width = 121
+    Height = 22
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
+    Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 7
     Text = '0'
+    OnKeyPress = Edt_baseKeyPress
   end
-  object Calc_icms: TButton
-    Left = 560
-    Top = 78
-    Width = 100
-    Height = 35
-    Caption = 'Calcular Icms'
+  object Edt_aliq_final: TEdit
+    Left = 243
+    Top = 158
+    Width = 89
+    Height = 22
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -247,21 +231,23 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 8
-    OnClick = Calc_icmsClick
+    Text = '0'
+    OnExit = Edt_aliq_finalExit
+    OnKeyPress = Edt_aliq_finalKeyPress
   end
-  object Edt_icms_total_normal: TEdit
-    Left = 549
-    Top = 48
-    Width = 121
-    Height = 24
+  object Edt_resultado: TEdit
+    Left = 127
+    Top = 278
+    Width = 129
+    Height = 27
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 9
     Text = '0'
-    OnExit = Edt_icms_total_normalExit
   end
 end

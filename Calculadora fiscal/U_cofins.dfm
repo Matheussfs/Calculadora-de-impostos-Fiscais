@@ -2,9 +2,10 @@ object Frm_cofins: TFrm_cofins
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Frm_cofins'
-  ClientHeight = 201
-  ClientWidth = 447
+  ClientHeight = 211
+  ClientWidth = 457
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -2,10 +2,9 @@ object frm_icms_st: Tfrm_icms_st
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
   Caption = 'frm_icms_st'
-  ClientHeight = 265
-  ClientWidth = 688
+  ClientHeight = 255
+  ClientWidth = 678
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -158,7 +157,6 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
-    OnClick = Btn_limpar_stClick
   end
   object Btn_aliq_st: TButton
     Left = 360
@@ -173,7 +171,6 @@ object frm_icms_st: Tfrm_icms_st
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
-    OnClick = Btn_aliq_stClick
   end
   object Cb_uf: TComboBox
     Left = 251

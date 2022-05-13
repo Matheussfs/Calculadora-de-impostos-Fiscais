@@ -4,25 +4,28 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TFrm_csll = class(TForm)
+    Panel1: TPanel;
+    Cbx_venda: TCheckBox;
+    Cbx_servico: TCheckBox;
+    Cbx_outras: TCheckBox;
+    Panel2: TPanel;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Cbx_venda: TCheckBox;
-    Cbx_servico: TCheckBox;
-    Cbx_outras: TCheckBox;
-    Btn_calcu: TButton;
-    Button3: TButton;
     edt_base_bruta: TEdit;
     Edt_aliq: TEdit;
     Edt_base: TEdit;
     Edt_aliq_final: TEdit;
+    Panel3: TPanel;
     Label8: TLabel;
     Label9: TLabel;
+    Btn_calcu: TButton;
+    Button3: TButton;
     Edt_resultado: TEdit;
     procedure Cbx_vendaClick(Sender: TObject);
     procedure Cbx_servicoClick(Sender: TObject);

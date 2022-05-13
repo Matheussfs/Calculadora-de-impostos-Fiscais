@@ -8,6 +8,22 @@ uses
 
 type
   TFrm_irpj = class(TForm)
+    Btn_calcu: TButton;
+    Button3: TButton;
+    edt_base_bruta: TEdit;
+    Edt_aliq: TEdit;
+    Edt_base: TEdit;
+    Edt_aliq_final: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edt_resultado: TEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    Edt_final_ad: TEdit;
+    Label10: TLabel;
+    Label11: TLabel;
     Panel1: TPanel;
     Label5: TLabel;
     Label6: TLabel;
@@ -22,24 +38,6 @@ type
     Cbx_outras: TCheckBox;
     Cbx_adicional: TCheckBox;
     Cbx_adc_mensal: TCheckBox;
-    Panel3: TPanel;
-    Label8: TLabel;
-    Label9: TLabel;
-    Label10: TLabel;
-    Label11: TLabel;
-    Btn_calcu: TButton;
-    Button3: TButton;
-    Edt_resultado: TEdit;
-    Edt_final_ad: TEdit;
-    Panel4: TPanel;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    edt_base_bruta: TEdit;
-    Edt_aliq: TEdit;
-    Edt_base: TEdit;
-    Edt_aliq_final: TEdit;
     procedure Cbx_vendaClick(Sender: TObject);
     procedure Cbx_servicoClick(Sender: TObject);
     procedure Cbx_gasolinaClick(Sender: TObject);

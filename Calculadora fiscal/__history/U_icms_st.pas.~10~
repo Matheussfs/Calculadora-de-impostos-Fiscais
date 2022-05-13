@@ -65,10 +65,8 @@ FRM_BASE_ST.showmodal;
 end;
 
 procedure Tfrm_icms_st.Btn_calcular_st_finalClick(Sender: TObject);
-//variáveis calculo icms st
 var base, icms, resultador_st, icms_st:real;
 begin
-//calculando icms st
 base := strtofloat (Edt_base_ST.text);
 icms_st := strtofloat (Txt_aliq_icms.text);
 icms := strtofloat (Edt_icms_total_normal.text);
@@ -86,7 +84,6 @@ end;
 
 procedure Tfrm_icms_st.Btn_limpar_stClick(Sender: TObject);
 begin
-//configurando o botão de limpar
 var p:integer;
 begin
 for p := 0 to   frm_icms_st.ComponentCount-1 do
@@ -167,13 +164,11 @@ end;
 
 procedure Tfrm_icms_st.Cb_ufKeyPress(Sender: TObject; var Key: Char);
 begin
-//configurando para o combobox aceitar apenas números
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure Tfrm_icms_st.Edt_icms_total_normalExit(Sender: TObject);
 begin
-//proteção para não deixar o tedit Edt_icms_total_normal vazio
 if (Edt_icms_total_normal.text='') then
 begin
 showmessage('Deve ser inserido um valor de ICMS');
@@ -184,7 +179,6 @@ end;
 
 procedure Tfrm_icms_st.Edt_base_STExit(Sender: TObject);
 begin
-//proteção para não deixar o tedit base icms st vazio
 if (Edt_base_ST.text='') then
 begin
 showmessage('Deve ser inserido uma base de ICMS-ST');
@@ -263,7 +257,6 @@ end;
 
 procedure Tfrm_icms_st.Txt_aliq_icmsExit(Sender: TObject);
 begin
-//proteção para não deixar o tedit Txt_aliq_icms vazio
 if (Txt_aliq_icms.text='') then
 begin
 showmessage('Deve ser inserido uma alíquota de ICMS-ST');

@@ -92,7 +92,6 @@ frm_ipi.showmodal;
 end;
 
 procedure TFRM_BASE_ST.Btn_limpar_baseClick(Sender: TObject);
-//configurando o botão de limpar
 begin
 var p:integer;
 begin
@@ -105,7 +104,6 @@ end;
 end;
 
 procedure TFRM_BASE_ST.edt_vl_produtoExit(Sender: TObject);
-//proteção para não deixar o campo edt_vl_produto
 begin
 if (edt_vl_produto.text='') then
 begin
@@ -121,7 +119,6 @@ begin
 end;
 
 procedure TFRM_BASE_ST.Edt_vl_seguroExit(Sender: TObject);
-//proteção para não deixar o campo Edt_vl_seguro vazio
 begin
 if (Edt_vl_seguro.text='') then
 begin
@@ -138,13 +135,10 @@ end;
 
 procedure TFRM_BASE_ST.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-//configurando para que a base preencha automáticamente em outro form
-//atalho altf11, deverá ser incluído o form, após, chama-lo
 frm_icms_st.Edt_base_ST.text :=Edt_resultado_bc_st.text;
 end;
 
 procedure TFRM_BASE_ST.Edt_vl_descontoExit(Sender: TObject);
-//proteção para não deixar o campo Edt_vl_desconto vazio
 begin
 if (Edt_vl_desconto.text='') then
 begin
@@ -160,7 +154,6 @@ begin
 end;
 
 procedure TFRM_BASE_ST.Edt_aliq_mvaExit(Sender: TObject);
-//proteção para não deixar o campo aliq_mva vazio
 begin
 if (Edt_aliq_mva.text='') then
 begin
@@ -176,7 +169,6 @@ begin
 end;
 
 procedure TFRM_BASE_ST.Edt_alq_freteExit(Sender: TObject);
-//proteção para não deixar o campo Edt_alq_frete vazio
 begin
 if (Edt_alq_frete.text='') then
 begin
@@ -192,7 +184,6 @@ begin
 end;
 
 procedure TFRM_BASE_ST.Edt_desp_acessoriasExit(Sender: TObject);
-//proteção para não deixar o campo Edt_desp_acessorias vazio
 begin
 if (Edt_desp_acessorias.text='') then
 begin
@@ -208,7 +199,6 @@ begin
 end;
 
 procedure TFRM_BASE_ST.Edt_vl_ipiExit(Sender: TObject);
-//proteção para não deixar o campo Edt_vl_ipi vazio
 begin
 if (Edt_vl_ipi.text='') then
 begin

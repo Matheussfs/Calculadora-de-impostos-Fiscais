@@ -4,14 +4,12 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
   Tfrm_difal = class(TForm)
-    Panel1: TPanel;
     StaticText2: TStaticText;
     txt_base_icms_difal: TEdit;
-    Panel2: TPanel;
     StaticText1: TStaticText;
     cb_uf_origem: TComboBox;
     StaticText3: TStaticText;
@@ -20,15 +18,13 @@ type
     StaticText5: TStaticText;
     edt_estadual: TEdit;
     edt_interestadual: TEdit;
-    Panel3: TPanel;
     Btn_limpar_difal: TButton;
     Btn_calc_difal: TButton;
-    btn_editar: TButton;
-    Panel4: TPanel;
     StaticText6: TStaticText;
     StaticText7: TStaticText;
     EDT_ALIQ_DIFAL_FINAL: TEdit;
     Edt_total_difal: TEdit;
+    btn_editar: TButton;
     procedure cb_uf_origemChange(Sender: TObject);
     procedure cb_uf_destinoChange(Sender: TObject);
     procedure txt_base_icms_difalExit(Sender: TObject);

@@ -2,10 +2,9 @@ object Frm_icms: TFrm_icms
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
   Caption = 'Frm_icms'
-  ClientHeight = 118
-  ClientWidth = 393
+  ClientHeight = 108
+  ClientWidth = 383
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

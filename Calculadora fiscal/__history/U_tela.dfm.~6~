@@ -3,10 +3,9 @@ object Form1: TForm1
   Top = 0
   Cursor = crHandPoint
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
   Caption = 'Teste hub'
-  ClientHeight = 375
-  ClientWidth = 454
+  ClientHeight = 365
+  ClientWidth = 444
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -2382,8 +2381,8 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 356
-    Width = 454
+    Top = 346
+    Width = 444
     Height = 19
     Panels = <
       item
@@ -2404,17 +2403,14 @@ object Form1: TForm1
         Text = 'Vers'#227'o Beta'
         Width = 111
       end>
-    ExplicitTop = 346
-    ExplicitWidth = 444
   end
   object Pnl_topo: TPanel
     Left = 0
     Top = 0
-    Width = 454
+    Width = 444
     Height = 26
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 444
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer

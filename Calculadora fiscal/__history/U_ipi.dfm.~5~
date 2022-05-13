@@ -2,10 +2,9 @@ object frm_IPI: Tfrm_IPI
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
   Caption = 'frm_IPI'
-  ClientHeight = 191
-  ClientWidth = 376
+  ClientHeight = 181
+  ClientWidth = 366
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -2,10 +2,9 @@ object frm_pis: Tfrm_pis
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsSingle
   Caption = 'frm_pis'
-  ClientHeight = 208
-  ClientWidth = 451
+  ClientHeight = 198
+  ClientWidth = 441
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

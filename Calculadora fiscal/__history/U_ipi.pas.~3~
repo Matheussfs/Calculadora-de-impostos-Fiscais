@@ -23,7 +23,6 @@ type
     procedure edt_aliq_ipiChange(Sender: TObject);
     procedure edt_aliq_ipiExit(Sender: TObject);
     procedure edt_base_ipiExit(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -36,8 +35,6 @@ var
 implementation
 
 {$R *.dfm}
-
-uses U_Icms_St_Base;
 
 procedure Tfrm_IPI.Btn_calc_ipiClick(Sender: TObject);
 var
@@ -113,11 +110,6 @@ procedure Tfrm_IPI.edt_base_ipiKeyPress(Sender: TObject; var Key: Char);
 //Proteção para permitir apenas números e vírgula no edt_base_ipi
 begin
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-end;
-
-procedure Tfrm_IPI.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-//FRM_BASE_ST.Edt_vl_ipi.text :=edt_total_ipi.text;
 end;
 
 end.
