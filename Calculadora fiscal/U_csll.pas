@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls,ShellAPI, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
 
 type
   TFrm_csll = class(TForm)
@@ -27,6 +27,7 @@ type
     Btn_calcu: TButton;
     Button3: TButton;
     Edt_resultado: TEdit;
+    SpeedButton1: TSpeedButton;
     procedure Cbx_vendaClick(Sender: TObject);
     procedure Cbx_servicoClick(Sender: TObject);
     procedure Cbx_outrasClick(Sender: TObject);
@@ -42,6 +43,7 @@ type
      procedure outras;
     procedure Btn_calcuClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
   var resultado_final, aliquota_final, aliquota, base, base_bruta:real;
     { Private declarations }
@@ -315,6 +317,13 @@ resultado_final := base * aliquota_final/100;
 
 Edt_resultado.text := floattostr (resultado_final);
 Edt_resultado.text := formatfloat ('0,.00', resultado_final);
+end;
+
+procedure TFrm_csll.SpeedButton1Click(Sender: TObject);
+//configurando botão para abrir o site do ajuda, deve ser declarado na user: ShellAPI;
+
+begin
+ ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-cadastrar-as-bases-de-irpj-e-csll-77437445.html', '',nil,0);
 end;
 
 procedure TFrm_csll.venda;

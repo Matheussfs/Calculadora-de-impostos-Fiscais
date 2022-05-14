@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls,ShellAPI, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
 
 type
   Tfrm_difal = class(TForm)
@@ -29,6 +29,7 @@ type
     StaticText7: TStaticText;
     EDT_ALIQ_DIFAL_FINAL: TEdit;
     Edt_total_difal: TEdit;
+    SpeedButton1: TSpeedButton;
     procedure cb_uf_origemChange(Sender: TObject);
     procedure cb_uf_destinoChange(Sender: TObject);
     procedure txt_base_icms_difalExit(Sender: TObject);
@@ -42,6 +43,7 @@ type
     procedure btn_editarClick(Sender: TObject);
     procedure cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
     procedure cb_uf_destinoKeyPress(Sender: TObject; var Key: Char);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -1033,6 +1035,13 @@ end;
 procedure Tfrm_difal.edt_interestadualKeyPress(Sender: TObject; var Key: Char);
 begin
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+procedure Tfrm_difal.SpeedButton1Click(Sender: TObject);
+//configurando botão para abrir o site do ajuda, deve ser declarado na user: ShellAPI;
+
+begin
+ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/difal-ao-consumidor-final-89582079.html', '',nil,0);
 end;
 
 procedure Tfrm_difal.txt_base_icms_difalExit(Sender: TObject);

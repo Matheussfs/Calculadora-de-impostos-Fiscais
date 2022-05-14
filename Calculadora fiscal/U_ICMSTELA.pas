@@ -4,20 +4,22 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TFRM_TELA_ICMS = class(TForm)
-    Btn_limpar_icms: TButton;
-    Btn_calcular_icms: TButton;
+    Panel1: TPanel;
     StaticText1: TStaticText;
     StaticText2: TStaticText;
     StaticText3: TStaticText;
     txt_base_icms: TEdit;
     Txt_aliq_icms: TEdit;
     cb_uf: TComboBox;
-    edt_resultado_icms: TEdit;
+    Panel2: TPanel;
     Label1: TLabel;
+    Btn_limpar_icms: TButton;
+    Btn_calcular_icms: TButton;
+    edt_resultado_icms: TEdit;
     procedure BTN_CALCULAR_IPIClick(Sender: TObject);
     procedure Btn_calcular_icmsClick(Sender: TObject);
     procedure Btn_limpar_icmsClick(Sender: TObject);
@@ -26,6 +28,7 @@ type
     procedure Txt_aliq_icmsKeyPress(Sender: TObject; var Key: Char);
     procedure txt_base_icmsExit(Sender: TObject);
     procedure Txt_aliq_icmsExit(Sender: TObject);
+    procedure cb_ufKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -148,6 +151,11 @@ begin
 
      Btn_calcular_icms.Enabled := True;
       Btn_limpar_icms.enabled := True;
+end;
+
+procedure TFRM_TELA_ICMS.cb_ufKeyPress(Sender: TObject; var Key: Char);
+begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure TFRM_TELA_ICMS.Txt_aliq_icmsExit(Sender: TObject);

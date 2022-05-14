@@ -30,16 +30,24 @@ uses U_ICMSTELA, U_interestadual, U_difal;
 
 procedure TFrm_icms.Btn_estadualClick(Sender: TObject);
 begin
+try
   application.createform (TFRM_TELA_ICMS, frm_tela_icms);
   FRM_TELA_ICMS.borderstyle := bssingle;
   FRM_TELA_ICMS.showmodal;
+finally
+
+end;
 end;
 
 procedure TFrm_icms.Btn_interestadualClick(Sender: TObject);
 begin
+try
 application.createform (Tfrm_difal, frm_difal);
   frm_difal.borderstyle := bssingle;
   frm_difal.showmodal;
+finally
+
+end;
 end;
 
 end.

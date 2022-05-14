@@ -137,19 +137,23 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="U_retencoes.pas">
-            <Form>Frm_retencoes</Form>
+            <Form>Frm_IRRF</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="U_ICMSTELA.pas">
             <Form>FRM_TELA_ICMS</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="U_interestadual.pas">
-            <Form>Frm_interestadual</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="U_Icms_St_Base.pas">
             <Form>FRM_BASE_ST</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="U_tela_retenções.pas">
+            <Form>Frm_retencoes_tela</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="U_csrf.pas">
+            <Form>Frm_csrf</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

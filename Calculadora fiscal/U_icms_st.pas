@@ -4,25 +4,28 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,ShellAPI, Vcl.Buttons;
 
 type
   Tfrm_icms_st = class(TForm)
-    Edt_base_ST: TEdit;
+    Panel1: TPanel;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    Label6: TLabel;
+    Edt_base_ST: TEdit;
+    Txt_aliq_icms: TEdit;
+    Cb_uf: TComboBox;
+    Edt_icms_total_normal: TEdit;
+    Panel2: TPanel;
     Btn_base: TButton;
+    Btn_aliq_st: TButton;
+    Calc_icms: TButton;
+    Label5: TLabel;
     Btn_calcular_st_final: TButton;
     Btn_limpar_st: TButton;
-    Btn_aliq_st: TButton;
-    Label5: TLabel;
-    Cb_uf: TComboBox;
-    Txt_aliq_icms: TEdit;
     Edt_vl_st: TEdit;
-    Label6: TLabel;
-    Calc_icms: TButton;
-    Edt_icms_total_normal: TEdit;
+    SpeedButton1: TSpeedButton;
     procedure Btn_calc_icmsClick(Sender: TObject);
     procedure Btn_baseClick(Sender: TObject);
     procedure Edt_base_STKeyPress(Sender: TObject; var Key: Char);
@@ -38,6 +41,7 @@ type
     procedure Edt_icms_total_normalExit(Sender: TObject);
     procedure Btn_aliq_stClick(Sender: TObject);
     procedure Btn_limpar_stClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,8 +64,12 @@ end;
 
 procedure Tfrm_icms_st.Btn_baseClick(Sender: TObject);
 begin
+try
 FRM_BASE_ST := tFRM_BASE_ST.create(self);
 FRM_BASE_ST.showmodal;
+finally
+
+end;
 end;
 
 procedure Tfrm_icms_st.Btn_calcular_st_finalClick(Sender: TObject);
@@ -108,6 +116,7 @@ begin
 end;
 
 procedure Tfrm_icms_st.Cb_ufChange(Sender: TObject);
+//configurando alíquotas por ufs preenchidas na propriedade items
 begin
 if cb_uf.text = 'RJ' then
   Txt_aliq_icms.text :='20';
@@ -201,6 +210,14 @@ end;
 procedure Tfrm_icms_st.Edt_vl_icmsKeyPress(Sender: TObject; var Key: Char);
 begin
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+end;
+
+procedure Tfrm_icms_st.SpeedButton1Click(Sender: TObject);
+//configurando botão para abrir o site do ajuda, deve ser declarado na user: ShellAPI;
+
+begin
+ ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-realizar-a-apuracao-da-substituicao-tributaria-no-sistema-fiscal-86675071.html', '',nil,0);
+
 end;
 
 procedure Tfrm_icms_st.Txt_aliq_icmsChange(Sender: TObject);

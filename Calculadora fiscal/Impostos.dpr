@@ -11,10 +11,11 @@ uses
   U_difal in 'U_difal.pas' {frm_difal},
   U_irpj in 'U_irpj.pas' {Frm_irpj},
   U_csll in 'U_csll.pas' {Frm_csll},
-  U_retencoes in 'U_retencoes.pas' {Frm_retencoes},
+  U_retencoes in 'U_retencoes.pas' {Frm_IRRF},
   U_ICMSTELA in 'U_ICMSTELA.pas' {FRM_TELA_ICMS},
-  U_interestadual in 'U_interestadual.pas' {Frm_interestadual},
-  U_Icms_St_Base in 'U_Icms_St_Base.pas' {FRM_BASE_ST};
+  U_Icms_St_Base in 'U_Icms_St_Base.pas' {FRM_BASE_ST},
+  U_tela_retenções in 'U_tela_retenções.pas' {Frm_retencoes_tela},
+  U_csrf in 'U_csrf.pas' {Frm_csrf};
 
 {$R *.res}
 
@@ -22,17 +23,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(Tfrm_pis, frm_pis);
-  Application.CreateForm(TFrm_cofins, Frm_cofins);
-  Application.CreateForm(Tfrm_icms_st, frm_icms_st);
-  Application.CreateForm(Tfrm_IPI, frm_IPI);
-  Application.CreateForm(Tfrm_difal, frm_difal);
-  Application.CreateForm(TFrm_irpj, Frm_irpj);
-  Application.CreateForm(TFrm_icms, Frm_icms);
-  Application.CreateForm(TFRM_TELA_ICMS, FRM_TELA_ICMS);
-  Application.CreateForm(TFrm_csll, Frm_csll);
-  Application.CreateForm(TFrm_retencoes, Frm_retencoes);
-  Application.CreateForm(TFrm_interestadual, Frm_interestadual);
-  Application.CreateForm(TFRM_BASE_ST, FRM_BASE_ST);
+  Application.CreateForm(TFrm_retencoes_tela, Frm_retencoes_tela);
+  Application.CreateForm(TFrm_csrf, Frm_csrf);
   Application.Run;
 end.

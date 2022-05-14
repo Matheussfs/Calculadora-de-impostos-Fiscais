@@ -4,20 +4,22 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtCtrls;
 
 type
   Tfrm_pis = class(TForm)
+    Panel1: TPanel;
     Label1: TLabel;
     edt_base_pis: TEdit;
-    Btn_calc_pis: TButton;
-    Btn_limpar_pis: TButton;
-    edt_valor_pis: TEdit;
-    Label2: TLabel;
-    edt_icms_excluir: TEdit;
     CheckBox_presumido: TCheckBox;
     CheckBox_real: TCheckBox;
     CheckBox_excluir_icms: TCheckBox;
+    Panel2: TPanel;
+    Label2: TLabel;
+    Btn_calc_pis: TButton;
+    Btn_limpar_pis: TButton;
+    edt_valor_pis: TEdit;
+    edt_icms_excluir: TEdit;
     procedure CheckBox_realClick(Sender: TObject);
     procedure CheckBox_presumidoClick(Sender: TObject);
     procedure CheckBox_excluir_icmsClick(Sender: TObject);

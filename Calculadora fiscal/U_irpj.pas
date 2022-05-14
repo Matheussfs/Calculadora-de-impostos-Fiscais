@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, ShellAPI, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
 
 type
   TFrm_irpj = class(TForm)
@@ -40,6 +40,8 @@ type
     Edt_aliq: TEdit;
     Edt_base: TEdit;
     Edt_aliq_final: TEdit;
+    btn_ajuda2: TSpeedButton;
+    SpeedButton1: TSpeedButton;
     procedure Cbx_vendaClick(Sender: TObject);
     procedure Cbx_servicoClick(Sender: TObject);
     procedure Cbx_gasolinaClick(Sender: TObject);
@@ -57,6 +59,8 @@ type
     procedure Cbx_adicionalClick(Sender: TObject);
     procedure Cbx_adc_mensalClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure btn_ajuda2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
   procedure venda;
   procedure servico;
@@ -288,6 +292,12 @@ end;
 procedure TFrm_irpj.Cbx_adc_mensalClick(Sender: TObject);
 //configurando checkbox do adicional mensal
 begin
+
+if Cbx_adc_mensal.checked  = true then
+btn_ajuda2.visible := true;
+if Cbx_adc_mensal.checked  = false then
+btn_ajuda2.visible := false;
+
 if Cbx_adc_mensal.checked = true then
  Cbx_adicional.enabled := false;
  if Cbx_adc_mensal.checked = false then
@@ -350,6 +360,13 @@ procedure TFrm_irpj.Cbx_adicionalClick(Sender: TObject);
 begin
 if Cbx_adicional.checked  = true then
 Cbx_adc_mensal.Enabled := false;
+
+if Cbx_adicional.checked  = true then
+btn_ajuda2.visible := true;
+if Cbx_adicional.checked  = true then
+btn_ajuda2.enabled := true;
+if Cbx_adicional.checked  = false then
+btn_ajuda2.visible := false;
 
 if Cbx_adicional.checked  = false then
 Cbx_adc_mensal.Enabled := true;
@@ -725,6 +742,20 @@ Edt_resultado.text := floattostr (resultado_final);
 Edt_resultado.text := formatfloat ('0,.00', resultado_final);
 end;
 
+
+procedure TFrm_irpj.SpeedButton1Click(Sender: TObject);
+begin
+ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-cadastrar-as-bases-de-irpj-e-csll-77437445.html', '',nil,0);
+
+end;
+
+procedure TFrm_irpj.btn_ajuda2Click(Sender: TObject);
+//configurando botão para abrir o site do ajuda, deve ser declarado na user: ShellAPI;
+
+begin
+ ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-calcular-o-adicional-de-ir-87732761.html', '',nil,0);
+
+end;
 
 procedure TFrm_irpj.venda;
 //configurando o calculo do irpj para os valores de vendas

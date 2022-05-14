@@ -4,20 +4,22 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TFrm_cofins = class(TForm)
+    Panel1: TPanel;
     Label1: TLabel;
-    Label2: TLabel;
     edt_base_cofins: TEdit;
+    CheckBox_presumido_cofins: TCheckBox;
+    CheckBox_real_cofins: TCheckBox;
+    CheckBox_excluir_icms_cofins: TCheckBox;
+    Panel2: TPanel;
+    Label2: TLabel;
     Btn_calc_pis: TButton;
     Btn_limpar_cofins: TButton;
     edt_valor_cofins: TEdit;
     edt_icms_excluir_cofins: TEdit;
-    CheckBox_presumido_cofins: TCheckBox;
-    CheckBox_real_cofins: TCheckBox;
-    CheckBox_excluir_icms_cofins: TCheckBox;
     procedure edt_base_cofinsChange(Sender: TObject);
     procedure edt_base_cofinsExit(Sender: TObject);
     procedure edt_base_cofinsKeyPress(Sender: TObject; var Key: Char);

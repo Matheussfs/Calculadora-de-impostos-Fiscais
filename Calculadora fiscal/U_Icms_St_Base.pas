@@ -4,29 +4,30 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TFRM_BASE_ST = class(TForm)
-    edt_vl_produto: TEdit;
-    Edt_vl_seguro: TEdit;
-    Edt_vl_desconto: TEdit;
-    Edt_aliq_mva: TEdit;
-    Edt_alq_frete: TEdit;
-    Edt_desp_acessorias: TEdit;
+    Panel1: TPanel;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
-    Edt_vl_ipi: TEdit;
     Label7: TLabel;
-    Btn_calc_ipi: TButton;
+    edt_vl_produto: TEdit;
+    Edt_vl_seguro: TEdit;
+    Edt_vl_desconto: TEdit;
+    Edt_aliq_mva: TEdit;
+    Edt_alq_frete: TEdit;
+    Edt_desp_acessorias: TEdit;
+    Edt_vl_ipi: TEdit;
+    Panel2: TPanel;
+    Label8: TLabel;
     Btn_calc_base: TButton;
     Btn_limpar_base: TButton;
     Edt_resultado_bc_st: TEdit;
-    Label8: TLabel;
     procedure Btn_calc_ipiClick(Sender: TObject);
     procedure edt_vl_produtoKeyPress(Sender: TObject; var Key: Char);
     procedure Edt_alq_freteKeyPress(Sender: TObject; var Key: Char);
@@ -85,7 +86,8 @@ end;
 procedure TFRM_BASE_ST.Btn_calc_ipiClick(Sender: TObject);
 begin
  Try
-frm_ipi.showmodal;
+
+
  Finally
 
  End;
