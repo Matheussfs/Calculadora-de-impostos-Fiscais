@@ -125,6 +125,27 @@ aliquota := strtofloat (edt_aliq.text);
 aliquota_final := strtofloat (edt_aliq_final.text);
 resultado_final := base * aliquota_final/100;
 base := ( base_bruta * aliquota/100);
+
+if base < (60000) then
+ShowMessage(' Não haverá adicional de IR, pois a base do imposto é menor que 60 Mil mensais');
+ if base < (60000) then
+Edt_base_adicional.visible := false;
+if base < (60000) then
+Edt_aliq_adicional.visible := false;
+if base < (60000) then
+Edt_total_adicional.visible :=false;
+if base < (60000) then
+Edt_final_ad.visible := false;
+if  base > (60000) then
+Edt_base_adicional.visible := true;
+if  base > (60000) then
+Edt_aliq_adicional.visible := true;
+if  base > (60000) then
+Edt_total_adicional.visible := true;
+if  base > (60000) then
+Edt_final_ad.visible := true;
+if  base > (60000) then
+
 resultado_final := strtofloat (Edt_resultado.text);
 base_adicional := strtofloat (Edt_base_adicional.text);
 aliq_adicional := strtofloat ('10');
@@ -200,11 +221,33 @@ aliquota := strtofloat (edt_aliq.text);
 aliquota_final := strtofloat (edt_aliq_final.text);
 resultado_final := base * aliquota_final/100;
 base := ( base_bruta * aliquota/100);
+
+if base < (20000) then
+ShowMessage(' Não haverá adicional de IR, pois a base do imposto é menor que 20 Mil mensais');
+ if base < (20000) then
+Edt_base_adicional.visible := false;
+if base < (20000) then
+Edt_aliq_adicional.visible := false;
+if base < (20000) then
+Edt_total_adicional.visible :=false;
+if base < (20000) then
+Edt_final_ad.visible := false;
+if  base > (20000) then
+Edt_base_adicional.visible := true;
+if  base > (20000) then
+Edt_aliq_adicional.visible := true;
+if  base > (20000) then
+Edt_total_adicional.visible := true;
+if  base > (20000) then
+Edt_final_ad.visible := true;
+if  base > (20000) then
+
 resultado_final := strtofloat (Edt_resultado.text);
 base_adicional := strtofloat (Edt_base_adicional.text);
 aliq_adicional := strtofloat ('10');
 base_adicional := ( base - 20000);
 Edt_base_adicional.text := floattostr (base_adicional);
+
 
 
 Edt_total_adicional.text := floattostr(base_adicional * 10/100);
@@ -217,7 +260,8 @@ Edt_final_ad.text := floattostr
 fim := strtofloat (Edt_final_ad.text);
 Edt_final_ad.text := formatfloat ('0,.00', FIM);
 
-//configurando a procedure do adicional mensal para as vendas
+//configurando a procedure do adicional mensal para os serviços
+
 if Cbx_adc_mensal.checked and Cbx_servico.Checked = true then
 
 base_bruta := strtofloat (edt_base_bruta.text);
@@ -227,6 +271,9 @@ aliquota_final := strtofloat (edt_aliq_final.text);
 
 
 base := ( base_bruta * aliquota/100);
+
+
+
 Edt_base.text := floattostr (base);
 resultado_final := base * aliquota_final/100;
 
@@ -735,6 +782,7 @@ aliquota_final := strtofloat (edt_aliq_final.text);
 
 
 base := ( base_bruta * aliquota/100);
+
 Edt_base.text := floattostr (base);
 resultado_final := base * aliquota_final/100;
 

@@ -314,6 +314,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Width = 75
       Height = 25
       Caption = 'Limpar'
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -329,6 +330,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Width = 75
       Height = 25
       Caption = 'Calcular'
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12

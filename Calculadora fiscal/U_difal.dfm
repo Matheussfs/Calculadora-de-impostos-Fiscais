@@ -4,7 +4,7 @@ object frm_difal: Tfrm_difal
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Difal'
-  ClientHeight = 325
+  ClientHeight = 293
   ClientWidth = 304
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -264,7 +264,7 @@ object frm_difal: Tfrm_difal
         'TO')
     end
     object StaticText3: TStaticText
-      Left = 13
+      Left = 10
       Top = 67
       Width = 92
       Height = 23
@@ -279,9 +279,10 @@ object frm_difal: Tfrm_difal
     end
     object cb_uf_destino: TComboBox
       Left = 36
-      Top = 96
+      Top = 88
       Width = 50
       Height = 22
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -352,7 +353,7 @@ object frm_difal: Tfrm_difal
     object edt_estadual: TEdit
       Tag = 5
       Left = 176
-      Top = 39
+      Top = 32
       Width = 81
       Height = 22
       Hint = 'Categoria'
@@ -366,13 +367,14 @@ object frm_difal: Tfrm_difal
       TabOrder = 6
       Text = '0'
       TextHint = '% icms Estadual'
+      OnChange = edt_estadualChange
       OnExit = edt_estadualExit
       OnKeyPress = edt_estadualKeyPress
     end
     object edt_interestadual: TEdit
       Tag = 5
       Left = 176
-      Top = 96
+      Top = 88
       Width = 81
       Height = 22
       Hint = 'Categoria'
@@ -392,7 +394,7 @@ object frm_difal: Tfrm_difal
   end
   object Panel3: TPanel
     Left = -3
-    Top = 182
+    Top = 167
     Width = 308
     Height = 59
     TabOrder = 2
@@ -402,7 +404,6 @@ object frm_difal: Tfrm_difal
       Width = 75
       Height = 25
       Caption = 'Limpar'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -413,12 +414,11 @@ object frm_difal: Tfrm_difal
       OnClick = Btn_limpar_difalClick
     end
     object Btn_calc_difal: TButton
-      Left = 27
-      Top = 8
+      Left = 28
+      Top = 9
       Width = 75
       Height = 25
       Caption = 'Calcular'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -446,7 +446,7 @@ object frm_difal: Tfrm_difal
   end
   object Panel4: TPanel
     Left = -3
-    Top = 240
+    Top = 207
     Width = 308
     Height = 89
     TabOrder = 3

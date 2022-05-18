@@ -1,10 +1,11 @@
-object FRM_TELA_ICMS: TFRM_TELA_ICMS
+object Frm_IRRF: TFrm_IRRF
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Icms'
-  ClientHeight = 190
-  ClientWidth = 426
+  BorderStyle = bsSingle
+  Caption = 'IRRF'
+  ClientHeight = 177
+  ClientWidth = 352
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -159,173 +160,101 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
-    Left = -4
-    Top = -3
-    Width = 433
-    Height = 79
+    Left = 0
+    Top = 0
+    Width = 353
+    Height = 73
     TabOrder = 0
-    object StaticText1: TStaticText
-      Left = 208
-      Top = 12
-      Width = 25
-      Height = 23
-      Caption = 'UF'
+    object Label1: TLabel
+      Left = 40
+      Top = 8
+      Width = 84
+      Height = 19
+      Caption = 'Base IRRF'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 0
     end
-    object StaticText2: TStaticText
-      Left = 33
-      Top = 12
-      Width = 132
-      Height = 23
-      Caption = 'Base de C'#225'lculo'
+    object Label2: TLabel
+      Left = 208
+      Top = 8
+      Width = 114
+      Height = 19
+      Caption = 'Al'#237'quota IRRF'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Edt_base_irrf: TEdit
+      Left = 16
+      Top = 33
+      Width = 121
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      Text = '0'
+    end
+    object Edt_aliq_irrf: TEdit
+      Left = 240
+      Top = 33
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
+      Text = '0'
     end
-    object StaticText3: TStaticText
-      Left = 275
-      Top = 12
-      Width = 138
-      Height = 23
-      Caption = 'ALIQUOTA ICMS'
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 72
+    Width = 353
+    Height = 105
+    TabOrder = 1
+    object Label3: TLabel
+      Left = 120
+      Top = 48
+      Width = 113
+      Height = 19
+      Caption = 'Valor do IRRF'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
     end
-    object txt_base_icms: TEdit
-      Tag = 5
-      Left = 25
-      Top = 33
-      Width = 132
-      Height = 22
-      Hint = 'Categoria'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 3
-      Text = '0'
-      TextHint = 'Valor base ICMS'
-      OnExit = txt_base_icmsExit
-      OnKeyPress = txt_base_icmsKeyPress
-    end
-    object Txt_aliq_icms: TEdit
-      Tag = 5
-      Left = 305
-      Top = 33
-      Width = 70
-      Height = 22
-      Hint = 'Categoria'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 4
-      Text = '0'
-      TextHint = 'Alq ICMS'
-      OnExit = Txt_aliq_icmsExit
-      OnKeyPress = Txt_aliq_icmsKeyPress
-    end
-    object cb_uf: TComboBox
-      Left = 191
-      Top = 33
-      Width = 50
-      Height = 22
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 5
-      TextHint = 'UF'
-      OnChange = cb_ufChange
-      OnKeyPress = cb_ufKeyPress
-      Items.Strings = (
-        'AC'
-        'AL'
-        'AP'
-        'AM'
-        'BA'
-        'CE'
-        'DF'
-        'ES'
-        'GO'
-        'MA'
-        'MT'
-        'MS'
-        'MG'
-        'PA'
-        'PB'
-        'PR'
-        'PE'
-        'PI'
-        'RJ'
-        'RN'
-        'RS'
-        'RO'
-        'RR'
-        'SC'
-        'SP'
-        'SE'
-        'TO')
-    end
-  end
-  object Panel2: TPanel
-    Left = -5
-    Top = 69
-    Width = 434
-    Height = 129
-    TabOrder = 1
-    object Label1: TLabel
-      Left = 111
-      Top = 66
-      Width = 33
-      Height = 23
+    object Label4: TLabel
+      Left = 78
+      Top = 72
+      Width = 28
+      Height = 19
       Caption = 'R$:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -19
+      Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object Btn_limpar_icms: TButton
-      Left = 209
-      Top = 13
-      Width = 75
-      Height = 25
-      Caption = 'Limpar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 0
-      OnClick = Btn_limpar_icmsClick
-    end
-    object Btn_calcular_icms: TButton
-      Left = 128
-      Top = 13
+    object Button1: TButton
+      Left = 89
+      Top = 7
       Width = 75
       Height = 25
       Caption = 'Calcular'
@@ -335,22 +264,35 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
-      OnClick = Btn_calcular_icmsClick
+      TabOrder = 0
     end
-    object edt_resultado_icms: TEdit
-      Left = 150
-      Top = 66
-      Width = 153
-      Height = 33
-      Enabled = False
+    object Button2: TButton
+      Left = 170
+      Top = 7
+      Width = 75
+      Height = 25
+      Caption = 'Limpar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -21
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Edit3: TEdit
+      Left = 112
+      Top = 73
+      Width = 129
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 2
+      Text = '0'
     end
   end
 end

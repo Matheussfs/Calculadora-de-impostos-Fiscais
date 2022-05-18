@@ -44,7 +44,6 @@ type
     procedure cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
     procedure cb_uf_destinoKeyPress(Sender: TObject; var Key: Char);
     procedure SpeedButton1Click(Sender: TObject);
-    procedure edt_estadualChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -1008,11 +1007,6 @@ begin
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
-procedure Tfrm_difal.edt_estadualChange(Sender: TObject);
-begin
-cb_uf_destino.enabled := true;
-end;
-
 procedure Tfrm_difal.edt_estadualExit(Sender: TObject);
 begin
 if (edt_estadual.text='') then
@@ -1047,7 +1041,7 @@ procedure Tfrm_difal.SpeedButton1Click(Sender: TObject);
 //configurando botão para abrir o site do ajuda, deve ser declarado na user: ShellAPI;
 
 begin
-ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-lancar-o-diferencial-de-aliquota-nas-entradas-83045346.html#:~:text=Acesse%20Menu%20Fiscal%20%3E%20Configura%C3%A7%C3%B5es%20e,%2C%20clique%20em%20%22Gravar%22.', '',nil,0);
+ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/difal-ao-consumidor-final-89582079.html', '',nil,0);
 end;
 
 procedure Tfrm_difal.txt_base_icms_difalExit(Sender: TObject);

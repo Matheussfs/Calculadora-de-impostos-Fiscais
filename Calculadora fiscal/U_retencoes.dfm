@@ -191,7 +191,7 @@ object Frm_IRRF: TFrm_IRRF
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object Edit1: TEdit
+    object Edt_base_irrf: TEdit
       Left = 16
       Top = 33
       Width = 121
@@ -204,8 +204,10 @@ object Frm_IRRF: TFrm_IRRF
       ParentFont = False
       TabOrder = 0
       Text = '0'
+      OnExit = Edt_base_irrfExit
+      OnKeyPress = Edt_base_irrfKeyPress
     end
-    object Edit2: TEdit
+    object Edt_aliq_irrf: TEdit
       Left = 240
       Top = 33
       Width = 49
@@ -218,6 +220,8 @@ object Frm_IRRF: TFrm_IRRF
       ParentFont = False
       TabOrder = 1
       Text = '0'
+      OnExit = Edt_aliq_irrfExit
+      OnKeyPress = Edt_aliq_irrfKeyPress
     end
   end
   object Panel2: TPanel
@@ -265,6 +269,7 @@ object Frm_IRRF: TFrm_IRRF
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 0
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 170
@@ -279,12 +284,14 @@ object Frm_IRRF: TFrm_IRRF
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
+      OnClick = Button2Click
     end
-    object Edit3: TEdit
+    object Edt_VALOR: TEdit
       Left = 112
       Top = 73
       Width = 129
       Height = 27
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16

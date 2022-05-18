@@ -60,8 +60,6 @@ uses U_ICMSTELA, U_Icms_St_Base;
 procedure Tfrm_icms_st.Btn_aliq_stClick(Sender: TObject);
 begin
 Txt_aliq_icms.enabled := true;
-Cb_uf.text := 'N/A';
-
 end;
 
 procedure Tfrm_icms_st.Btn_baseClick(Sender: TObject);

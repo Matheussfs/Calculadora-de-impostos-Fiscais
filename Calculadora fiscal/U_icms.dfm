@@ -4,8 +4,8 @@ object Frm_icms: TFrm_icms
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Opera'#231#227'o de Icms'
-  ClientHeight = 118
-  ClientWidth = 393
+  ClientHeight = 121
+  ClientWidth = 411
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -160,7 +160,7 @@ object Frm_icms: TFrm_icms
   PixelsPerInch = 96
   TextHeight = 13
   object LB_TELA_ICMS: TLabel
-    Left = 8
+    Left = 23
     Top = 8
     Width = 362
     Height = 19
@@ -173,7 +173,7 @@ object Frm_icms: TFrm_icms
     ParentFont = False
   end
   object Btn_estadual: TButton
-    Left = 48
+    Left = 96
     Top = 48
     Width = 97
     Height = 33
@@ -188,7 +188,7 @@ object Frm_icms: TFrm_icms
     OnClick = Btn_estadualClick
   end
   object Btn_interestadual: TButton
-    Left = 208
+    Left = 216
     Top = 48
     Width = 97
     Height = 33
