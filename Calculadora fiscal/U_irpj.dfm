@@ -327,7 +327,7 @@ object Frm_irpj: TFrm_irpj
     end
     object Cbx_adicional: TCheckBox
       Left = 196
-      Top = 31
+      Top = 54
       Width = 189
       Height = 17
       Caption = 'Somar Adicional Trimestral'
@@ -342,7 +342,7 @@ object Frm_irpj: TFrm_irpj
     end
     object Cbx_adc_mensal: TCheckBox
       Left = 196
-      Top = 54
+      Top = 31
       Width = 189
       Height = 17
       Caption = 'Somar Adicional Mensal'

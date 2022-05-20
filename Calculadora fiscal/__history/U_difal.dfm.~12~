@@ -181,9 +181,9 @@ object frm_difal: Tfrm_difal
     end
     object txt_base_icms_difal: TEdit
       Tag = 5
-      Left = 88
+      Left = 93
       Top = 23
-      Width = 137
+      Width = 132
       Height = 22
       Hint = 'Categoria'
       Font.Charset = DEFAULT_CHARSET

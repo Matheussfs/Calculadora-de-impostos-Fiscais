@@ -46,7 +46,6 @@ type
     procedure SpeedButton1Click(Sender: TObject);
     procedure edt_estadualChange(Sender: TObject);
     procedure difal_duplo;
-    PROCEDURE DIFAL_NORMAL;
   private
     { Private declarations }
   public
@@ -61,31 +60,27 @@ implementation
 {$R *.dfm}
 
 procedure Tfrm_difal.Btn_calc_difalClick(Sender: TObject);
-
+var base_icms_difal, icms_inter,icms_estadual , resultado_aliquota,
+resultado_difal: real;
 begin
-if (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
-(cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
-(cb_uf_origem.text ='PI')  or (cb_uf_origem.text ='PR') or
-(cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
-(cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE')
-then
+
+
+if cb_uf_origem.text ='MG' then
 begin
 difal_duplo;
-end;
+end
+ELSE
+//calculando o valor de icms difal
 
-if  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
-(cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
-(cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
-(cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
-(cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
-(cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
-(cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
-(cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR') or
-(cb_uf_origem.text ='SP') then
-BEGIN
-difal_normal;
-END;
-
+   { base_icms_difal := strtofloat(txt_base_icms_difal.text);
+   icms_estadual := strtofloat (edt_estadual.text);
+   icms_inter := strtofloat (edt_interestadual.text);
+   EDT_ALIQ_DIFAL_FINAL.text := FormatFloat('',
+   (StrToFloat(edt_estadual.text) - StrToFloat(edt_interestadual.text)));
+     resultado_aliquota :=  strtofloat(EDT_ALIQ_DIFAL_FINAL.text);
+   resultado_difal :=  base_icms_difal * resultado_aliquota/100;
+    Edt_total_difal.text := floattostr (resultado_difal);
+  Edt_total_difal.text := FormatFloat('0,.00', resultado_difal);  }
 
 
 end;
@@ -1026,6 +1021,7 @@ resultado, base_calculo1, base_calculo2,
  base_operacao3, valor_icms_estadual, valor_icms_interestadual: real;
 begin
 
+
   base_calculo := strtofloat (txt_base_icms_difal.text);
   icms_interno := strtofloat (edt_estadual.text);
   icms_interestadual := strtofloat (edt_interestadual.text);
@@ -1041,23 +1037,6 @@ begin
   Edt_total_difal.text := floattostr (resultado);
   Edt_total_difal.text := FormatFloat('0,.00', resultado);
 
-end;
-
-procedure Tfrm_difal.DIFAL_NORMAL;
-var base_icms_difal, icms_inter,icms_estadual , resultado_aliquota,
-resultado_difal: real;
-begin
-//calculando o valor de icms difal
-
-   base_icms_difal := strtofloat(txt_base_icms_difal.text);
-   icms_estadual := strtofloat (edt_estadual.text);
-   icms_inter := strtofloat (edt_interestadual.text);
-   EDT_ALIQ_DIFAL_FINAL.text := FormatFloat('',
-   (StrToFloat(edt_estadual.text) - StrToFloat(edt_interestadual.text)));
-     resultado_aliquota :=  strtofloat(EDT_ALIQ_DIFAL_FINAL.text);
-   resultado_difal :=  base_icms_difal * resultado_aliquota/100;
-    Edt_total_difal.text := floattostr (resultado_difal);
-  Edt_total_difal.text := FormatFloat('0,.00', resultado_difal);
 end;
 
 procedure Tfrm_difal.edt_estadualChange(Sender: TObject);
