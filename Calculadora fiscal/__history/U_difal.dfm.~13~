@@ -2,10 +2,10 @@ object frm_difal: Tfrm_difal
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsDialog
+  BorderStyle = bsSingle
   Caption = 'Difal'
-  ClientHeight = 295
-  ClientWidth = 301
+  ClientHeight = 293
+  ClientWidth = 304
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -159,25 +159,11 @@ object frm_difal: Tfrm_difal
   Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object memo: TLabel
-    Left = 311
-    Top = 2
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    Visible = False
-  end
   object Panel1: TPanel
-    Left = -10
+    Left = -3
     Top = 0
-    Width = 315
-    Height = 58
-    BorderStyle = bsSingle
+    Width = 308
+    Height = 56
     TabOrder = 0
     object StaticText2: TStaticText
       Left = 93
@@ -212,26 +198,10 @@ object frm_difal: Tfrm_difal
       OnExit = txt_base_icms_difalExit
       OnKeyPress = txt_base_icms_difalKeyPress
     end
-    object Cx_momoria: TCheckBox
-      Left = 236
-      Top = 28
-      Width = 105
-      Height = 17
-      Caption = 'Mem'#243'ria'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 2
-      Visible = False
-      OnClick = Cx_momoriaClick
-    end
   end
   object Panel2: TPanel
     Left = -3
-    Top = 53
+    Top = 51
     Width = 308
     Height = 142
     TabOrder = 1

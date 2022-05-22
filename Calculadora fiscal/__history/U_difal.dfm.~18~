@@ -220,7 +220,7 @@ object frm_difal: Tfrm_difal
       Caption = 'Mem'#243'ria'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False

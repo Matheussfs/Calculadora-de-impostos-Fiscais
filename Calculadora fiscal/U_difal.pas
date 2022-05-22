@@ -30,6 +30,8 @@ type
     EDT_ALIQ_DIFAL_FINAL: TEdit;
     Edt_total_difal: TEdit;
     SpeedButton1: TSpeedButton;
+    memo: TLabel;
+    Cx_momoria: TCheckBox;
     procedure cb_uf_origemChange(Sender: TObject);
     procedure cb_uf_destinoChange(Sender: TObject);
     procedure txt_base_icms_difalExit(Sender: TObject);
@@ -47,6 +49,7 @@ type
     procedure edt_estadualChange(Sender: TObject);
     procedure difal_duplo;
     PROCEDURE DIFAL_NORMAL;
+    procedure Cx_momoriaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,6 +63,8 @@ implementation
 
 {$R *.dfm}
 
+uses U_memoria;
+
 procedure Tfrm_difal.Btn_calc_difalClick(Sender: TObject);
 
 begin
@@ -71,6 +76,7 @@ if (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
 then
 begin
 difal_duplo;
+
 end;
 
 if  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
@@ -85,9 +91,6 @@ if  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
 BEGIN
 difal_normal;
 END;
-
-
-
 end;
 
 
@@ -115,6 +118,8 @@ begin
  if components[r] is TComboBox then
  begin
     TComboBOX(components[r]).text := '';
+    clientwidth := 302;
+    Cx_momoria.visible := false;
 end;
 end;
 end;
@@ -1012,6 +1017,46 @@ if cb_uf_origem.text = 'RJ' then
   if cb_uf_origem.text = 'TO' then
   edt_estadual.text :='18';
 
+if (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
+(cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
+(cb_uf_origem.text ='PI')  or (cb_uf_origem.text ='PR') or
+(cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
+(cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE')
+then
+Cx_momoria.visible := true;
+
+if(cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+(cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+(cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+(cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
+(cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
+(cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
+(cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
+(cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR') or
+(cb_uf_origem.text ='SP')
+then Cx_momoria.visible := false;
+
+if(cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+(cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+(cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+(cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
+(cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
+(cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
+(cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
+(cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR') or
+(cb_uf_origem.text ='SP')
+then   clientwidth := 301;
+
+if(cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+(cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+(cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+(cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
+(cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
+(cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
+(cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
+(cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR') or
+(cb_uf_origem.text ='SP')
+then Cx_momoria.checked := false;
 
 end;
 
@@ -1019,6 +1064,24 @@ procedure Tfrm_difal.cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
 begin
  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
+
+procedure Tfrm_difal.Cx_momoriaClick(Sender: TObject);
+//configurando checkbox memória de calculo
+begin
+if Cx_momoria.checked = false then
+memo.caption := '';
+if Cx_momoria.checked = true then
+memo.visible := true;
+if Cx_momoria.checked = true then
+clientwidth := 771;
+
+if Cx_momoria.checked =  false then
+memo.visible := false;
+if Cx_momoria.checked = false then
+clientwidth := 301;
+end;
+
+
 
 procedure Tfrm_difal.difal_duplo;
 var icms_interno,icms_interestadual,base_calculo,base_dupla,
@@ -1040,6 +1103,31 @@ begin
 
   Edt_total_difal.text := floattostr (resultado);
   Edt_total_difal.text := FormatFloat('0,.00', resultado);
+//configurando a memória de calculo
+memo.Caption :=('Primeiro calculamos o icms interestadual, onde:'+#13+
+'será a base de cálculo: '+FloatToStr(base_calculo)+#13+
+'vezes a Alíquota de Icms interestadual, de: '+floattostr(icms_interestadual)+#13+
+'Totalizando: '+floattostr(valor_icms_interestadual)+#13+
+'Depois, precisamos pegar novamente nossa base de calculo '+#13+
+'No valor de: '+FloatToStr(base_calculo)+#13+
+'e diminuir pelo valor que achamos anteriormente do icms interestadual, de: '+FloatToStr(valor_icms_interestadual)+#13+
+'Totalizando: '+floattostr(base_calculo1)+#13+
+'Continuando, nesta etapa iremos encontrar a base de cálculo, que será usada para'+#13+
+'definirmos o valor do ICMS Interno, onde usaremos a base anterior, de:'
++FloatToStr(base_calculo1)+#13+
+'e aplicaremos a seguinte regra de calculo: (1 – Alíquota Interna)'+#13+
+'Totalizando '+FloatToStr(base_calculo2)+#13+
+'Feito isso, preicisamos agora achar o icms estadual'+#13+
+'que será a base anterior de :'+FloatToStr(base_calculo2)+#13+
+'multiplicado pela alíquota interna, de'+FloatToStr(icms_interno)+#13+
+'Totalizando um icms interno de '+FloatToStr(valor_icms_estadual)+#13+
+'Feito isso, o último passo será diminuir o icms estadual, de:'
++FloatToStr(valor_icms_estadual)+#13+
+'Pelo icms interestadual, de '+FloatToStr(valor_icms_interestadual)+#13+
+'Totalizando o difal em '+FloatToStr(resultado)+#13+
+'Essa regra será valida apenas para os estados de:'+#13+
+'BA, MG, MS, PA, PI, PR, RS, SC, TO, SE, AL, GO, PE e PB');
+
 
 end;
 
