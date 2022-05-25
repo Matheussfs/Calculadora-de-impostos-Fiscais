@@ -157,6 +157,14 @@
             <Form>Frm_csrf</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="U_icms_in.pas">
+            <Form>Icms_do_st</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="U_BI.pas">
+            <Form>frm_bi</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

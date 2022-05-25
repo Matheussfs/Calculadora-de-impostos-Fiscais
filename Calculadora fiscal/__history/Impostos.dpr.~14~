@@ -16,8 +16,7 @@ uses
   U_Icms_St_Base in 'U_Icms_St_Base.pas' {FRM_BASE_ST},
   U_tela_retenções in 'U_tela_retenções.pas' {Frm_retencoes_tela},
   U_csrf in 'U_csrf.pas' {Frm_csrf},
-  U_icms_in in 'U_icms_in.pas' {Icms_do_st},
-  U_BI in 'U_BI.pas' {frm_bi};
+  U_icms_in in 'U_icms_in.pas' {Icms_do_st};
 
 {$R *.res}
 
@@ -28,6 +27,5 @@ begin
   Application.CreateForm(TFrm_retencoes_tela, Frm_retencoes_tela);
   Application.CreateForm(TFrm_csrf, Frm_csrf);
   Application.CreateForm(TIcms_do_st, Icms_do_st);
-  Application.CreateForm(Tfrm_bi, frm_bi);
   Application.Run;
 end.

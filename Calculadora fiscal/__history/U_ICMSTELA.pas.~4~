@@ -80,7 +80,7 @@ begin
  for i := 0 to    FRM_TELA_ICMS.ComponentCount-1 do
  if components[i] is tedit then
  begin
-    tedit(components[i]).text := '0';
+    tedit(components[i]).text := '';
    end;
    for i := 0 to  FRM_TELA_ICMS.ComponentCount-1 do
  if components[i] is TComboBox then

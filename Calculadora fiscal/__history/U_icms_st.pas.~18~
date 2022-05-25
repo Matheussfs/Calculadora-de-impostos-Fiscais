@@ -55,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_ICMSTELA, U_Icms_St_Base, U_icms_in;
+uses U_ICMSTELA, U_Icms_St_Base;
 
 procedure Tfrm_icms_st.Btn_aliq_stClick(Sender: TObject);
 begin
@@ -110,8 +110,8 @@ end;
 procedure Tfrm_icms_st.Calc_icmsClick(Sender: TObject);
 begin
   Try
-    Icms_do_st := tIcms_do_st.create(self);
-    Icms_do_st.show
+    FRM_TELA_ICMS := tFRM_TELA_ICMS.create(self);
+    FRM_TELA_ICMS.show
   Finally
 
   End;

@@ -11,10 +11,12 @@ uses
   U_difal in 'U_difal.pas' {frm_difal},
   U_irpj in 'U_irpj.pas' {Frm_irpj},
   U_csll in 'U_csll.pas' {Frm_csll},
-  U_retencoes in 'U_retencoes.pas' {Frm_retencoes},
+  U_retencoes in 'U_retencoes.pas' {Frm_IRRF},
   U_ICMSTELA in 'U_ICMSTELA.pas' {FRM_TELA_ICMS},
-  U_interestadual in 'U_interestadual.pas' {Frm_interestadual},
-  U_Icms_St_Base in 'U_Icms_St_Base.pas' {FRM_BASE_ST};
+  U_Icms_St_Base in 'U_Icms_St_Base.pas' {FRM_BASE_ST},
+  U_tela_retenções in 'U_tela_retenções.pas' {Frm_retencoes_tela},
+  U_csrf in 'U_csrf.pas' {Frm_csrf},
+  U_icms_in in 'U_icms_in.pas' {Form2};
 
 {$R *.res}
 
@@ -22,5 +24,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrm_retencoes_tela, Frm_retencoes_tela);
+  Application.CreateForm(TFrm_csrf, Frm_csrf);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.
