@@ -83,17 +83,7 @@ end;
 procedure TFrm_csrf.Edt_cofins_retKeyPress(Sender: TObject; var Key: Char);
 begin
 //proteção para permitir escrever apenas números no tedit
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 procedure TFrm_csrf.Edt_csll_retExit(Sender: TObject);
@@ -110,17 +100,7 @@ end;
 procedure TFrm_csrf.Edt_csll_retKeyPress(Sender: TObject; var Key: Char);
 //proteção para permitir escrever apenas números no tedit
 begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 procedure TFrm_csrf.Edt_pis_retExit(Sender: TObject);
@@ -137,17 +117,7 @@ end;
 procedure TFrm_csrf.Edt_pis_retKeyPress(Sender: TObject; var Key: Char);
 //proteção para permitir escrever apenas números no tedit
 begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 end.

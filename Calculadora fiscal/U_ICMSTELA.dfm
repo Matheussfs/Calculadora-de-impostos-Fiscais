@@ -176,7 +176,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 2
     end
     object StaticText2: TStaticText
       Left = 33
@@ -190,7 +190,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 4
     end
     object StaticText3: TStaticText
       Left = 275
@@ -204,7 +204,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 5
     end
     object txt_base_icms: TEdit
       Tag = 5
@@ -219,7 +219,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 0
       Text = '0'
       TextHint = 'Valor base ICMS'
       OnExit = txt_base_icmsExit
@@ -238,7 +238,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 3
       Text = '0'
       TextHint = 'Alq ICMS'
       OnExit = Txt_aliq_icmsExit
@@ -255,7 +255,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 1
       TextHint = 'UF'
       OnChange = cb_ufChange
       OnKeyPress = cb_ufKeyPress
@@ -320,8 +320,9 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 2
       OnClick = Btn_limpar_icmsClick
+      OnKeyPress = Btn_limpar_icmsKeyPress
     end
     object Btn_calcular_icms: TButton
       Left = 128
@@ -337,6 +338,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       ParentFont = False
       TabOrder = 1
       OnClick = Btn_calcular_icmsClick
+      OnKeyPress = Btn_calcular_icmsKeyPress
     end
     object edt_resultado_icms: TEdit
       Left = 150
@@ -350,7 +352,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 0
     end
   end
 end

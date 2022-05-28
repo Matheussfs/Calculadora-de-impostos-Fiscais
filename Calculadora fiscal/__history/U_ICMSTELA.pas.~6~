@@ -29,8 +29,6 @@ type
     procedure txt_base_icmsExit(Sender: TObject);
     procedure Txt_aliq_icmsExit(Sender: TObject);
     procedure cb_ufKeyPress(Sender: TObject; var Key: Char);
-    procedure Btn_calcular_icmsKeyPress(Sender: TObject; var Key: Char);
-    procedure Btn_limpar_icmsKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -69,22 +67,6 @@ begin
     edt_resultado_icms.text := FormatFloat('0,.00', resultado);
 end;
 
-procedure TFRM_TELA_ICMS.Btn_calcular_icmsKeyPress(Sender: TObject;
-  var Key: Char);
-begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
-end;
-
 procedure TFRM_TELA_ICMS.BTN_CALCULAR_IPIClick(Sender: TObject);
 begin
  application.createform (TFRM_calculo_ipi, frm_calculo_ipi);
@@ -106,22 +88,6 @@ begin
     TComboBOX(components[i]).text := '';
 
  end;
-end;
-
-procedure TFRM_TELA_ICMS.Btn_limpar_icmsKeyPress(Sender: TObject;
-  var Key: Char);
-begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 procedure TFRM_TELA_ICMS.cb_ufChange(Sender: TObject);
@@ -188,15 +154,7 @@ end;
 
 procedure TFRM_TELA_ICMS.cb_ufKeyPress(Sender: TObject; var Key: Char);
 begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
 end;
 
 procedure TFRM_TELA_ICMS.Txt_aliq_icmsExit(Sender: TObject);
@@ -216,17 +174,8 @@ procedure TFRM_TELA_ICMS.Txt_aliq_icmsKeyPress(Sender: TObject; var Key: Char);
 {proteção para não deixar preencher letras no tedit.
 Deve ser colocado no evento onkeypress }
 begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
 end;
-
 
 procedure TFRM_TELA_ICMS.txt_base_icmsExit(Sender: TObject);
 {proteção para não deixar o tedit de base de icms vazio,
@@ -245,15 +194,7 @@ procedure TFRM_TELA_ICMS.txt_base_icmsKeyPress(Sender: TObject; var Key: Char);
 {proteção para não deixar preencher letras no tedit.
 Deve ser colocado no evento onkeypress}
 begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
+ if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 end.

@@ -245,9 +245,8 @@ object frm_icms_st: Tfrm_icms_st
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 3
       Text = '0'
-      OnChange = Txt_aliq_icmsChange
       OnExit = Txt_aliq_icmsExit
       OnKeyPress = Txt_aliq_icmsKeyPress
     end
@@ -306,9 +305,10 @@ object frm_icms_st: Tfrm_icms_st
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 4
       Text = '0'
       OnExit = Edt_icms_total_normalExit
+      OnKeyPress = Edt_icms_total_normalKeyPress
     end
     object Btn_base: TButton
       Left = 48
@@ -322,8 +322,9 @@ object frm_icms_st: Tfrm_icms_st
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 1
       OnClick = Btn_baseClick
+      OnExit = Btn_baseExit
     end
     object Btn_aliq_st: TButton
       Left = 360

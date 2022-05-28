@@ -111,8 +111,6 @@ edt_icms_excluir.Enabled := false;
 If CheckBox_excluir_icms.checked = false then
 edt_icms_excluir.text := ('0');
 
-
-
 end;
 
 

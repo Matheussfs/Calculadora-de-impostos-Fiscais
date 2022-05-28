@@ -236,17 +236,7 @@ end;
 procedure TFrm_csll.Edt_aliqKeyPress(Sender: TObject; var Key: Char);
 //proteção para deixar preencher apenas números no tedit edt_aliq
 begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 procedure TFrm_csll.Edt_aliq_finalExit(Sender: TObject);
@@ -265,17 +255,7 @@ end;
 procedure TFrm_csll.Edt_aliq_finalKeyPress(Sender: TObject; var Key: Char);
 //proteção para deixar preencher apenas números no tedit edt_aliq_final
 begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 procedure TFrm_csll.Edt_baseKeyPress(Sender: TObject; var Key: Char);
@@ -300,17 +280,7 @@ end;
 procedure TFrm_csll.edt_base_brutaKeyPress(Sender: TObject; var Key: Char);
 //proteção para deixar preencher apenas números no tedit edt_base_bruta
 begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
 end;
 
 procedure TFrm_csll.outras;

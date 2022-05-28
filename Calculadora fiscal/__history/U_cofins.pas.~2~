@@ -29,7 +29,6 @@ type
     procedure edt_icms_excluir_cofinsExit(Sender: TObject);
     procedure Btn_calc_pisClick(Sender: TObject);
     procedure Btn_limpar_cofinsClick(Sender: TObject);
-    procedure edt_icms_excluir_cofinsKeyPress(Sender: TObject; var Key: Char);
 
   private
   {procedures para calculo do cofins real/presumido.
@@ -169,17 +168,7 @@ end;
 procedure TFrm_cofins.edt_base_cofinsKeyPress(Sender: TObject; var Key: Char);
 //proteção pra não deixar preencher letras no tedit edt_base_cofins
 begin
- begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
+ if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 
@@ -194,22 +183,6 @@ edt_icms_excluir_cofins.text := ('0');
 end;
 end;
 
-
-procedure TFrm_cofins.edt_icms_excluir_cofinsKeyPress(Sender: TObject;
-  var Key: Char);
-begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
-end;
 
 procedure TFrm_cofins.presumido_cofins;
 //procedure com o calculo do cofins lucro presumido

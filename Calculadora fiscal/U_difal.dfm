@@ -191,11 +191,11 @@ object frm_difal: Tfrm_difal
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 1
     end
     object txt_base_icms_difal: TEdit
       Tag = 5
-      Left = 88
+      Left = 93
       Top = 23
       Width = 137
       Height = 22
@@ -206,7 +206,7 @@ object frm_difal: Tfrm_difal
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       Text = '0'
       TextHint = 'Valor base ICMS'
       OnExit = txt_base_icms_difalExit
@@ -305,7 +305,7 @@ object frm_difal: Tfrm_difal
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 3
     end
     object cb_uf_destino: TComboBox
       Left = 36
@@ -318,7 +318,7 @@ object frm_difal: Tfrm_difal
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       TextHint = 'UF Destino'
       OnChange = cb_uf_destinoChange
       OnKeyPress = cb_uf_destinoKeyPress
@@ -439,7 +439,7 @@ object frm_difal: Tfrm_difal
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 1
       OnClick = Btn_limpar_difalClick
     end
     object Btn_calc_difal: TButton
@@ -454,7 +454,7 @@ object frm_difal: Tfrm_difal
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       OnClick = Btn_calc_difalClick
     end
     object btn_editar: TButton

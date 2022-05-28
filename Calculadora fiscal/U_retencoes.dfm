@@ -231,7 +231,7 @@ object Frm_IRRF: TFrm_IRRF
     Height = 105
     TabOrder = 1
     object Label3: TLabel
-      Left = 120
+      Left = 112
       Top = 48
       Width = 113
       Height = 19
@@ -289,7 +289,7 @@ object Frm_IRRF: TFrm_IRRF
     object Edt_VALOR: TEdit
       Left = 112
       Top = 73
-      Width = 129
+      Width = 113
       Height = 27
       Enabled = False
       Font.Charset = DEFAULT_CHARSET

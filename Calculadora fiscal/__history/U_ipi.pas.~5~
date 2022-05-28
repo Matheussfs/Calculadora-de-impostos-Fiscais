@@ -94,17 +94,8 @@ end;
 procedure Tfrm_IPI.edt_aliq_ipiKeyPress(Sender: TObject; var Key: Char);
 //Proteção para permitir apenas números e vírgula no edt_aliq_ipi
 begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
+if ((key in ['0'..'9'] = false) and (word(key) <> vk_back)) then
+ key := #0;
 end;
 
 procedure Tfrm_IPI.edt_base_ipiExit(Sender: TObject);
@@ -123,17 +114,7 @@ end;
 procedure Tfrm_IPI.edt_base_ipiKeyPress(Sender: TObject; var Key: Char);
 //Proteção para permitir apenas números e vírgula no edt_base_ipi
 begin
- begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
+ if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 procedure Tfrm_IPI.FormClose(Sender: TObject; var Action: TCloseAction);

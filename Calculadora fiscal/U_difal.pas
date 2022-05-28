@@ -1032,7 +1032,17 @@ end;
 
 procedure Tfrm_difal.cb_uf_destinoKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+ begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure Tfrm_difal.cb_uf_origemChange(Sender: TObject);
@@ -1176,7 +1186,17 @@ end;
 
 procedure Tfrm_difal.cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure Tfrm_difal.Cx_momoriaClick(Sender: TObject);
@@ -1233,13 +1253,13 @@ memo.Caption :=('Primeiro calculamos o icms interestadual, onde:'+#13+
 'Totalizando '+FloatToStr(base_calculo2)+#13+
 'Feito isso, preicisamos agora achar o icms estadual'+#13+
 'que será a base anterior de :'+FloatToStr(base_calculo2)+#13+
-'multiplicado pela alíquota interna, de'+FloatToStr(icms_interno)+#13+
-'Totalizando um icms interno de '+FloatToStr(valor_icms_estadual)+#13+
+'multiplicado pela alíquota interna, de: '+FloatToStr(icms_interno)+#13+
+'Totalizando um icms interno de: '+FloatToStr(valor_icms_estadual)+#13+
 'Feito isso, o último passo será diminuir o icms estadual, de:'
 +FloatToStr(valor_icms_estadual)+#13+
 'Pelo icms interestadual, de '+FloatToStr(valor_icms_interestadual)+#13+
 'Totalizando o difal em '+FloatToStr(resultado)+#13+
-'Essa regra será valida apenas para os estados de:'+#13+
+'Essa regra será valida apenas para os estados: '+#13+
 'BA, MG, MS, PA, PI, PR, RS, SC, TO, SE, AL, GO, PE e PB');
 
 
@@ -1279,7 +1299,17 @@ end;
 
 procedure Tfrm_difal.edt_estadualKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure Tfrm_difal.edt_interestadualExit(Sender: TObject);
@@ -1294,7 +1324,17 @@ end;
 
 procedure Tfrm_difal.edt_interestadualKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure Tfrm_difal.SpeedButton1Click(Sender: TObject);
@@ -1317,7 +1357,17 @@ end;
 procedure Tfrm_difal.txt_base_icms_difalKeyPress(Sender: TObject;
   var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+ begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+ end;
 end;
 
 end.

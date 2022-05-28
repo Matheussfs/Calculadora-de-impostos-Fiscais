@@ -209,7 +209,6 @@ object frm_pis: Tfrm_pis
       ParentFont = False
       TabOrder = 1
       OnClick = CheckBox_presumidoClick
-      OnKeyPress = CheckBox_presumidoKeyPress
     end
     object CheckBox_real: TCheckBox
       Left = 41
@@ -224,9 +223,8 @@ object frm_pis: Tfrm_pis
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       OnClick = CheckBox_realClick
-      OnKeyPress = CheckBox_realKeyPress
     end
     object CheckBox_excluir_icms: TCheckBox
       Left = 295
@@ -241,7 +239,7 @@ object frm_pis: Tfrm_pis
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 3
       OnClick = CheckBox_excluir_icmsClick
     end
   end
@@ -325,7 +323,6 @@ object frm_pis: Tfrm_pis
       TabOrder = 3
       Text = '0'
       OnExit = edt_icms_excluirExit
-      OnKeyPress = edt_icms_excluirKeyPress
     end
   end
 end

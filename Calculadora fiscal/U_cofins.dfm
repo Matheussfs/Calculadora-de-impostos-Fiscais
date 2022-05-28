@@ -195,7 +195,7 @@ object Frm_cofins: TFrm_cofins
       OnKeyPress = edt_base_cofinsKeyPress
     end
     object CheckBox_presumido_cofins: TCheckBox
-      Left = 161
+      Left = 169
       Top = 85
       Width = 128
       Height = 17
@@ -322,6 +322,7 @@ object Frm_cofins: TFrm_cofins
       TabOrder = 3
       Text = '0'
       OnExit = edt_icms_excluir_cofinsExit
+      OnKeyPress = edt_icms_excluir_cofinsKeyPress
     end
   end
 end

@@ -763,7 +763,17 @@ end;
 procedure TFrm_irpj.Edt_base_adicionalKeyPress(Sender: TObject; var Key: Char);
 //confuigurando o evento onkeypress para aceitar apenas números
 begin
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure TFrm_irpj.Edt_aliqExit(Sender: TObject);
@@ -781,7 +791,17 @@ end;
 procedure TFrm_irpj.Edt_aliqKeyPress(Sender: TObject; var Key: Char);
 //confuigurando o evento onkeypress para aceitar apenas números
 begin
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure TFrm_irpj.Edt_aliq_finalExit(Sender: TObject);
@@ -798,7 +818,17 @@ end;
 procedure TFrm_irpj.Edt_aliq_finalKeyPress(Sender: TObject; var Key: Char);
 //confuigurando o evento onkeypress para aceitar apenas números
 begin
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure TFrm_irpj.edt_base_brutaExit(Sender: TObject);
@@ -810,12 +840,23 @@ showmessage('Deve ser inserido uma base de IRPJ');
 edt_base_bruta.setfocus;
 edt_base_bruta.text := ('0');
 end;
+Btn_calcu.setfocus;
 end;
 
 procedure TFrm_irpj.edt_base_brutaKeyPress(Sender: TObject; var Key: Char);
 //confuigurando o evento onkeypress para aceitar apenas números
 begin
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
+  end;
+end;
 end;
 
 procedure TFrm_irpj.gasolina;

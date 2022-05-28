@@ -555,6 +555,7 @@ object Frm_irpj: TFrm_irpj
       Width = 73
       Height = 24
       Caption = 'Calcular'
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13

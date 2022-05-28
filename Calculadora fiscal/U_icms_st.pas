@@ -33,7 +33,6 @@ type
     procedure Edt_vl_icmsKeyPress(Sender: TObject; var Key: Char);
     procedure Edt_base_STExit(Sender: TObject);
     procedure Txt_aliq_icmsExit(Sender: TObject);
-    procedure Txt_aliq_icmsChange(Sender: TObject);
     procedure Cb_ufChange(Sender: TObject);
     procedure Cb_ufKeyPress(Sender: TObject; var Key: Char);
     procedure Calc_icmsClick(Sender: TObject);
@@ -42,6 +41,8 @@ type
     procedure Btn_aliq_stClick(Sender: TObject);
     procedure Btn_limpar_stClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure Btn_baseExit(Sender: TObject);
+    procedure Edt_icms_total_normalKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -72,6 +73,11 @@ FRM_BASE_ST.showmodal;
 finally
 
 end;
+end;
+
+procedure Tfrm_icms_st.Btn_baseExit(Sender: TObject);
+begin
+Cb_uf.setfocus
 end;
 
 procedure Tfrm_icms_st.Btn_calcular_st_finalClick(Sender: TObject);
@@ -179,7 +185,16 @@ end;
 procedure Tfrm_icms_st.Cb_ufKeyPress(Sender: TObject; var Key: Char);
 begin
 //configurando para o combobox aceitar apenas números
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+  end;
+end;
 end;
 
 procedure Tfrm_icms_st.Edt_icms_total_normalExit(Sender: TObject);
@@ -190,6 +205,23 @@ begin
 showmessage('Deve ser inserido um valor de ICMS');
 Edt_icms_total_normal.setfocus;
 Edt_icms_total_normal.text := ('0');
+
+end;
+Btn_calcular_st_final.setfocus;
+end;
+
+procedure Tfrm_icms_st.Edt_icms_total_normalKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+  end;
 end;
 end;
 
@@ -202,16 +234,44 @@ showmessage('Deve ser inserido uma base de ICMS-ST');
 Edt_base_ST.setfocus;
 Edt_base_ST.text := ('0');
 end;
+ Cb_uf.setfocus;
 end;
 
 procedure Tfrm_icms_st.Edt_base_STKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+  end;
+end;
+  end;
+end;
 end;
 
 procedure Tfrm_icms_st.Edt_vl_icmsKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+  end;
+end;
 end;
 
 procedure Tfrm_icms_st.SpeedButton1Click(Sender: TObject);
@@ -220,64 +280,6 @@ procedure Tfrm_icms_st.SpeedButton1Click(Sender: TObject);
 begin
  ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-realizar-a-apuracao-da-substituicao-tributaria-no-sistema-fiscal-86675071.html', '',nil,0);
 
-end;
-
-procedure Tfrm_icms_st.Txt_aliq_icmsChange(Sender: TObject);
-begin
-if cb_uf.text = 'RJ' then
-  Txt_aliq_icms.text :='20';
-  if cb_uf.text = 'AC' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'AL' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'AM' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'AP' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'BA' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'CE' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'DF' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'ES' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'GO' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'MA' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = '17' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'MS' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'MG' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'PA' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'PB' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'PR' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'PE' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'PI' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'RN' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'RS' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'RO' then
-  Txt_aliq_icms.text :='17,5';
-  if cb_uf.text = 'RR' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'SC' then
-  Txt_aliq_icms.text :='17';
-  if cb_uf.text = 'SP' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'SE' then
-  Txt_aliq_icms.text :='18';
-  if cb_uf.text = 'TO' then
-  Txt_aliq_icms.text :='18';
 end;
 
 procedure Tfrm_icms_st.Txt_aliq_icmsExit(Sender: TObject);
@@ -293,7 +295,16 @@ end;
 
 procedure Tfrm_icms_st.Txt_aliq_icmsKeyPress(Sender: TObject; var Key: Char);
 begin
- if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+begin
+if key = #13 then
+  begin
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+  end;
+end;
 end;
 
 end.

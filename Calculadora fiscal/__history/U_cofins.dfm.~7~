@@ -1,11 +1,11 @@
-object frm_pis: Tfrm_pis
+object Frm_cofins: TFrm_cofins
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'Pis'
-  ClientHeight = 216
-  ClientWidth = 440
+  Caption = 'Cofins'
+  ClientHeight = 220
+  ClientWidth = 437
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -161,9 +161,9 @@ object frm_pis: Tfrm_pis
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = -2
+    Top = -5
     Width = 441
-    Height = 99
+    Height = 110
     TabOrder = 0
     object Label1: TLabel
       Left = 136
@@ -178,25 +178,25 @@ object frm_pis: Tfrm_pis
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object edt_base_pis: TEdit
+    object edt_base_cofins: TEdit
       Left = 136
       Top = 33
       Width = 136
-      Height = 26
+      Height = 24
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 0
-      OnChange = edt_base_pisChange
-      OnExit = edt_base_pisExit
-      OnKeyPress = edt_base_pisKeyPress
+      OnChange = edt_base_cofinsChange
+      OnExit = edt_base_cofinsExit
+      OnKeyPress = edt_base_cofinsKeyPress
     end
-    object CheckBox_presumido: TCheckBox
-      Left = 144
-      Top = 80
+    object CheckBox_presumido_cofins: TCheckBox
+      Left = 161
+      Top = 85
       Width = 128
       Height = 17
       Caption = 'Lucro Presumido'
@@ -208,12 +208,11 @@ object frm_pis: Tfrm_pis
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
-      OnClick = CheckBox_presumidoClick
-      OnKeyPress = CheckBox_presumidoKeyPress
+      OnClick = CheckBox_presumido_cofinsClick
     end
-    object CheckBox_real: TCheckBox
-      Left = 41
-      Top = 80
+    object CheckBox_real_cofins: TCheckBox
+      Left = 49
+      Top = 84
       Width = 89
       Height = 17
       Caption = 'Lucro Real'
@@ -224,13 +223,12 @@ object frm_pis: Tfrm_pis
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
-      OnClick = CheckBox_realClick
-      OnKeyPress = CheckBox_realKeyPress
+      TabOrder = 2
+      OnClick = CheckBox_real_cofinsClick
     end
-    object CheckBox_excluir_icms: TCheckBox
-      Left = 295
-      Top = 80
+    object CheckBox_excluir_icms_cofins: TCheckBox
+      Left = 303
+      Top = 84
       Width = 122
       Height = 17
       Caption = 'Abate o ICMS ?'
@@ -241,19 +239,19 @@ object frm_pis: Tfrm_pis
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
-      OnClick = CheckBox_excluir_icmsClick
+      TabOrder = 3
+      OnClick = CheckBox_excluir_icms_cofinsClick
     end
   end
   object Panel2: TPanel
-    Left = 0
-    Top = 95
-    Width = 441
-    Height = 153
+    Left = -2
+    Top = 96
+    Width = 443
+    Height = 129
     TabOrder = 1
     object Label2: TLabel
-      Left = 102
-      Top = 70
+      Left = 112
+      Top = 64
       Width = 28
       Height = 19
       Caption = 'R$:'
@@ -265,39 +263,39 @@ object frm_pis: Tfrm_pis
       ParentFont = False
     end
     object Btn_calc_pis: TButton
-      Left = 116
-      Top = 8
+      Left = 110
+      Top = 7
       Width = 75
       Height = 25
       Caption = 'Calcular'
       Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -12
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 0
       OnClick = Btn_calc_pisClick
     end
-    object Btn_limpar_pis: TButton
-      Left = 197
-      Top = 8
+    object Btn_limpar_cofins: TButton
+      Left = 191
+      Top = 7
       Width = 75
       Height = 25
       Caption = 'Limpar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -12
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
-      OnClick = Btn_limpar_pisClick
+      OnClick = Btn_limpar_cofinsClick
     end
-    object edt_valor_pis: TEdit
-      Left = 136
-      Top = 70
+    object edt_valor_cofins: TEdit
+      Left = 146
+      Top = 64
       Width = 128
       Height = 27
       Enabled = False
@@ -308,24 +306,22 @@ object frm_pis: Tfrm_pis
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 2
-      OnChange = edt_valor_pisChange
     end
-    object edt_icms_excluir: TEdit
+    object edt_icms_excluir_cofins: TEdit
       Left = 311
-      Top = 8
+      Top = 9
       Width = 90
-      Height = 24
+      Height = 22
       Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -12
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 3
       Text = '0'
-      OnExit = edt_icms_excluirExit
-      OnKeyPress = edt_icms_excluirKeyPress
+      OnExit = edt_icms_excluir_cofinsExit
     end
   end
 end

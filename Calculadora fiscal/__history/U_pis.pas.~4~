@@ -30,9 +30,6 @@ type
     procedure edt_icms_excluirExit(Sender: TObject);
     procedure edt_base_pisKeyPress(Sender: TObject; var Key: Char);
     procedure edt_valor_pisChange(Sender: TObject);
-    procedure edt_icms_excluirKeyPress(Sender: TObject; var Key: Char);
-    procedure CheckBox_realKeyPress(Sender: TObject; var Key: Char);
-    procedure CheckBox_presumidoKeyPress(Sender: TObject; var Key: Char);
 
   private
   {procedures para calculo do pis real/presumido
@@ -111,8 +108,6 @@ edt_icms_excluir.Enabled := false;
 If CheckBox_excluir_icms.checked = false then
 edt_icms_excluir.text := ('0');
 
-
-
 end;
 
 
@@ -142,21 +137,6 @@ edt_valor_pis.clear;
 
 end;
 
-procedure Tfrm_pis.CheckBox_presumidoKeyPress(Sender: TObject; var Key: Char);
-begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
-end;
-
 procedure Tfrm_pis.CheckBox_realClick(Sender: TObject);
 //configurando o checkbox de lucro real
 begin
@@ -182,21 +162,6 @@ edt_valor_pis.clear;
 
 end;
 
-
-procedure Tfrm_pis.CheckBox_realKeyPress(Sender: TObject; var Key: Char);
-begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
-end;
 
 procedure Tfrm_pis.edt_base_pisChange(Sender: TObject);
 {configurando p/ o tedit base_pis habilitar apenas
@@ -224,17 +189,7 @@ end;
 
 procedure Tfrm_pis.edt_base_pisKeyPress(Sender: TObject; var Key: Char);
 begin
- begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
-end;
+ if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 end;
 
 //proteção pra não deixar o tedit edt_icms_excluir com valor nulos
@@ -246,21 +201,6 @@ begin
 showmessage('Deve ser inserido um valor de icms');
 edt_icms_excluir.setfocus;
 edt_icms_excluir.text := ('0');
-end;
-end;
-
-procedure Tfrm_pis.edt_icms_excluirKeyPress(Sender: TObject; var Key: Char);
-begin
-begin
-if key = #13 then
-  begin
-    key:= #0;
-    perform (WM_NEXTDLGCTL,0,0);
-    end;
-    begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
-  end;
 end;
 end;
 
