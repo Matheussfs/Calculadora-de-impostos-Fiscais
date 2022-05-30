@@ -1039,8 +1039,6 @@ if key = #13 then
     perform (WM_NEXTDLGCTL,0,0);
     end;
     begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
   end;
 end;
 end;
@@ -1193,7 +1191,6 @@ if key = #13 then
     perform (WM_NEXTDLGCTL,0,0);
     end;
     begin
-if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 
   end;
 end;

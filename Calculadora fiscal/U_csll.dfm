@@ -440,7 +440,6 @@ object Frm_csll: TFrm_csll
       Width = 73
       Height = 25
       Caption = 'Calcular'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13

@@ -52,13 +52,6 @@ type
     Label3: TLabel;
     Label18: TLabel;
     Label20: TLabel;
-    CheckBox3: TCheckBox;
-    Edit19: TEdit;
-    Panel5: TPanel;
-    Label21: TLabel;
-    Edit20: TEdit;
-    Label22: TLabel;
-    Edit21: TEdit;
   private
     { Private declarations }
   public

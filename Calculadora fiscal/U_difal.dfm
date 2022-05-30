@@ -254,6 +254,7 @@ object frm_difal: Tfrm_difal
       Top = 32
       Width = 50
       Height = 22
+      CharCase = ecUpperCase
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -312,6 +313,7 @@ object frm_difal: Tfrm_difal
       Top = 88
       Width = 50
       Height = 22
+      CharCase = ecUpperCase
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12

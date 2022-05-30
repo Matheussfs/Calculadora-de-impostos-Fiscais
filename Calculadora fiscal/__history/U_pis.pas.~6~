@@ -24,6 +24,7 @@ type
     procedure CheckBox_presumidoClick(Sender: TObject);
     procedure CheckBox_excluir_icmsClick(Sender: TObject);
     procedure Btn_calc_pisClick(Sender: TObject);
+    procedure edt_base_pisChange(Sender: TObject);
     procedure Btn_limpar_pisClick(Sender: TObject);
     procedure edt_base_pisExit(Sender: TObject);
     procedure edt_icms_excluirExit(Sender: TObject);
@@ -94,13 +95,6 @@ for p := 0 to   frm_pis.ComponentCount-1 do
  begin
     tedit(components[p]).text := '0';
   end;
-  begin
-for p := 0 to   frm_pis.ComponentCount-1 do
- if components[p] is tcheckbox then
- begin
-     tcheckbox(components[p]).Checked := false;
- end;
-  end;
 
 end;
 
@@ -158,6 +152,7 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
   end;
 end;
 end;
@@ -198,8 +193,18 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
   end;
 end;
+end;
+
+procedure Tfrm_pis.edt_base_pisChange(Sender: TObject);
+{configurando p/ o tedit base_pis habilitar apenas
+quando um dos checkbox for marcado}
+begin
+CheckBox_real.Enabled := true;
+CheckBox_presumido.Enabled := true;
+
 end;
 
 procedure Tfrm_pis.edt_base_pisExit(Sender: TObject);
@@ -227,6 +232,7 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
   end;
 end;
 end;
@@ -253,6 +259,7 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
   end;
 end;
 end;

@@ -190,7 +190,6 @@ object Frm_cofins: TFrm_cofins
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 0
-      OnChange = edt_base_cofinsChange
       OnExit = edt_base_cofinsExit
       OnKeyPress = edt_base_cofinsKeyPress
     end
@@ -200,7 +199,6 @@ object Frm_cofins: TFrm_cofins
       Width = 128
       Height = 17
       Caption = 'Lucro Presumido'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -216,7 +214,6 @@ object Frm_cofins: TFrm_cofins
       Width = 89
       Height = 17
       Caption = 'Lucro Real'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13

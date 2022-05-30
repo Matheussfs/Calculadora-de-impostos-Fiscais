@@ -20,6 +20,7 @@ type
     Btn_limpar_cofins: TButton;
     edt_valor_cofins: TEdit;
     edt_icms_excluir_cofins: TEdit;
+    procedure edt_base_cofinsChange(Sender: TObject);
     procedure edt_base_cofinsExit(Sender: TObject);
     procedure edt_base_cofinsKeyPress(Sender: TObject; var Key: Char);
     procedure CheckBox_real_cofinsClick(Sender: TObject);
@@ -75,18 +76,11 @@ procedure TFrm_cofins.Btn_limpar_cofinsClick(Sender: TObject);
 var a:integer;
 begin
 for a := 0 to   frm_cofins.ComponentCount-1 do
- if components[a] is tedit  then
+ if components[a] is tedit then
  begin
     tedit(components[a]).text := '0';
+  end;
 
-  end;
-  begin
-for a := 0 to   frm_cofins.ComponentCount-1 do
- if components[a] is tcheckbox  then
-  begin
-     tcheckbox(components[a]).Checked := false;
-  end;
-  end;
 end;
 
 procedure TFrm_cofins.CheckBox_excluir_icms_cofinsClick(Sender: TObject);
@@ -153,6 +147,14 @@ edt_valor_cofins.clear;
 end;
 
 
+procedure TFrm_cofins.edt_base_cofinsChange(Sender: TObject);
+{configurando p/ o tedit base_cofins habilitar apenas
+quando um dos checkbox for marcado}
+begin
+CheckBox_real_cofins.Enabled := true;
+CheckBox_presumido_cofins.Enabled := true;
+end;
+
 procedure TFrm_cofins.edt_base_cofinsExit(Sender: TObject);
 // colocando um showmessage caso o campo de base esteja vazio
 begin
@@ -175,6 +177,7 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
   end;
 end;
 end;
@@ -203,6 +206,7 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+
   end;
 end;
 end;

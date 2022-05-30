@@ -182,11 +182,9 @@ begin
   if cb_uf.text = 'TO' then
   Txt_aliq_icms.text :='18';
 
-
-
-  end;
-
-
+     Btn_calcular_icms.Enabled := True;
+      Btn_limpar_icms.enabled := True;
+end;
 
 procedure TFRM_TELA_ICMS.cb_ufKeyPress(Sender: TObject; var Key: Char);
 begin
@@ -195,7 +193,10 @@ if key = #13 then
     key:= #0;
     perform (WM_NEXTDLGCTL,0,0);
     end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 
+  end;
 end;
 
 procedure TFRM_TELA_ICMS.Txt_aliq_icmsExit(Sender: TObject);

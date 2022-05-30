@@ -249,7 +249,6 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
       Top = 33
       Width = 50
       Height = 22
-      CharCase = ecUpperCase
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12

@@ -99,6 +99,13 @@ for p := 0 to   Frm_irpj.ComponentCount-1 do
  begin
     tedit(components[p]).text := '0';
   end;
+  begin
+for p := 0 to   Frm_irpj.ComponentCount-1 do
+ if components[p] is tcheckbox then
+ begin
+    tcheckbox(components[p]).checked := false;
+ end;
+  end;
 end;
 end;
 
@@ -569,10 +576,7 @@ Cbx_servico.enabled := false;
 if Cbx_gasolina.Checked = true then
 Cbx_outras.enabled := false;
 
-if Cbx_gasolina.Checked = true then
-btn_calcu.enabled := true;
-if Cbx_gasolina.Checked = false then
-btn_calcu.enabled := false;
+
 
 if Cbx_gasolina.Checked = false then
 Cbx_venda.enabled := true;
@@ -613,10 +617,6 @@ Edt_aliq.enabled := true;
 if Cbx_outras.Checked = true then
 Edt_aliq_final.enabled := true;
 
-if Cbx_outras.Checked = true then
-btn_calcu.enabled := true;
-if Cbx_outras.Checked = false then
-btn_calcu.enabled := false;
 
 if Cbx_outras.Checked = false then
 Edt_aliq.enabled := false;
@@ -666,10 +666,6 @@ Cbx_gasolina.enabled := false;
 if Cbx_servico.Checked = true then
 Cbx_outras.enabled := false;
 
-if Cbx_servico.Checked = true then
-btn_calcu.enabled := true;
-if Cbx_servico.Checked = false then
-btn_calcu.enabled := false;
 
 if Cbx_servico.Checked = false then
 Cbx_venda.enabled := true;
@@ -712,10 +708,6 @@ Cbx_gasolina.enabled := false;
 if Cbx_venda.Checked = true then
 Cbx_outras.enabled := false;
 
-if Cbx_venda.Checked = true then
-btn_calcu.enabled := true;
-if Cbx_venda.Checked = false then
-btn_calcu.enabled := false;
 
 if Cbx_venda.Checked = false then
 Cbx_servico.enabled := true;
@@ -771,7 +763,6 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
   end;
 end;
 end;
@@ -799,7 +790,6 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
   end;
 end;
 end;
@@ -826,7 +816,6 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
   end;
 end;
 end;
@@ -854,7 +843,6 @@ if key = #13 then
     end;
     begin
 if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
-
   end;
 end;
 end;

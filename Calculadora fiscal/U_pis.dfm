@@ -190,7 +190,6 @@ object frm_pis: Tfrm_pis
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 0
-      OnChange = edt_base_pisChange
       OnExit = edt_base_pisExit
       OnKeyPress = edt_base_pisKeyPress
     end
@@ -200,7 +199,6 @@ object frm_pis: Tfrm_pis
       Width = 128
       Height = 17
       Caption = 'Lucro Presumido'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -217,7 +215,6 @@ object frm_pis: Tfrm_pis
       Width = 89
       Height = 17
       Caption = 'Lucro Real'
-      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
