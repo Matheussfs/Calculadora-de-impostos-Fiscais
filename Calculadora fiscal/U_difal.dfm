@@ -209,6 +209,7 @@ object frm_difal: Tfrm_difal
       TabOrder = 0
       Text = '0'
       TextHint = 'Valor base ICMS'
+      OnClick = txt_base_icms_difalClick
       OnExit = txt_base_icms_difalExit
       OnKeyPress = txt_base_icms_difalKeyPress
     end
@@ -264,6 +265,7 @@ object frm_difal: Tfrm_difal
       TabOrder = 1
       TextHint = 'UF Origem'
       OnChange = cb_uf_origemChange
+      OnClick = cb_uf_origemClick
       OnKeyPress = cb_uf_origemKeyPress
       Items.Strings = (
         'AC'
@@ -323,6 +325,7 @@ object frm_difal: Tfrm_difal
       TabOrder = 2
       TextHint = 'UF Destino'
       OnChange = cb_uf_destinoChange
+      OnClick = cb_uf_destinoClick
       OnKeyPress = cb_uf_destinoKeyPress
       Items.Strings = (
         'AC'

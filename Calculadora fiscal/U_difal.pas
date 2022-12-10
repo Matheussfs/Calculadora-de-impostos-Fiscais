@@ -50,6 +50,9 @@ type
     procedure difal_duplo;
     PROCEDURE DIFAL_NORMAL;
     procedure Cx_momoriaClick(Sender: TObject);
+    procedure txt_base_icms_difalClick(Sender: TObject);
+    procedure cb_uf_origemClick(Sender: TObject);
+    procedure cb_uf_destinoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,22 +75,24 @@ if (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
 (cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
 (cb_uf_origem.text ='PI')  or (cb_uf_origem.text ='PR') or
 (cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
-(cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE')
+(cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE') or
+(cb_uf_origem.text ='SP')
 then
 begin
 difal_duplo;
 
 end;
 
-if  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
-(cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
-(cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
-(cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
-(cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
-(cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
-(cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
-(cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR') or
-(cb_uf_origem.text ='SP') then
+if
+  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+  (cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+  (cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+  (cb_uf_origem.text ='ES') or (cb_uf_origem.text ='GO') or
+  (cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') or
+  (cb_uf_origem.text ='PB') OR (cb_uf_origem.text ='RN') or
+  (cb_uf_origem.text ='RO') OR (cb_uf_origem.text ='PE') or
+  (cb_uf_origem.text ='RJ') OR (cb_uf_origem.text ='RR')
+then
 BEGIN
 difal_normal;
 END;
@@ -1030,6 +1035,12 @@ Btn_calc_difal.Enabled := True;
 Btn_limpar_difal.enabled := True;
 end;
 
+procedure Tfrm_difal.cb_uf_destinoClick(Sender: TObject);
+begin
+  EDT_ALIQ_DIFAL_FINAL.text := '0' ;
+  Edt_total_difal.text := '0';
+end;
+
 procedure Tfrm_difal.cb_uf_destinoKeyPress(Sender: TObject; var Key: Char);
 begin
  begin
@@ -1139,24 +1150,69 @@ if cb_uf_origem.text = 'RJ' then
   if cb_uf_origem.text = 'TO' then
   edt_estadual.text :='18';
 
-if (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
-(cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
-(cb_uf_origem.text ='PI')  or (cb_uf_origem.text ='PR') or
-(cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
-(cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE')
+if
+  (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
+  (cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
+  (cb_uf_origem.text ='PI') or (cb_uf_origem.text ='PR') or
+  (cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
+  (cb_uf_origem.text ='TO') or (cb_uf_origem.text ='SE') or
+  (cb_uf_origem.text ='SP')
 then
-Cx_momoria.visible := true;
+  Cx_momoria.visible := true;
+  if
+  (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
+  (cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
+  (cb_uf_origem.text ='PI') or (cb_uf_origem.text ='PR') or
+  (cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
+  (cb_uf_origem.text ='TO') or (cb_uf_origem.text ='SE') or
+  (cb_uf_origem.text ='SP')
+  then
+  StaticText6.visible := false;
+  if
+  (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
+  (cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
+  (cb_uf_origem.text ='PI') or (cb_uf_origem.text ='PR') or
+  (cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
+  (cb_uf_origem.text ='TO') or (cb_uf_origem.text ='SE') or
+  (cb_uf_origem.text ='SP')
+  then
+  EDT_ALIQ_DIFAL_FINAL.visible := false;
 
-if(cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
-(cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
-(cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
-(cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
-(cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
-(cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
-(cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
-(cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR') or
-(cb_uf_origem.text ='SP')
-then Cx_momoria.visible := false;
+
+if
+  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+  (cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+  (cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+  (cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
+  (cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
+  (cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
+  (cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
+  (cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR')
+then
+  Cx_momoria.visible := false;
+  if
+  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+  (cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+  (cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+  (cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
+  (cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
+  (cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
+  (cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
+  (cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR')
+then
+  StaticText6.visible := true;
+  if
+  (cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
+  (cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
+  (cb_uf_origem.text ='AP') or (cb_uf_origem.text ='DF') or
+  (cb_uf_origem.text ='ES')  or (cb_uf_origem.text ='GO') or
+  (cb_uf_origem.text ='MA') or (cb_uf_origem.text ='MT') OR
+  (cb_uf_origem.text ='PB') OR  (cb_uf_origem.text ='RN') or
+  (cb_uf_origem.text ='RO') OR  (cb_uf_origem.text ='PE') or
+  (cb_uf_origem.text ='RJ') OR  (cb_uf_origem.text ='RR')
+then
+  EDT_ALIQ_DIFAL_FINAL.visible := true;
+
 
 if(cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
 (cb_uf_origem.text ='AM') or (cb_uf_origem.text ='CE') or
@@ -1180,6 +1236,12 @@ if(cb_uf_origem.text ='AC') or (cb_uf_origem.text ='AL') or
 (cb_uf_origem.text ='SP')
 then Cx_momoria.checked := false;
 
+end;
+
+procedure Tfrm_difal.cb_uf_origemClick(Sender: TObject);
+begin
+  EDT_ALIQ_DIFAL_FINAL.text := '0' ;
+  Edt_total_difal.text := '0';
 end;
 
 procedure Tfrm_difal.cb_uf_origemKeyPress(Sender: TObject; var Key: Char);
@@ -1339,6 +1401,11 @@ procedure Tfrm_difal.SpeedButton1Click(Sender: TObject);
 
 begin
 ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-lancar-o-diferencial-de-aliquota-nas-entradas-83045346.html#:~:text=Acesse%20Menu%20Fiscal%20%3E%20Configura%C3%A7%C3%B5es%20e,%2C%20clique%20em%20%22Gravar%22.', '',nil,0);
+end;
+
+procedure Tfrm_difal.txt_base_icms_difalClick(Sender: TObject);
+begin
+Btn_limpar_difal.click
 end;
 
 procedure Tfrm_difal.txt_base_icms_difalExit(Sender: TObject);

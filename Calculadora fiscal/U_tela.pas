@@ -31,6 +31,7 @@ type
     Pnl_topo: TPanel;
     Timer1: TTimer;
     SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
     procedure btn_pisClick(Sender: TObject);
     procedure btn_cofinsClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -42,6 +43,7 @@ type
     procedure Btn_csllClick(Sender: TObject);
     procedure Btn_retencoesClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,7 +58,7 @@ implementation
 {$R *.dfm}
 
 uses U_cofins, U_pis, U_icms, U_csll, U_difal, U_icms_st, U_ipi, U_irpj,
-  U_retencoes, U_tela_retenções;
+  U_retencoes, U_tela_retenções, U_Dime;
 
 procedure TForm1.btn_cofinsClick(Sender: TObject);
 begin
@@ -152,6 +154,12 @@ procedure TForm1.SpeedButton1Click(Sender: TObject);
 begin
 ShowMessage
 ('Este aplicativo foi construido para ajudar o suporte a realizar cálculos de alguns dos impostos mais comuns do nosso dia a dia! Em caso de dúvidas ou sugestões de melhoria, procurem pelo MatheusFs.sup.pack no Googlechat.');
+end;
+
+procedure TForm1.SpeedButton2Click(Sender: TObject);
+begin
+Frm_dime := tFrm_dime.create(self);
+Frm_dime.showmodal;
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
