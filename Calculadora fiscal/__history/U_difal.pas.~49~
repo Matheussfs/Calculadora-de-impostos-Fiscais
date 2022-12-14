@@ -50,6 +50,7 @@ type
     procedure difal_duplo;
     PROCEDURE DIFAL_NORMAL;
     procedure Cx_momoriaClick(Sender: TObject);
+    procedure txt_base_icms_difalClick(Sender: TObject);
     procedure cb_uf_origemClick(Sender: TObject);
     procedure cb_uf_destinoClick(Sender: TObject);
   private
@@ -70,14 +71,13 @@ uses U_memoria;
 procedure Tfrm_difal.Btn_calc_difalClick(Sender: TObject);
  var str:string;
 begin
-  if
-  (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
-  (cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
-  (cb_uf_origem.text ='PI')  or (cb_uf_origem.text ='PR') or
-  (cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
-  (cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE') or
-  (cb_uf_origem.text ='SP')
-  then
+if (cb_uf_origem.text ='MG') or (cb_uf_origem.text ='BA') or
+(cb_uf_origem.text ='MS') or (cb_uf_origem.text ='PA') or
+(cb_uf_origem.text ='PI')  or (cb_uf_origem.text ='PR') or
+(cb_uf_origem.text ='RS') or (cb_uf_origem.text ='SC') OR
+(cb_uf_origem.text ='TO') OR  (cb_uf_origem.text ='SE') or
+(cb_uf_origem.text ='SP')
+then
 begin
 difal_duplo;
 
@@ -1283,20 +1283,20 @@ var
    icms_interno,icms_interestadual,base_calculo,base_dupla,
    resultado, base_calculo1, base_calculo2,
    base_operacao3, valor_icms_estadual, valor_icms_interestadual: real;
-
+   str:string;
 begin
 
-  base_calculo := strtofloat (txt_base_icms_difal.text);
-  icms_interno := strtofloat (edt_estadual.text);
-  icms_interestadual := strtofloat (edt_interestadual.text);
+  base_calculo := strtocurr (txt_base_icms_difal.text);
+  icms_interno := strtocurr (edt_estadual.text);
+  icms_interestadual := strtocurr (edt_interestadual.text);
+  resultado := strtocurr (Edt_total_difal.text);
 
+  valor_icms_interestadual := base_calculo * icms_interestadual/100;
+  base_calculo1 :=  base_calculo - valor_icms_interestadual;
+  base_calculo2 :=  base_calculo1/(1-icms_interno/100);
 
-  valor_icms_interestadual := (base_calculo * icms_interestadual/100);
-  base_calculo1 :=  (base_calculo - valor_icms_interestadual);
-  base_calculo2 :=  (base_calculo1/(1-icms_interno/100));
-
-  valor_icms_estadual :=  (base_calculo2 * icms_interno/100);
-  resultado :=  (valor_icms_estadual - valor_icms_interestadual);
+  valor_icms_estadual :=  base_calculo2 * icms_interno/100;
+  resultado :=     valor_icms_estadual - valor_icms_interestadual;
 
   Edt_total_difal.text := floattostr (resultado);
   Edt_total_difal.text := Formatcurr('0,.00', resultado);
@@ -1310,7 +1310,7 @@ begin
 memo.Caption :=('Primeiro calculamos o icms interestadual, onde:'+#13+
 'será a base de cálculo: '+FloatToStr(base_calculo)+#13+
 'vezes a Alíquota de Icms interestadual, de: '+floattostr(icms_interestadual)+#13+
-'Totalizando: '+currtostr(valor_icms_interestadual)+#13+
+'Totalizando: '+floattostr(valor_icms_interestadual)+#13+
 'Depois, precisamos pegar novamente nossa base de calculo '+#13+
 'No valor de: '+FloatToStr(base_calculo)+#13+
 'e diminuir pelo valor que achamos anteriormente do icms interestadual, de: '+FloatToStr(valor_icms_interestadual)+#13+
@@ -1319,17 +1319,17 @@ memo.Caption :=('Primeiro calculamos o icms interestadual, onde:'+#13+
 'definirmos o valor do ICMS Interno, onde usaremos a base anterior, de:'
 +FloatToStr(base_calculo1)+#13+
 'e aplicaremos a seguinte regra de calculo: (1 – Alíquota Interna)'+#13+
-'Totalizando '+currToStr(base_calculo2)+#13+
+'Totalizando '+FloatToStr(base_calculo2)+#13+
 'Feito isso, preicisamos agora achar o icms estadual'+#13+
-'que será a base anterior de :'+currToStr(base_calculo2)+#13+
+'que será a base anterior de :'+FloatToStr(base_calculo2)+#13+
 'multiplicado pela alíquota interna, de: '+FloatToStr(icms_interno)+#13+
-'Totalizando um icms interno de: '+currToStr(valor_icms_estadual)+#13+
+'Totalizando um icms interno de: '+FloatToStr(valor_icms_estadual)+#13+
 'Feito isso, o último passo será diminuir o icms estadual, de:'
-+CurrToStr(valor_icms_estadual)+#13+
-'Pelo icms interestadual, de '+CurrToStr(valor_icms_interestadual)+#13+
-'Totalizando o difal em '+CurrToStr(resultado)+#13+
++FloatToStr(valor_icms_estadual)+#13+
+'Pelo icms interestadual, de '+FloatToStr(valor_icms_interestadual)+#13+
+'Totalizando o difal em '+FloatToStr(resultado)+#13+
 'Essa regra será valida apenas para os estados: '+#13+
-'BA, MG, MS, PA, PI, PR, RS, SC, TO, SE, AL, GO, PE , PB e SP');
+'BA, MG, MS, PA, PI, PR, RS, SC, TO, SE, AL, GO, PE e PB');
 
 
 end;
@@ -1340,43 +1340,45 @@ resultado_difal: real;
 begin
 //calculando o valor de icms difal
 
-  base_icms_difal := strtofloat(txt_base_icms_difal.text);
-  icms_estadual := strtofloat (edt_estadual.text);
-  icms_inter := strtofloat (edt_interestadual.text);
-  EDT_ALIQ_DIFAL_FINAL.text := FormatFloat('',(StrToFloat(edt_estadual.text) - StrToFloat(edt_interestadual.text)));
-  resultado_aliquota :=  strtofloat(EDT_ALIQ_DIFAL_FINAL.text);
-  resultado_difal :=  (base_icms_difal * resultado_aliquota/100);
-  Edt_total_difal.text := floattostr (resultado_difal);
+   base_icms_difal := strtofloat(txt_base_icms_difal.text);
+   icms_estadual := strtofloat (edt_estadual.text);
+   icms_inter := strtofloat (edt_interestadual.text);
+   EDT_ALIQ_DIFAL_FINAL.text := FormatFloat('',
+   (StrToFloat(edt_estadual.text) - StrToFloat(edt_interestadual.text)));
+     resultado_aliquota :=  strtofloat(EDT_ALIQ_DIFAL_FINAL.text);
+   resultado_difal :=  base_icms_difal * resultado_aliquota/100;
+    Edt_total_difal.text := floattostr (resultado_difal);
   Edt_total_difal.text := FormatFloat('0,.00', resultado_difal);
 end;
 
 procedure Tfrm_difal.edt_estadualChange(Sender: TObject);
 begin
-  cb_uf_destino.enabled := true;
+cb_uf_destino.enabled := true;
 end;
 
 procedure Tfrm_difal.edt_estadualExit(Sender: TObject);
 begin
-  if (edt_estadual.text='') then
+if (edt_estadual.text='') then
 begin
-  showmessage('Deve ser inserido uma alíquota de ICMS');
-  edt_estadual.setfocus;
-  edt_estadual.text := ('0');
+showmessage('Deve ser inserido uma alíquota de ICMS');
+edt_estadual.setfocus;
+edt_estadual.text := ('0');
 end;
 end;
 
 procedure Tfrm_difal.edt_estadualKeyPress(Sender: TObject; var Key: Char);
-
+begin
+begin
+if key = #13 then
   begin
-    if key = #13 then
-      begin
-      key:= #0;
-      perform (WM_NEXTDLGCTL,0,0);
-      end;
-  begin
-  if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
+    key:= #0;
+    perform (WM_NEXTDLGCTL,0,0);
+    end;
+    begin
+if not (Key in ['0'..'9' , ',' , #8]) then Key := #0;
 
   end;
+end;
 end;
 
 procedure Tfrm_difal.edt_interestadualExit(Sender: TObject);
@@ -1409,6 +1411,11 @@ procedure Tfrm_difal.SpeedButton1Click(Sender: TObject);
 
 begin
 ShellExecute(Handle,'open','https://ajuda.alterdata.com.br/fiscalbase/como-lancar-o-diferencial-de-aliquota-nas-entradas-83045346.html#:~:text=Acesse%20Menu%20Fiscal%20%3E%20Configura%C3%A7%C3%B5es%20e,%2C%20clique%20em%20%22Gravar%22.', '',nil,0);
+end;
+
+procedure Tfrm_difal.txt_base_icms_difalClick(Sender: TObject);
+begin
+Btn_limpar_difal.click
 end;
 
 procedure Tfrm_difal.txt_base_icms_difalExit(Sender: TObject);

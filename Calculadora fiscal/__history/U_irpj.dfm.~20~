@@ -261,9 +261,9 @@ object Frm_irpj: TFrm_irpj
   end
   object Panel2: TPanel
     Left = 0
-    Top = -4
+    Top = 0
     Width = 417
-    Height = 81
+    Height = 82
     TabOrder = 1
     object Cbx_venda: TCheckBox
       Left = 21
@@ -358,9 +358,9 @@ object Frm_irpj: TFrm_irpj
   end
   object Panel3: TPanel
     Left = 0
-    Top = 227
+    Top = 224
     Width = 713
-    Height = 136
+    Height = 145
     TabOrder = 2
     object Label8: TLabel
       Left = 99

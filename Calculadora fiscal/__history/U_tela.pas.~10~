@@ -9,30 +9,29 @@ uses
 
 type
   TForm1 = class(TForm)
+    btn_pis: TSpeedButton;
+    btn_cofins: TSpeedButton;
+    btn_icms: TSpeedButton;
+    Btn_icms_st: TSpeedButton;
+    Btn_difal: TSpeedButton;
+    Btn_ipi: TSpeedButton;
+    Btn_retencoes: TSpeedButton;
+    Btn_csll: TSpeedButton;
+    btn_irpj: TSpeedButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
     StatusBar1: TStatusBar;
     Pnl_topo: TPanel;
     Timer1: TTimer;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
-    Panel1: TPanel;
-    btn_icms: TSpeedButton;
-    Label1: TLabel;
-    Btn_icms_st: TSpeedButton;
-    Label2: TLabel;
-    Btn_ipi: TSpeedButton;
-    btn_cofins: TSpeedButton;
-    Label3: TLabel;
-    btn_pis: TSpeedButton;
-    Label5: TLabel;
-    Btn_difal: TSpeedButton;
-    Label4: TLabel;
-    btn_irpj: TSpeedButton;
-    Label7: TLabel;
-    Btn_csll: TSpeedButton;
-    Label8: TLabel;
-    Btn_retencoes: TSpeedButton;
-    Label9: TLabel;
-    Label6: TLabel;
     procedure btn_pisClick(Sender: TObject);
     procedure btn_cofinsClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);

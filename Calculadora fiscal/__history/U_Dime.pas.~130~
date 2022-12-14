@@ -182,6 +182,7 @@ type
     Label69: TLabel;
     Label70: TLabel;
     Button1: TButton;
+    Panel23: TPanel;
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);

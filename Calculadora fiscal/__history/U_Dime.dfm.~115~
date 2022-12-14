@@ -2,7 +2,7 @@ object Frm_dime: TFrm_dime
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Dime SC. Quados 15, 16 e 85.'
+  Caption = 'Dime Quados 15, 16 e 85.'
   ClientHeight = 717
   ClientWidth = 1365
   Color = clBtnFace

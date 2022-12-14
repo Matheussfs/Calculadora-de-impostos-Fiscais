@@ -280,8 +280,8 @@ object Form1: TForm1
     Height = 322
     TabOrder = 2
     object btn_icms: TSpeedButton
-      Left = 35
-      Top = 9
+      Left = 24
+      Top = 10
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -408,8 +408,8 @@ object Form1: TForm1
       OnClick = btn_icmsClick
     end
     object Label1: TLabel
-      Left = 59
-      Top = 81
+      Left = 48
+      Top = 82
       Width = 56
       Height = 25
       Caption = 'ICMS'
@@ -421,8 +421,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object Btn_icms_st: TSpeedButton
-      Left = 171
-      Top = 9
+      Left = 160
+      Top = 10
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -549,8 +549,8 @@ object Form1: TForm1
       OnClick = Btn_icms_stClick
     end
     object Label2: TLabel
-      Left = 180
-      Top = 81
+      Left = 169
+      Top = 82
       Width = 88
       Height = 25
       Caption = 'ICMS ST'
@@ -562,8 +562,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object Btn_ipi: TSpeedButton
-      Left = 307
-      Top = 9
+      Left = 296
+      Top = 10
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -690,8 +690,8 @@ object Form1: TForm1
       OnClick = Btn_ipiClick
     end
     object btn_cofins: TSpeedButton
-      Left = 307
-      Top = 112
+      Left = 296
+      Top = 113
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -818,8 +818,8 @@ object Form1: TForm1
       OnClick = btn_cofinsClick
     end
     object Label3: TLabel
-      Left = 339
-      Top = 81
+      Left = 328
+      Top = 82
       Width = 34
       Height = 25
       Caption = 'IPI'
@@ -831,8 +831,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object btn_pis: TSpeedButton
-      Left = 171
-      Top = 112
+      Left = 160
+      Top = 113
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -998,8 +998,8 @@ object Form1: TForm1
       OnClick = btn_pisClick
     end
     object Label5: TLabel
-      Left = 203
-      Top = 185
+      Left = 192
+      Top = 186
       Width = 37
       Height = 25
       Caption = 'PIS'
@@ -1011,8 +1011,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object Btn_difal: TSpeedButton
-      Left = 35
-      Top = 112
+      Left = 24
+      Top = 113
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -1139,8 +1139,8 @@ object Form1: TForm1
       OnClick = Btn_difalClick
     end
     object Label4: TLabel
-      Left = 51
-      Top = 185
+      Left = 40
+      Top = 186
       Width = 64
       Height = 25
       Caption = 'DIFAL'
@@ -1152,8 +1152,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object btn_irpj: TSpeedButton
-      Left = 35
-      Top = 216
+      Left = 24
+      Top = 217
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -1280,8 +1280,8 @@ object Form1: TForm1
       OnClick = btn_irpjClick
     end
     object Label7: TLabel
-      Left = 59
-      Top = 290
+      Left = 48
+      Top = 291
       Width = 50
       Height = 25
       Caption = 'IRPJ'
@@ -1293,8 +1293,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object Btn_csll: TSpeedButton
-      Left = 171
-      Top = 216
+      Left = 160
+      Top = 217
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -1421,8 +1421,8 @@ object Form1: TForm1
       OnClick = Btn_csllClick
     end
     object Label8: TLabel
-      Left = 189
-      Top = 290
+      Left = 178
+      Top = 291
       Width = 51
       Height = 25
       Caption = 'CSLL'
@@ -1434,8 +1434,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object Btn_retencoes: TSpeedButton
-      Left = 305
-      Top = 216
+      Left = 294
+      Top = 217
       Width = 97
       Height = 73
       Cursor = crHandPoint
@@ -1572,8 +1572,8 @@ object Form1: TForm1
       OnClick = Btn_retencoesClick
     end
     object Label9: TLabel
-      Left = 291
-      Top = 290
+      Left = 280
+      Top = 291
       Width = 126
       Height = 25
       Caption = 'RETEN'#199#213'ES'
@@ -1585,8 +1585,8 @@ object Form1: TForm1
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 321
-      Top = 185
+      Left = 310
+      Top = 186
       Width = 81
       Height = 25
       Caption = 'COFINS'

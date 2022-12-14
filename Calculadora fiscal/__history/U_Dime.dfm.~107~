@@ -1,10 +1,10 @@
 object Frm_dime: TFrm_dime
   Left = 0
   Top = 0
-  BorderStyle = bsSingle
-  Caption = 'Dime SC. Quados 15, 16 e 85.'
-  ClientHeight = 717
-  ClientWidth = 1365
+  BorderStyle = bsNone
+  Caption = 'Frm_dime'
+  ClientHeight = 746
+  ClientWidth = 1371
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,9 +12,8 @@ object Frm_dime: TFrm_dime
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poMainFormCenter
   ScreenSnap = True
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -37,7 +36,7 @@ object Frm_dime: TFrm_dime
       ParentFont = False
     end
     object SpeedButton16: TSpeedButton
-      Left = 327
+      Left = 326
       Top = 8
       Width = 29
       Height = 21
@@ -2025,7 +2024,7 @@ object Frm_dime: TFrm_dime
       OnExit = Edt_icms_exonerado_devExit
     end
     object Edit56: TEdit
-      Left = 4
+      Left = 5
       Top = 73
       Width = 99
       Height = 21
@@ -2036,9 +2035,9 @@ object Frm_dime: TFrm_dime
       OnExit = Edit56Exit
     end
     object Edit57: TEdit
-      Left = 4
+      Left = 5
       Top = 100
-      Width = 99
+      Width = 98
       Height = 21
       CharCase = ecUpperCase
       TabOrder = 2
@@ -2159,7 +2158,7 @@ object Frm_dime: TFrm_dime
       ParentFont = False
     end
     object Edt_fumdes: TEdit
-      Left = 1
+      Left = 0
       Top = 46
       Width = 105
       Height = 21
@@ -2313,7 +2312,7 @@ object Frm_dime: TFrm_dime
       OnExit = Edt_fundo_socialExit
     end
     object Edit61: TEdit
-      Left = 2
+      Left = 3
       Top = 73
       Width = 103
       Height = 21
@@ -2324,9 +2323,9 @@ object Frm_dime: TFrm_dime
       OnExit = Edit61Exit
     end
     object Edit62: TEdit
-      Left = 2
+      Left = 3
       Top = 100
-      Width = 103
+      Width = 102
       Height = 21
       CharCase = ecUpperCase
       TabOrder = 2

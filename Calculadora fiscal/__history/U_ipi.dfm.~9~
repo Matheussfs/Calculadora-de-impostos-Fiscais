@@ -162,9 +162,9 @@ object frm_IPI: Tfrm_IPI
   TextHeight = 13
   object Panel1: TPanel
     Left = 1
-    Top = -4
+    Top = -6
     Width = 319
-    Height = 80
+    Height = 88
     TabOrder = 0
     object edt_base_ipi: TEdit
       Left = 40
@@ -235,7 +235,7 @@ object frm_IPI: Tfrm_IPI
   end
   object Panel2: TPanel
     Left = -6
-    Top = 76
+    Top = 70
     Width = 326
     Height = 105
     TabOrder = 1
@@ -254,7 +254,7 @@ object frm_IPI: Tfrm_IPI
     end
     object Btn_calc_ipi: TButton
       Left = 88
-      Top = 10
+      Top = 8
       Width = 75
       Height = 25
       Caption = 'Calcular'
@@ -270,7 +270,7 @@ object frm_IPI: Tfrm_IPI
     end
     object Btn_clear_ipi: TButton
       Left = 169
-      Top = 10
+      Top = 8
       Width = 75
       Height = 25
       Caption = 'Limpar'

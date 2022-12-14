@@ -162,11 +162,11 @@ object Frm_csrf: TFrm_csrf
   object Panel1: TPanel
     Left = 0
     Top = -9
-    Width = 185
+    Width = 167
     Height = 74
     TabOrder = 0
     object Label1: TLabel
-      Left = 56
+      Left = 42
       Top = 16
       Width = 67
       Height = 16
@@ -179,7 +179,7 @@ object Frm_csrf: TFrm_csrf
       ParentFont = False
     end
     object Edt_pis_ret: TEdit
-      Left = 40
+      Left = 20
       Top = 35
       Width = 121
       Height = 24
@@ -202,8 +202,8 @@ object Frm_csrf: TFrm_csrf
     Height = 74
     TabOrder = 1
     object Label3: TLabel
-      Left = 58
-      Top = 13
+      Left = 47
+      Top = 16
       Width = 85
       Height = 16
       Caption = 'Cofins Retido'
@@ -215,7 +215,7 @@ object Frm_csrf: TFrm_csrf
       ParentFont = False
     end
     object Edt_cofins_ret: TEdit
-      Left = 40
+      Left = 30
       Top = 35
       Width = 121
       Height = 24
@@ -232,7 +232,7 @@ object Frm_csrf: TFrm_csrf
     end
   end
   object Panel3: TPanel
-    Left = 350
+    Left = 352
     Top = -7
     Width = 185
     Height = 72
@@ -269,7 +269,7 @@ object Frm_csrf: TFrm_csrf
   end
   object Panel4: TPanel
     Left = 0
-    Top = 56
+    Top = 65
     Width = 535
     Height = 121
     TabOrder = 3
@@ -287,8 +287,8 @@ object Frm_csrf: TFrm_csrf
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 195
-      Top = 61
+      Left = 203
+      Top = 48
       Width = 115
       Height = 19
       Caption = 'Valor da CSRF'
@@ -301,7 +301,7 @@ object Frm_csrf: TFrm_csrf
     end
     object Button1: TButton
       Left = 180
-      Top = 15
+      Top = 11
       Width = 75
       Height = 25
       Caption = 'Calcular'
@@ -316,7 +316,7 @@ object Frm_csrf: TFrm_csrf
     end
     object Button2: TButton
       Left = 261
-      Top = 15
+      Top = 11
       Width = 75
       Height = 25
       Caption = 'Limpar'
@@ -331,7 +331,7 @@ object Frm_csrf: TFrm_csrf
     end
     object Edt_csrf: TEdit
       Left = 195
-      Top = 86
+      Top = 77
       Width = 130
       Height = 27
       Enabled = False

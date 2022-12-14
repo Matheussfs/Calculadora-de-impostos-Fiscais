@@ -253,7 +253,6 @@ type
     procedure Edt_tottExit(Sender: TObject);
     procedure Edt_tott1Exit(Sender: TObject);
     procedure SpeedButton20Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -311,14 +310,6 @@ begin
   length( Edt_vl_fundo_social.text);
   while length (Edt_vl_fundo_social.text) <17 do
    Edt_vl_fundo_social.text :='0' + Edt_vl_fundo_social.text;
-end;
-
-procedure TFrm_dime.FormShow(Sender: TObject);
-var
-  R:TRect;
-begin
-   SystemParametersInfo(SPI_GETWORKAREA, 0, @r,0) ;
-   SetBounds(r.Left, r.Top, r.Right-r.Left, r.Bottom-r.Top) ;
 end;
 
 procedure TFrm_dime.Edt_base_devoExit(Sender: TObject);

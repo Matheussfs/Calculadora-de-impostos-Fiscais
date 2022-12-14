@@ -292,7 +292,7 @@ object FRM_TELA_ICMS: TFRM_TELA_ICMS
   end
   object Panel2: TPanel
     Left = -5
-    Top = 69
+    Top = 76
     Width = 434
     Height = 129
     TabOrder = 1

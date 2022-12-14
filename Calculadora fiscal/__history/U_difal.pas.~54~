@@ -1321,15 +1321,15 @@ memo.Caption :=('Primeiro calculamos o icms interestadual, onde:'+#13+
 'e aplicaremos a seguinte regra de calculo: (1 – Alíquota Interna)'+#13+
 'Totalizando '+currToStr(base_calculo2)+#13+
 'Feito isso, preicisamos agora achar o icms estadual'+#13+
-'que será a base anterior de :'+currToStr(base_calculo2)+#13+
+'que será a base anterior de :'+FloatToStr(base_calculo2)+#13+
 'multiplicado pela alíquota interna, de: '+FloatToStr(icms_interno)+#13+
-'Totalizando um icms interno de: '+currToStr(valor_icms_estadual)+#13+
+'Totalizando um icms interno de: '+FloatToStr(valor_icms_estadual)+#13+
 'Feito isso, o último passo será diminuir o icms estadual, de:'
-+CurrToStr(valor_icms_estadual)+#13+
-'Pelo icms interestadual, de '+CurrToStr(valor_icms_interestadual)+#13+
-'Totalizando o difal em '+CurrToStr(resultado)+#13+
++FloatToStr(valor_icms_estadual)+#13+
+'Pelo icms interestadual, de '+FloatToStr(valor_icms_interestadual)+#13+
+'Totalizando o difal em '+FloatToStr(resultado)+#13+
 'Essa regra será valida apenas para os estados: '+#13+
-'BA, MG, MS, PA, PI, PR, RS, SC, TO, SE, AL, GO, PE , PB e SP');
+'BA, MG, MS, PA, PI, PR, RS, SC, TO, SE, AL, GO, PE e PB');
 
 
 end;

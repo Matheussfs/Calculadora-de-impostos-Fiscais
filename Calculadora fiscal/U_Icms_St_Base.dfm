@@ -163,7 +163,7 @@ object FRM_BASE_ST: TFRM_BASE_ST
     Left = 0
     Top = -8
     Width = 353
-    Height = 259
+    Height = 252
     TabOrder = 0
     object Label1: TLabel
       Left = 40

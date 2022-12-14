@@ -2,7 +2,7 @@ object Frm_dime: TFrm_dime
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Dime SC. Quados 15, 16 e 85.'
+  Caption = 'Frm_dime'
   ClientHeight = 717
   ClientWidth = 1365
   Color = clBtnFace
@@ -269,6 +269,13 @@ object Frm_dime: TFrm_dime
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
+    end
+    object Panel23: TPanel
+      Left = 368
+      Top = 0
+      Width = 1
+      Height = 49
+      TabOrder = 0
     end
   end
   object Panel2: TPanel

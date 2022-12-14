@@ -4,7 +4,7 @@ object frm_icms_st: Tfrm_icms_st
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Icms St'
-  ClientHeight = 253
+  ClientHeight = 249
   ClientWidth = 701
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -163,7 +163,7 @@ object frm_icms_st: Tfrm_icms_st
     Left = 0
     Top = -8
     Width = 705
-    Height = 154
+    Height = 137
     TabOrder = 0
     object Label1: TLabel
       Left = 8
@@ -359,13 +359,13 @@ object frm_icms_st: Tfrm_icms_st
   end
   object Panel2: TPanel
     Left = 0
-    Top = 127
+    Top = 129
     Width = 705
-    Height = 130
+    Height = 120
     TabOrder = 1
     object Label5: TLabel
       Left = 171
-      Top = 80
+      Top = 72
       Width = 136
       Height = 18
       Caption = 'Valor do ICMS-ST:'
@@ -474,7 +474,7 @@ object frm_icms_st: Tfrm_icms_st
     end
     object Edt_vl_st: TEdit
       Left = 313
-      Top = 75
+      Top = 67
       Width = 145
       Height = 31
       Enabled = False

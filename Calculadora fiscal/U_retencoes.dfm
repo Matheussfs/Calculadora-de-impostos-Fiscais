@@ -226,7 +226,7 @@ object Frm_IRRF: TFrm_IRRF
   end
   object Panel2: TPanel
     Left = 0
-    Top = 72
+    Top = 73
     Width = 353
     Height = 105
     TabOrder = 1

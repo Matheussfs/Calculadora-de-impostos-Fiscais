@@ -163,7 +163,7 @@ object Frm_csll: TFrm_csll
     Left = 0
     Top = 0
     Width = 396
-    Height = 61
+    Height = 55
     TabOrder = 0
     object Cbx_venda: TCheckBox
       Left = 32
@@ -213,9 +213,9 @@ object Frm_csll: TFrm_csll
   end
   object Panel2: TPanel
     Left = 0
-    Top = 54
+    Top = 55
     Width = 396
-    Height = 127
+    Height = 126
     TabOrder = 1
     object Label1: TLabel
       Left = 20
@@ -338,13 +338,13 @@ object Frm_csll: TFrm_csll
   end
   object Panel3: TPanel
     Left = 0
-    Top = 173
+    Top = 181
     Width = 396
     Height = 151
     TabOrder = 2
     object Label8: TLabel
       Left = 23
-      Top = 70
+      Top = 62
       Width = 112
       Height = 19
       Caption = 'Total da CSLL'
@@ -357,7 +357,7 @@ object Frm_csll: TFrm_csll
     end
     object Label9: TLabel
       Left = 141
-      Top = 71
+      Top = 62
       Width = 26
       Height = 18
       Caption = 'R$:'
@@ -370,7 +370,7 @@ object Frm_csll: TFrm_csll
     end
     object SpeedButton1: TSpeedButton
       Left = 262
-      Top = 14
+      Top = 6
       Width = 34
       Height = 33
       Glyph.Data = {
@@ -436,7 +436,7 @@ object Frm_csll: TFrm_csll
     end
     object Btn_calcu: TButton
       Left = 104
-      Top = 22
+      Top = 6
       Width = 73
       Height = 25
       Caption = 'Calcular'
@@ -451,7 +451,7 @@ object Frm_csll: TFrm_csll
     end
     object Button3: TButton
       Left = 183
-      Top = 22
+      Top = 6
       Width = 73
       Height = 25
       Caption = 'Limpar'
@@ -466,7 +466,7 @@ object Frm_csll: TFrm_csll
     end
     object Edt_resultado: TEdit
       Left = 173
-      Top = 64
+      Top = 56
       Width = 129
       Height = 27
       Enabled = False

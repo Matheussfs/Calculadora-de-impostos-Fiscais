@@ -4,7 +4,7 @@ object frm_bi: Tfrm_bi
   BorderStyle = bsSingle
   Caption = 'BI'
   ClientHeight = 472
-  ClientWidth = 789
+  ClientWidth = 792
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,9 +16,9 @@ object frm_bi: Tfrm_bi
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = -10
+    Top = -5
     Width = 425
-    Height = 177
+    Height = 182
     TabOrder = 0
     object Label1: TLabel
       Left = 20
@@ -199,10 +199,10 @@ object frm_bi: Tfrm_bi
     end
   end
   object Panel2: TPanel
-    Left = 425
+    Left = 423
     Top = -8
-    Width = 418
-    Height = 175
+    Width = 426
+    Height = 185
     TabOrder = 1
     object Label11: TLabel
       Left = 46
@@ -442,7 +442,7 @@ object frm_bi: Tfrm_bi
       Left = 155
       Top = 176
       Width = 86
-      Height = 24
+      Height = 25
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -510,9 +510,9 @@ object frm_bi: Tfrm_bi
     end
   end
   object Panel4: TPanel
-    Left = 425
+    Left = 423
     Top = 167
-    Width = 369
+    Width = 345
     Height = 234
     TabOrder = 3
     object Label10: TLabel
@@ -640,7 +640,7 @@ object frm_bi: Tfrm_bi
   object Panel5: TPanel
     Left = 0
     Top = 400
-    Width = 792
+    Width = 768
     Height = 73
     TabOrder = 4
     object Label21: TLabel

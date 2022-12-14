@@ -242,13 +242,13 @@ object Frm_cofins: TFrm_cofins
   end
   object Panel2: TPanel
     Left = -2
-    Top = 96
+    Top = 105
     Width = 443
     Height = 129
     TabOrder = 1
     object Label2: TLabel
       Left = 112
-      Top = 64
+      Top = 44
       Width = 28
       Height = 19
       Caption = 'R$:'
@@ -292,7 +292,7 @@ object Frm_cofins: TFrm_cofins
     end
     object edt_valor_cofins: TEdit
       Left = 146
-      Top = 64
+      Top = 39
       Width = 128
       Height = 27
       Enabled = False

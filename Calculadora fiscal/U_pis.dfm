@@ -244,7 +244,7 @@ object frm_pis: Tfrm_pis
   end
   object Panel2: TPanel
     Left = 0
-    Top = 95
+    Top = 97
     Width = 441
     Height = 153
     TabOrder = 1
