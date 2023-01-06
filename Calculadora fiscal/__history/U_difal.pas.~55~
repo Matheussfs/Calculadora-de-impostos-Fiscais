@@ -1276,6 +1276,7 @@ clientwidth := 301;
 end;
 
 
+
 procedure Tfrm_difal.difal_duplo;
 //Configurando o "difal duplo"
 var

@@ -6,7 +6,7 @@ object Form1: TForm1
   BorderStyle = bsSingle
   Caption = 'Impostos'
   ClientHeight = 371
-  ClientWidth = 446
+  ClientWidth = 441
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -163,7 +163,7 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Top = 352
-    Width = 446
+    Width = 441
     Height = 19
     Panels = <
       item
@@ -189,11 +189,10 @@ object Form1: TForm1
   object Pnl_topo: TPanel
     Left = 0
     Top = 0
-    Width = 446
+    Width = 441
     Height = 33
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 441
     object SpeedButton1: TSpeedButton
       Left = -1
       Top = 0
@@ -278,7 +277,7 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = -1
     Top = 33
-    Width = 458
+    Width = 449
     Height = 320
     TabOrder = 2
     object btn_icms: TSpeedButton

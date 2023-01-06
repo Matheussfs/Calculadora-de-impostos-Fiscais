@@ -2405,7 +2405,7 @@ object Frm_dime: TFrm_dime
     Left = 0
     Top = 290
     Width = 641
-    Height = 158
+    Height = 152
     TabOrder = 18
     object Label36: TLabel
       Left = 16
@@ -2505,9 +2505,9 @@ object Frm_dime: TFrm_dime
   end
   object Panel20: TPanel
     Left = 0
-    Top = 448
+    Top = 439
     Width = 641
-    Height = 202
+    Height = 211
     TabOrder = 19
     object Label42: TLabel
       Left = 16
@@ -2563,7 +2563,6 @@ object Frm_dime: TFrm_dime
       Width = 36
       Height = 13
       Caption = 'Total 7 '
-      Visible = False
     end
     object Label71: TLabel
       Left = 206
@@ -2571,7 +2570,6 @@ object Frm_dime: TFrm_dime
       Width = 33
       Height = 13
       Caption = 'Total 8'
-      Visible = False
     end
     object Label72: TLabel
       Left = 360
@@ -2579,7 +2577,6 @@ object Frm_dime: TFrm_dime
       Width = 39
       Height = 13
       Caption = 'Total 13'
-      Visible = False
     end
     object Label73: TLabel
       Left = 530
@@ -2587,7 +2584,6 @@ object Frm_dime: TFrm_dime
       Width = 39
       Height = 13
       Caption = 'Total 14'
-      Visible = False
     end
     object Edt_fundo_social_total: TEdit
       Left = 24
@@ -2643,8 +2639,6 @@ object Frm_dime: TFrm_dime
       Height = 21
       CharCase = ecUpperCase
       TabOrder = 5
-      Text = '00000000000000000'
-      Visible = False
     end
     object Edt_total_8: TEdit
       Left = 163
@@ -2652,8 +2646,6 @@ object Frm_dime: TFrm_dime
       Width = 121
       Height = 21
       TabOrder = 6
-      Text = '00000000000000000'
-      Visible = False
     end
     object edt_total_13: TEdit
       Left = 326
@@ -2661,8 +2653,6 @@ object Frm_dime: TFrm_dime
       Width = 121
       Height = 21
       TabOrder = 7
-      Text = '00000000000000000'
-      Visible = False
     end
     object Edt_total_14: TEdit
       Left = 494
@@ -2670,8 +2660,6 @@ object Frm_dime: TFrm_dime
       Width = 121
       Height = 21
       TabOrder = 8
-      Text = '00000000000000000'
-      Visible = False
     end
   end
   object Panel21: TPanel

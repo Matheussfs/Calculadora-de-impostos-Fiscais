@@ -2405,7 +2405,7 @@ object Frm_dime: TFrm_dime
     Left = 0
     Top = 290
     Width = 641
-    Height = 158
+    Height = 152
     TabOrder = 18
     object Label36: TLabel
       Left = 16
@@ -2505,9 +2505,9 @@ object Frm_dime: TFrm_dime
   end
   object Panel20: TPanel
     Left = 0
-    Top = 448
+    Top = 439
     Width = 641
-    Height = 202
+    Height = 208
     TabOrder = 19
     object Label42: TLabel
       Left = 16
@@ -2643,7 +2643,6 @@ object Frm_dime: TFrm_dime
       Height = 21
       CharCase = ecUpperCase
       TabOrder = 5
-      Text = '00000000000000000'
       Visible = False
     end
     object Edt_total_8: TEdit
@@ -2652,7 +2651,6 @@ object Frm_dime: TFrm_dime
       Width = 121
       Height = 21
       TabOrder = 6
-      Text = '00000000000000000'
       Visible = False
     end
     object edt_total_13: TEdit
@@ -2661,8 +2659,6 @@ object Frm_dime: TFrm_dime
       Width = 121
       Height = 21
       TabOrder = 7
-      Text = '00000000000000000'
-      Visible = False
     end
     object Edt_total_14: TEdit
       Left = 494
@@ -2670,8 +2666,6 @@ object Frm_dime: TFrm_dime
       Width = 121
       Height = 21
       TabOrder = 8
-      Text = '00000000000000000'
-      Visible = False
     end
   end
   object Panel21: TPanel

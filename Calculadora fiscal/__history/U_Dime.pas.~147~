@@ -568,26 +568,6 @@ Edit6.text := floattostr (T529);
   while length (Edt_total_8.text) <17 do
   Edt_total_8.text :='0' + Edt_total_8.text;
 
-
-  B13 := strtoint (Edt_base_devo.text);
-  B_13 := strtoint (Edit51.text);
-  B_13_3 := strtoint ( Edit52.text);
-  Totalb13 := b13 + b_13 + b_13_3;
-  edt_total_13.text := floattostr (Totalb13);
-  length(edt_total_13.text);
-  while length (edt_total_13.text) <17 do
-  edt_total_13.text :='0' + edt_total_13.text;
-
-  B14 := strtoint (Edt_icms_exonerado_dev.text);
-  B_14 := strtoint (Edit56.text);
-  B_14_4 := strtoint (Edit57.text);
-  Totalb14 := b14 + b_14 + b_14_4;
-  Edt_total_14.text := floattostr ( totalb14);
-  length(Edt_total_14.text);
-  while length (Edt_total_14.text) <17 do
-  Edt_total_14.text :='0' + Edt_total_14.text;
-
-
 end;
 
 procedure TFrm_dime.CheckBox1Click(Sender: TObject);
@@ -1145,18 +1125,18 @@ begin
          Edit42.text, Edit47.text, Edit52.text, Edit57.text,
          Edit67.text, Edit62.text );
 
-         WriteLn(Arquivo,'3615', '999', '9999', '999999999999999', '9999',edt_total_7.text, Edt_total_8.text, '9', Edt_fundes_devido.text, '9', Edt_fundo_social_total.text, edt_total_13.text, Edt_total_14.text, EDT_devolucao_fumdes.text, Edt_devolucao_fundo_social.text  );
+         WriteLn(Arquivo, '99999999999999999999999999');
 
-         WriteLn(Arquivo, '37', '16', '010', Edt_fundes_devido.text);
-         WriteLn(Arquivo, '37', '16','020', Edt_recebe_cred.text);
-         WriteLn(Arquivo, '37', '16', '030',EDT_devolucao_fumdes.text);
-         WriteLn(Arquivo, '37', '16','098', Edt_cred_futuro_fumdes.text);
-         WriteLn(Arquivo, '37', '16','099', Edt_recolhimento_fumdes.text);
-         WriteLn(Arquivo, '37', '16','110', Edt_fundo_social_total.text);
-         WriteLn(Arquivo, '37', '16','120', Edt_sald_cred_fundo_social.text);
-         WriteLn(Arquivo, '37', '16','130', Edt_devolucao_fundo_social.text);
-         WriteLn(Arquivo, '37', '16','198', Edt_tott.text);
-         WriteLn(Arquivo, '37', '16','199', Edt_tott1.text);
+         WriteLn(Arquivo, '37', '16', '01', Edt_fundes_devido.text);
+         WriteLn(Arquivo, '37', '16','02', Edt_recebe_cred.text);
+         WriteLn(Arquivo, '37', '16', '03',EDT_devolucao_fumdes.text);
+         WriteLn(Arquivo, '37', '16','98', Edt_cred_futuro_fumdes.text);
+         WriteLn(Arquivo, '37', '16','99', Edt_recolhimento_fumdes.text);
+         WriteLn(Arquivo, '37', '16','10', Edt_fundo_social_total.text);
+         WriteLn(Arquivo, '37', '16','20', Edt_sald_cred_fundo_social.text);
+         WriteLn(Arquivo, '37', '16','30', Edt_devolucao_fundo_social.text);
+         WriteLn(Arquivo, '37', '16','98', Edt_tott.text);
+         WriteLn(Arquivo, '37', '16','99', Edt_tott1.text);
 
 
 

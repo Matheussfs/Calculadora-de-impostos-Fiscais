@@ -2336,9 +2336,9 @@ object Frm_dime: TFrm_dime
     end
   end
   object Panel16: TPanel
-    Left = -6
-    Top = 201
-    Width = 647
+    Left = 0
+    Top = 260
+    Width = 641
     Height = 24
     TabOrder = 15
     object Label35: TLabel
@@ -2356,13 +2356,13 @@ object Frm_dime: TFrm_dime
     end
   end
   object Panel17: TPanel
-    Left = 0
-    Top = 225
-    Width = 641
+    Left = -6
+    Top = 284
+    Width = 647
     Height = 65
     TabOrder = 16
     object TLabel
-      Left = 8
+      Left = 13
       Top = 6
       Width = 296
       Height = 13
@@ -2395,17 +2395,17 @@ object Frm_dime: TFrm_dime
     end
   end
   object Panel18: TPanel
-    Left = 313
-    Top = 225
+    Left = 307
+    Top = 284
     Width = 3
     Height = 65
     TabOrder = 17
   end
   object Panel19: TPanel
     Left = 0
-    Top = 290
+    Top = 349
     Width = 641
-    Height = 158
+    Height = 152
     TabOrder = 18
     object Label36: TLabel
       Left = 16
@@ -2505,9 +2505,9 @@ object Frm_dime: TFrm_dime
   end
   object Panel20: TPanel
     Left = 0
-    Top = 448
+    Top = 501
     Width = 641
-    Height = 202
+    Height = 208
     TabOrder = 19
     object Label42: TLabel
       Left = 16
@@ -2557,38 +2557,6 @@ object Frm_dime: TFrm_dime
       Height = 13
       Caption = 'Soma Valores relativos a devolu'#231#227'o'
     end
-    object Tota: TLabel
-      Left = 56
-      Top = 152
-      Width = 36
-      Height = 13
-      Caption = 'Total 7 '
-      Visible = False
-    end
-    object Label71: TLabel
-      Left = 206
-      Top = 149
-      Width = 33
-      Height = 13
-      Caption = 'Total 8'
-      Visible = False
-    end
-    object Label72: TLabel
-      Left = 360
-      Top = 149
-      Width = 39
-      Height = 13
-      Caption = 'Total 13'
-      Visible = False
-    end
-    object Label73: TLabel
-      Left = 530
-      Top = 149
-      Width = 39
-      Height = 13
-      Caption = 'Total 14'
-      Visible = False
-    end
     object Edt_fundo_social_total: TEdit
       Left = 24
       Top = 64
@@ -2636,48 +2604,11 @@ object Frm_dime: TFrm_dime
       Text = '00000000000000000'
       OnExit = Edt_devolucao_fundo_socialExit
     end
-    object edt_total_7: TEdit
-      Left = 24
-      Top = 168
-      Width = 121
-      Height = 21
-      CharCase = ecUpperCase
-      TabOrder = 5
-      Text = '00000000000000000'
-      Visible = False
-    end
-    object Edt_total_8: TEdit
-      Left = 163
-      Top = 168
-      Width = 121
-      Height = 21
-      TabOrder = 6
-      Text = '00000000000000000'
-      Visible = False
-    end
-    object edt_total_13: TEdit
-      Left = 326
-      Top = 168
-      Width = 121
-      Height = 21
-      TabOrder = 7
-      Text = '00000000000000000'
-      Visible = False
-    end
-    object Edt_total_14: TEdit
-      Left = 494
-      Top = 168
-      Width = 121
-      Height = 21
-      TabOrder = 8
-      Text = '00000000000000000'
-      Visible = False
-    end
   end
   object Panel21: TPanel
-    Left = 641
-    Top = 201
-    Width = 706
+    Left = 642
+    Top = 260
+    Width = 705
     Height = 24
     TabOrder = 20
     object Label48: TLabel
@@ -2711,7 +2642,7 @@ object Frm_dime: TFrm_dime
   end
   object Panel22: TPanel
     Left = 641
-    Top = 225
+    Top = 284
     Width = 706
     Height = 425
     TabOrder = 21
